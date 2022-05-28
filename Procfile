@@ -1,0 +1,1 @@
+web: gunicorn skyeonlineenglish.wsgi
