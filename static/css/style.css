@@ -46,6 +46,26 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
 }
 
+/* .............................Navbar */
+
+.site-header{
+    font-weight: 300;
+    margin-right: 10px;
+}
+
+.navbar{
+    border-bottom: #b877a9 solid 0.1px;
+    border-top: #b877a9 solid 0.1px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar-brand{
+    font-size: 1.5em;
+}
+
+.header-2{
+    display:none;
+}
 
 
 
@@ -76,6 +96,22 @@ h1, h2, h3, h4, h5, h6 {
         margin: 1%;
     }
 
+    #site-header{
+        font-size: 1.5em;
+    }
+
+    .navbar{
+        border-top: 0px;
+    }
+
+    .header-1{
+        display:none;
+    }
+
+    .header-2{
+        display:block;
+    }
+
 }
   
 /* Media Query for low resolution  Tablets, Ipads */
@@ -85,11 +121,33 @@ h1, h2, h3, h4, h5, h6 {
         margin: 1%
     }
 
+    .navbar{
+        border-top: 0px;
+    }
+
+    .header-1{
+        display:none;
+    }
+
+    .header-2{
+        display:block;
+    }
+
 }
   
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px){
-    
+    .navbar{
+        border-top: 0px;
+    }
+
+    .header-1{
+        display:none;
+    }
+
+    .header-2{
+        display:block;
+    }
 
 }  
 /* Media Query for Laptops and Desktops */
