@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid px-3">
+    <h2 class="m-3">Courses:</h2>
+</div>
+<div class="container-fluid">
+    <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
+        {% for course in courses %}
+        <div class="p-3 m-2 course-card">
+            <h4 class="pb-2">{{ course.name }}</h4>
+            <p>{{ course.card_description|safe }}</p>
+            <hr>
+            <p>Course Length = {{ course.course_length }}</p>
+            <p class="course-price">Price - £{{ course.price }}</p>
+            <a href="" class="btn btn-outline-dark">More Details</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -51,8 +51,12 @@ INSTALLED_APPS = [
     # crispyforms
     'crispy_forms',
 
+    # Summernote
+    'django_summernote',
+
     # User Apps
-    'home'
+    'home',
+    'courses',
 ]
 
 MIDDLEWARE = [
@@ -160,6 +164,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+SUMMERNOTE_THEME = 'bs4'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

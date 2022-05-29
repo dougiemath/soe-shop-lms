@@ -68,7 +68,7 @@
                                         English</a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Exam Skills</a>
+                                    <a class="nav-link" href="{% url 'courses' %}">Exam Skills</a>
                                 </li>
                                 <li class="nav-item active">
                                     <a class="nav-link" href="#">Business
@@ -88,10 +88,17 @@
                                     </div>
                                 </div>
                                 {% else %}
-                                <div class="login-link">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                                    </li>
+                                <div class="d-flex flex-column flex-lg-row">
+                                    <div class="login-link">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                                        </li>
+                                    </div>
+                                    <div class="sign-up-link">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="{% url 'account_signup' %}">Sign up</a>
+                                        </li>
+                                    </div>
                                 </div>
                                 {% endif %}
                             </ul>

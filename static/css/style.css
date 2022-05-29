@@ -69,13 +69,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .users-page-link,
 .logout-link,
-.login-link{
+.login-link,
+.sign-up-link{
     font-weight: 700;
 }
 
 .logout-link > .nav-item > .nav-link,
 .users-page-link > .nav-item > .nav-link,
-.login-link > .nav-item > .nav-link{
+.login-link > .nav-item > .nav-link,
+.sign-up-link > .nav-item > .nav-link{
     color: #0cad95;
 }
 
@@ -124,6 +126,18 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
 }
 
+/* .............................courses */
+
+.course-card{
+    border: solid 0.1px #b877a9;
+    background: #ffffff;
+    width:30%
+}
+
+.course-price{
+    color: #b877a9;
+}
+
 
 
 /* .............................media queries */
@@ -159,6 +173,11 @@ h1, h2, h3, h4, h5, h6 {
         display:block;
     }
 
+    .lesson-card{
+        width:96%;
+        margin: 1%;
+    }
+
 }
   
 /* Media Query for low resolution  Tablets, Ipads */
@@ -178,6 +197,11 @@ h1, h2, h3, h4, h5, h6 {
 
     .header-2{
         display:block;
+    }
+
+    .lesson-card{
+        width:96%;
+        margin: 1%;
     }
 
 }
