@@ -1,0 +1,14 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Account Inactive" %}{% endblock %}
+
+{% block inner_content %}
+<h2 class="py-2">{% trans "Account Inactive" %}</h2>
+
+<p class="sign-up">{% trans "This account is inactive." %}</p>
+
+<p class="sign-up"><a class="footer-links" href="{% url 'home' %}"> &laquo; Click here to return to the home page
+        &raquo;</a></p>
+{% endblock %}

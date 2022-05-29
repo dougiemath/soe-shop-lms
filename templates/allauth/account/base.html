@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container p-4">
+    <div class="row">
+        <div class="allauth-form-inner-content border">
+            {% block inner_content %}
+            {% endblock %}
+            <p class="sign-up"><a class="footer-links" href="{% url 'index' %}"> &laquo; Click here to return to the home
+                    page
+                    &raquo;</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
