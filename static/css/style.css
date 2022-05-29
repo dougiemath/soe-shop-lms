@@ -67,6 +67,18 @@ h1, h2, h3, h4, h5, h6 {
     display:none;
 }
 
+.users-page-link,
+.logout-link,
+.login-link{
+    font-weight: 700;
+}
+
+.logout-link > .nav-item > .nav-link,
+.users-page-link > .nav-item > .nav-link,
+.login-link > .nav-item > .nav-link{
+    color: #0cad95;
+}
+
 /* .............................footer */
 
 .footer-cards{

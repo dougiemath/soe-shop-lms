@@ -12,8 +12,8 @@ Ongoing Bug discovery and fixes
 ### Libraries Used
 
 - [Django version 3.2.13](https://www.djangoproject.com/)
-- [Allauth (latest version as of May 2022)](https://django-allauth.readthedocs.io/en/latest/index.html)
-- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/install.html)
+- [Allauth version 0.50.0](https://django-allauth.readthedocs.io/en/latest/index.html)
+- [Crispy Forms version 1.14.0](https://django-crispy-forms.readthedocs.io/en/latest/install.html)
 
 ### Media Used
 
