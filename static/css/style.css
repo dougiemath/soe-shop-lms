@@ -138,6 +138,11 @@ h1, h2, h3, h4, h5, h6 {
     color: #b877a9;
 }
 
+.course-details{
+    border: solid 0.1px #b877a9;
+    font-family: 'Roboto', sans-serif;
+}
+
 
 
 /* .............................media queries */
@@ -173,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
         display:block;
     }
 
-    .lesson-card{
+    .course-card{
         width:96%;
         margin: 1%;
     }

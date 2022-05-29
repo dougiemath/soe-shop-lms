@@ -13,7 +13,7 @@
             <hr>
             <p>Course Length = {{ course.course_length }}</p>
             <p class="course-price">Price - £{{ course.price }}</p>
-            <a href="" class="btn btn-outline-dark">More Details</a>
+            <a href="{% url 'course_details' course.id %}" class="btn btn-outline-success">More Details</a>
         </div>
         {% endfor %}
     </div>
