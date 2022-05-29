@@ -67,12 +67,35 @@ h1, h2, h3, h4, h5, h6 {
     display:none;
 }
 
+/* .............................footer */
 
+.footer-cards{
+    width:33%;
+    background: #ffffff;
+}
 
+.footer-text{
+    font-weight: 300;
+}
 
+.footer-links{
+    text-decoration: none;
+    color: #b877a9;
+}
 
+.footer-links:hover{
+    color: #000000;
+}
 
+.social-media-icons a{
+    color: #b877a9;
+    font-size: 200%;
+}
 
+.social-media-icons a:hover{
+    color: #0cad95;
+    text-decoration: underline;
+}
 
 
 

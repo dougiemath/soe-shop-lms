@@ -91,15 +91,77 @@
         </div>
 
     </header>
-{% block content %}
-{% endblock content %}
+
+{% block content %}{% endblock content %}
+
+<footer class="pb-4">
+        <div class="container-fluid footer-container border-top mb">
+            <div class="row mt-4 mx-2 d-flex flex-md-row flex-column justify-content-between">
+                <div class="p-2 footer-cards rounded">
+                    <h6 class="menu-card-title">Courses</h6>
+                    <hr>
+                    <p class="footer-text"> <a class="footer-links" href="#">
+                            Home
+                            &raquo;</a></p>
+                    <p class="footer-text"> <a class="footer-links" href="#">
+                            All Courses
+                            &raquo;</a></p>
+                    <p class="footer-text"> <a class="footer-links" href="#">
+                            General
+                            English
+                            &raquo;</a></p>
+                    <p class="footer-text"><a class="footer-links" href="#">
+                            Business
+                            English
+                            &raquo;</a></p>
+                    <p class="footer-text"><a class="footer-links" href="#">
+                            Exam Skills
+                            &raquo;</a></p>
+                </div>
+
+                <div class="p-2 footer-cards rounded">
+                    <h6 class="menu-card-title">About Us</h6>
+                    <hr>
+                    <p class="footer-text"> <a class="footer-links" href="#">
+                            Privacy Policy
+                            &raquo;</a></p>
+                    <p class="footer-text"> <a class="footer-links" href="#">
+                            Terms and Conditions
+                            &raquo;</a></p>
+                </div>
+
+                <div class="p-2 footer-cards rounded">
+                    <h6 class="menu-card-title">Follow Us</h6>
+                    <hr>
+                    <div class="social-media-icons d-flex justify-content-around px-5 m-1">
+                        <a href="#" class="">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                        <a href="#" class="">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                        <a href="#" class="">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                        <a href="#" class="">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <p class="footer-text">Copyright Skye Online English &copy; 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
 
 {% block postload_js %}{% endblock postload_js %}
-
-</body>
 
 <!-- Icon Pack -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+</body>
 </html>
