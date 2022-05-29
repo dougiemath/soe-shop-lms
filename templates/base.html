@@ -95,7 +95,7 @@
 {% block content %}{% endblock content %}
 
 <footer class="pb-4">
-        <div class="container-fluid footer-container border-top mb">
+        <div class="container-fluid footer-container border-top">
             <div class="row mt-4 mx-2 d-flex flex-md-row flex-column justify-content-between">
                 <div class="p-2 footer-cards rounded">
                     <h6 class="menu-card-title">Courses</h6>
@@ -122,10 +122,10 @@
                 <div class="p-2 footer-cards rounded">
                     <h6 class="menu-card-title">About Us</h6>
                     <hr>
-                    <p class="footer-text"> <a class="footer-links" href="#">
+                    <p class="footer-text"> <a class="footer-links" href="{% url 'privacy_policy' %}">
                             Privacy Policy
                             &raquo;</a></p>
-                    <p class="footer-text"> <a class="footer-links" href="#">
+                    <p class="footer-text"> <a class="footer-links" href="">
                             Terms and Conditions
                             &raquo;</a></p>
                 </div>
