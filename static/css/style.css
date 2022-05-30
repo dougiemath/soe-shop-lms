@@ -17,6 +17,12 @@ h1, h2, h3, h4, h5, h6 {
     color:#0cad95
 }
 
+.site-title-link,
+.site-title-link:hover{
+    color:#0cad95;
+    text-decoration: none;
+}
+
 
 
 /* ............................home page */
@@ -147,6 +153,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .bag-item-table-cell{
     width: 30%;
+}
+
+.bag-items{
+    position: fixed;
+    bottom: 0px;
+    z-index: 9999;
+    background: #c1ece5;
+    padding: 2px;
 }
 
 /* .............................media queries */

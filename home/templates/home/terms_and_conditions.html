@@ -3,7 +3,19 @@
 {% load static %}
 
 {% block content %}
-
+{% if total %}
+<div class="container-fluid">
+    <div class="row w-100 bag-items d-flex justify-content-center bg-success">
+        <div class="col-12 text-center bg-white p-2">
+            <a class="footer-links p-2 text-center" href="{% url 'bag' %}">View Bag
+                <ion-icon name="bag-handle-outline"></ion-icon> -
+                £{{ total|floatformat:2 }}
+            </a>
+        </div>
+    </div>
+</div>
+{% else %}
+{% endif %}
 <div class="container-fluid border-bottom">
     <h2 class="terms-and-conditions py-3 px-2">Terms and Conditions</h2>
 </div>
