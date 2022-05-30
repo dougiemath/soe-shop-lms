@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% if bag_items %}
+<div class="container-fluid">
+    <div id="bag-title" class="bag-title border-bottom m-2 px-3">
+        <h2 class="mt-4">Shopping Bag</h2>
+    </div>
+</div>
+<div class="container-fluid mt-3">
+    <div class="col px-3">
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                {% for item in bag_items %}
+                <tr class="border-bottom">
+                    <td class="py-4">
+                        <div class="product-name my-2">
+                            <h5 class="bag-item-name">{{ item.product.name }}</h5>
+                        </div>
+                    </td>
+                    <td class="bag-item-table-cell d-none d-md-table-cell">
+                        <div class="course-length-title text-center">
+                            <h6>Course Length</h6>
+                        </div>
+                        <div class="course-length text-center">
+                            <p class="">{{ item.product.course_length }} hours</p>
+                        </div>
+                    </td>
+                    <td class="bag-item-table-cell d-none d-md-table-cell">
+                        <div class="product-price-title text-end">
+                            <h6>Price per course</h6>
+                        </div>
+                        <div class="product-price text-end">
+                            <p class="">£{{ item.product.price }}</p>
+                        </div>
+                    </td>
+                    <!-- Responsive view  -->
+                    <td class="d-md-none w-25">
+                        <div class="course-length-title">
+                            <h6>Course Length</h6>
+                        </div>
+                        <div class="course-length">
+                            <p class="">{{ item.product.course_length }} hours</p>
+                        </div>
+                        <div class="product-price-title">
+                            <h6>Price per course</h6>
+                        </div>
+                        <div class="product-price border-bottom">
+                            <p class="">£{{ item.product.price }}</p>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr class="text-end border-top-0">
+                    <td colspan="5" class="p-3">
+                        <h4 id="total">Total: £{{ total|floatformat:2 }}</h4>
+                    </td>
+                </tr>
+                <tr class="text-end">
+                    <td colspan="5">
+                        <a href="{% url 'courses' %}" class="btn btn-outline-success rounded-0">
+                            <span class="text-uppercase">Back to courses</span>
+                        </a>
+                        <a href="" class="btn btn-outline-success rounded-0">
+                            <span class="text-uppercase">Secure Checkout</span>
+                        </a>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-bag my-3 py-5">
+            <h3 class="text-center">Your bag is empty</h3>
+            <p class="text-center">
+                <a href="{% url 'index' %}" class="footer-links">
+                    <span class="text-uppercase">&laquo; Back to Home &raquo;</span>
+                </a>
+            </p>
+        </div>
+
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
