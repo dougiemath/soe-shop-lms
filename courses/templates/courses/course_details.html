@@ -17,13 +17,15 @@
                         <div class="col-12">
                             <div class="form-group w-75">
                                 <h5>Add to bag:</h5>
-                                <div class="input-group d-flex align-items-center">
-                                    <h6 class="my-2">{{ course.name }}</h6>
-                                    <input class="form-control qty_input my-2" type="number" name="quantity" value="1"
+                                <div class="input-group d-flex justify-content-between border-bottom align-items-center">
+                                    <div><h6 class="my-2">{{ course.name }}</h6></div>
+                                    <div><h6 class="my-2">£{{ course.price }}</h6></div>
+                                    <input class="form-control qty_input my-2 d-none" type="number" name="quantity" value="1"
                                     min="1" max="99" data-item_id="{{ course.id }}" id="id_qty_{{ course.id }}">
 
-                                </div><input type="submit" class="btn btn-outline-success rounded-0 text-uppercase my-2"
+                                <input type="submit" class="btn btn-outline-success rounded-0 text-uppercase my-2"
                                     value="Add to Bag">
+                                </div>
                             </div>
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -45,12 +47,10 @@
                 </div>
             </div>
             {% endif %}
-            <div class="col-12">
-                <hr class="my-4">
+            <div class="col-12 my-4">
                 <a href="{{request.META.HTTP_REFERER}}" class="footer-links"> &laquo; Back to previous page</a>
             </div>
         </div>
     </div>
 </div>
-
 {% endblock %}
