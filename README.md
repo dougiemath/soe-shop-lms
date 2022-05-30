@@ -9,7 +9,23 @@ Ongoing Bug discovery and fixes
 | | | |
 
 
-### Libraries Used
+### Technologies Used
+
+**Languages**
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python version 3.2.13](https://www.python.org/)
+
+
+**Libraries**
+
+- [Bootstrap version 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+- [jQuery Version 3.6](https://jquery.com/)
+
+
+**Packages**
 
 - [Django version 3.2.13](https://www.djangoproject.com/)
 - [Allauth version 0.50.0](https://django-allauth.readthedocs.io/en/latest/index.html)
@@ -19,6 +35,8 @@ Ongoing Bug discovery and fixes
 ### Media Used
 
 **Homepage image** - [Pexels](https://www.pexels.com/) - <https://images.pexels.com/photos/3786748/pexels-photo-3786748.jpeg>
+
+**Icons** - [Ionicons](https://ionic.io/ionicons)
 
 **Fonts Used** - [Google Fonts](https://fonts.google.com/)
 

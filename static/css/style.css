@@ -203,6 +203,23 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 9999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
   
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {

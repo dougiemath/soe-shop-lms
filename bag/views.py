@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
+from django.contrib import messages
 
 from courses.models import Course
 
@@ -18,8 +19,10 @@ def add_to_bag(request, item_id):
 
     if item_id not in list(bag.keys()):
         bag[item_id] = quantity
+        messages.success(request, f'Added {course.name} course to bag.')
     else:
-        print("already added")
+        messages.error(request, f'{course.name} has already been added to the bag.')
+
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -31,8 +34,10 @@ def remove_from_bag(request, item_id):
         course = get_object_or_404(Course, pk=item_id)
         bag = request.session.get('bag', {})
         bag.pop(item_id)
+        messages.success(request, f'Removed {course.name} from bag.')
         request.session['bag'] = bag
         return HttpResponse(status=200)
 
     except Exception as e:
+        messages.error(request, f'Something went wrong.  Please try again.')
         return HttpResponse(status=500)
