@@ -62,13 +62,15 @@
                                 <li class="nav-item active">
                                     <a class="nav-link" href="#">Home</a>
                                 </li>
-
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">General
+                                    <a class="nav-link" href="{% url 'courses' %}">All Courses</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'courses' %}?category=general_eng">General
                                         English</a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{% url 'courses' %}">Exam Skills</a>
+                                    <a class="nav-link" href="{% url 'courses' %}?category=exams">Exam Skills</a>
                                 </li>
                                 <li class="nav-item active">
                                     <a class="nav-link" href="#">Business
@@ -103,7 +105,7 @@
                                 {% endif %}
                             </ul>
                             <div class="form">
-                                <form method="GET" action=""
+                                <form method="GET" action="{% url 'courses' %}"
                                     class="form-inline my-2 my-lg-0 flex d-flex flex-row">
                                     <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search"
                                         aria-label="Search">
