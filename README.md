@@ -1,5 +1,26 @@
 # Skye Online English
 
+## Planning
+
+User Stories
+
+Wireframes - Shop
+
+**Desktop**
+
+- [Desktop View - Homepage](media/wireframes/desktop_shop/1_desktop_view_homepage.jpg)
+- [Desktop View - All Courses](media/wireframes/desktop_shop/2_desktop_view_all_courses_contents_page.jpg)
+- [Desktop View - Course Details](media/wireframes/desktop_shop/3_desktop_view_course_details.jpg)
+- [Desktop View - Shopping Bag](media/wireframes/desktop_shop/4_desktop_view_course_shopping_bag.jpg)
+- [Desktop View - Checkout](media/wireframes/desktop_shop/5_desktop_view_checkout.jpg)
+
+**Mobile**
+- [Mobile View - Homepage](media/wireframes/desktop_shop/1_mobile_view_homepage.jpg)
+- [Mobile View - All Courses](media/wireframes/desktop_shop/2_mobile_view_all_courses_contents_page.jpg)
+- [Mobile View - Course Details](media/wireframes/desktop_shop/3_mobile_view_course_details.jpg)
+- [Mobile View - Shopping Bag](media/wireframes/desktop_shop/4_mobile_view_course_shopping_bag.jpg)
+- [Mobile View - Checkout](media/wireframes/desktop_shop/5_mobile_view_checkout.jpg)
+
 Ongoing Bug discovery and fixes
 
 | Bug Number | Issue | Fix |
