@@ -14,7 +14,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
 <div class="container">
     <div class="row">
         <div class="col">
@@ -89,5 +88,51 @@
             </tbody>
         </table>
     </div>
-    
+    <div class="table-responsive col-12 mt-4">
+        <table class="table border">
+            <tbody>
+                <tr>
+                    <th scope="row"><small class="text-muted">Personal Details:</small></th>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <th scope="row">Name:</th>
+                    <td>
+                        <p class="mb-0">{{ order.name }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Address:</th>
+                    <td>
+                        <p>{{ order.street_address1 }}</p>
+                        {% if order.street_address2 %}
+                        <p>{{ order.street_address2 }}</p>
+                        {% else %}
+                        {% endif %}
+
+                        {% if order.town_or_city %}
+                        <p>{{ order.town_or_city }}</p>
+                        {% else %}
+                        {% endif %}
+
+                        {% if order.county %}
+                        <p>{{ order.county }}</p>
+                        {% else %}
+                        {% endif %}
+
+                        {% if order.postcode %}
+                        <p>{{ order.postcode }}</p>
+                        {% else %}
+                        {% endif %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-12  text-end my-3">
+        <a href="{% url 'index' %}" class="btn btn-outline-success rounded-0">
+            BACK TO SHOP
+       </a>
+    </div>
+</div>
 {% endblock %}
