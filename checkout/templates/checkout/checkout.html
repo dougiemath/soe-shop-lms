@@ -3,4 +3,57 @@
 
 {% block content %}
 
+<div class="container-fluid px-4">
+    <div class="row">
+        <div class="col">
+            <h2 class="my-3">Checkout</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column flex-md-row">
+        <div class="col-md-6 col-12 mb-5 pr-3">
+            <p class="text-muted">Order Summary ({{ product_count }} items)</p>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Qty</th>
+                        <th scope="col" class="p-2">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in bag_items %}
+                    <tr>
+                        <td class="p-2">
+                            <p class="my-1">{{ item.product.name }}</p>
+                        </td>
+                        <td class="p-2">
+                            <p class="my-1 small text-muted text-right">
+                                £{{ item.product.price }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <td colspan="2" class="border-bottom-0">
+                        <p class="font-weight-bold my-3">
+                            <a href="{% url 'bag' %}" class="footer-links">
+                                &laquo; Adjust Bag &raquo;
+                            </a>
+                        </p>
+                    </td>
+                    <tr class="border-top">
+                        <td>
+                            <p class="my-4 text-uppercase">Grand total:</p>
+                        </td>
+                        <td class="">
+                            <p class="my-1">
+                                <p class="my-4"><strong>£ {{ total | floatformat:2 }}</strong></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
 {% endblock %}
