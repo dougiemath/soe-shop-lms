@@ -246,6 +246,28 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 }
+
+/* ............................checkout */
+
+.main-fieldset > .form-group > div,
+.address-fieldset > .form-group > div{
+    margin-bottom: 5px;
+}
+
+.main-fieldset > .form-group > div > input::placeholder,
+.address-fieldset > .form-group > div > input::placeholder{
+    color: #cacecd;
+}
+
+
+#div_id_country > div > select{
+    color: #cacecd;
+}
+
+#div_id_country > div > select > option:not(:first-child) {
+    color: #000000;
+}
+
   
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px){
