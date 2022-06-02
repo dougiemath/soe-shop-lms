@@ -54,6 +54,9 @@ INSTALLED_APPS = [
     # Summernote
     'django_summernote',
 
+    # Django COuntries
+    'django_countries',
+
     # User Apps
     'home',
     'courses',

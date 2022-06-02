@@ -53,6 +53,7 @@ Ongoing Bug discovery and fixes
 - [Allauth version 0.50.0](https://django-allauth.readthedocs.io/en/latest/index.html)
 - [Crispy Forms version 1.14.0](https://django-crispy-forms.readthedocs.io/en/latest/install.html)
 - [Summernote version 0.8.20.0](https://github.com/summernote/django-summernote)
+- [Django Countries version 7.3.2](https://pypi.org/project/django-countries/#installation)
 
 ### Media Used
 
