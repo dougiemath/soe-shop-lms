@@ -34,8 +34,8 @@
                     {% endfor %}
                     <td colspan="2" class="border-bottom-0">
                         <p class="font-weight-bold my-3">
-                            <a href="{% url 'bag' %}" class="footer-links">
-                                &laquo; Adjust Bag &raquo;
+                            <a href="{% url 'bag' %}" class="btn btn-outline-success btn-sm rounded-0">
+                                 BACK TO SHOPPING BAG
                             </a>
                         </p>
                     </td>
@@ -52,7 +52,7 @@
             </table>
         </div>
         <!-- Order Form -->
-        <div class="col-md-6 col-12 border px-2">
+        <div class="col-md-6 col-12 px-2">
             <p class="text-muted px-3">Please fill out the form below to complete your order</p>
             <hr class="mx-3">
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -94,6 +94,7 @@
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                     <!-- Pass the client secret to the view so we can get the payment intent id -->
 
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
                 <div class="complete-order-button d-flex flex-column align-items-left">
                     <div class="submit-button text-right mb-2">
@@ -118,4 +119,11 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block postload_js %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

@@ -69,6 +69,6 @@ Ongoing Bug discovery and fixes
 
 **Colors** - As taken from source site <https://www.skyeonlineenglish.com>
 
-- Text - [#0cad95](https://g.co/kgs/DqF28c) & [#b877a9](https://g.co/kgs/yjHqid) & [#000000](https://g.co/kgs/xfSLW2)
+- Text - [#0cad95](https://g.co/kgs/DqF28c) & [#b877a9](https://g.co/kgs/yjHqid) & [#000000](https://g.co/kgs/xfSLW2) & [#cacecd](https://g.co/kgs/91ighC)
 - Backgrounds - [#ffff](https://g.co/kgs/yDTdox)
 - Borders - [#b877a9](https://g.co/kgs/yjHqid)
