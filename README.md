@@ -29,6 +29,7 @@ Ongoing Bug discovery and fixes
 | 2 | Repeat of bug number 1 - Added new Postgresql DATABASE_URL to env.py, will request further information from mentor/slack community |   |
 | 3 | Bag items are not displaying after submitting 'Add to Bag' on course detials page | bag contexts file added to settings.py |
 | 4 | Profile page not rendering when function in views.py pulls data from models.py | Created brand new user, seems to work ok after. |
+| 5 | embedvideo package ran locally but video wouldn't display as embedded address was changed from 'Https' to 'Http' | Added Content Security Policy to base.html meta |
 
 
 ### Technologies Used

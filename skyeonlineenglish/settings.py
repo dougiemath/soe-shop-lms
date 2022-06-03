@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     # Django COuntries
     'django_countries',
 
+    # Embed video
+    'embed_video',
+
     # User Apps
     'home',
     'courses',

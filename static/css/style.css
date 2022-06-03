@@ -228,6 +228,49 @@ h1, h2, h3, h4, h5, h6 {
     border: #0cad95 solid 1px;
 }
 
+/* ................................lms */
+
+.exam-overview,
+.sample-question,
+.how-to-do-it,
+.conclusion{
+    font-family: 'RaleWay', sans-serif;
+    border: 1px solid #b877a9;
+}
+
+.exam-overview > div > b,
+.sample-question > p > b,
+.sample-question > .questions > div > table > tbody > tr > td > span{
+    color: #0cad95;
+}
+.exam-overview > ul{
+    margin-top: 10px;
+}
+
+.sample-question > div > table,
+.sample-question > div > table > tbody > tr,
+.sample-question > .questions > div > table > tbody > tr > td{
+    border:none;
+}
+
+.how-to-do-it > blockquote{
+    border-top: solid 1px #0cad95;
+    border-bottom: solid 1px #0cad95;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sample-question,
+.how-to-do-it,
+.conclusion{
+    display: none;
+}
+
+.progress-bar{
+    background: #0cad95;
+    height: 2px;
+}
+
 
 /* .............................*/
 /* ........media queries....... */
