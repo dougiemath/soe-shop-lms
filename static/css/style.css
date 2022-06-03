@@ -163,7 +163,65 @@ h1, h2, h3, h4, h5, h6 {
     padding: 2px;
 }
 
-/* .............................media queries */
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 9999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* ............................checkout + profiles */
+
+.main-fieldset > .form-group > div,
+.address-fieldset > .form-group > div{
+    margin-bottom: 5px;
+}
+
+.main-fieldset > .form-group > div > input::placeholder,
+.address-fieldset > .form-group > div > input::placeholder{
+    color: #cacecd;
+}
+
+#div_id_country > div > select{
+    color: #cacecd;
+}
+
+#div_id_country > div > select > option:not(:first-child){
+    color: #000000;
+}
+
+#profile-update-form > .form-group > div > input::placeholder{
+    color: #cacecd;
+}
+
+#profile-update-form > #div_id_default_country > div > select{
+    color: #cacecd;
+}
+
+#profile-update-form > #div_id_default_country > div > select > option:not(:first-child){
+    color: #000000;
+}
+
+.profile-form-input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #000000;
+}
+
+
+/* .............................*/
+/* ........media queries....... */
+/* .............................*/
 
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
@@ -202,24 +260,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 }
-
-/* ------------------------------- bootstrap toasts */
-
-.message-container {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    z-index: 9999;
-}
-
-.custom-toast {
-    overflow: visible;
-}
-
-.toast-capper {
-    height: 2px;
-}
-
   
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
@@ -247,26 +287,7 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-/* ............................checkout */
 
-.main-fieldset > .form-group > div,
-.address-fieldset > .form-group > div{
-    margin-bottom: 5px;
-}
-
-.main-fieldset > .form-group > div > input::placeholder,
-.address-fieldset > .form-group > div > input::placeholder{
-    color: #cacecd;
-}
-
-
-#div_id_country > div > select{
-    color: #cacecd;
-}
-
-#div_id_country > div > select > option:not(:first-child) {
-    color: #000000;
-}
 
   
 /* Media Query for Tablets Ipads portrait mode */
