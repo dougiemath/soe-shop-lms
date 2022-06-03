@@ -55,6 +55,8 @@ Ongoing Bug discovery and fixes
 - [Summernote version 0.8.20.0](https://github.com/summernote/django-summernote)
 - [Django Countries version 7.3.2](https://pypi.org/project/django-countries/#installation)
 - [Stripe](http://stripe.com/)
+- [Embed Video version 1.4.4](https://pypi.org/project/django-embed-video/)
+- [Pillow version 9.1.1](https://pypi.org/project/Pillow/)
 
 ### Media Used
 

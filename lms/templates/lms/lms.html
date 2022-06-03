@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <h2 class="m-3">Let's get started</h2>
+</div>
+<div class="container-fluid">
+    <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
+        {% for examskill in examskills %}
+        <div class="card m-1" style="width: 18rem;">
+            <img class="card-img-top pt-2" src="{% static 'media/' %}{{examskill.question_image}}" alt="Card image cap">
+
+            <div class="card-body">
+                <h5 class="card-title py-3">{{ examskill.exam_name }} - {{ examskill.exam_section }}</h5>
+                <p class="card-text">Question Type - {{ examskill.question_type }}</p>
+                <a href="" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
