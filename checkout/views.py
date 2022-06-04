@@ -83,8 +83,9 @@ def checkout(request):
     else:
         bag = request.session.get('bag',{})
         if not bag:
-            messages.error(request, "There's nothing in your bag")
-            return redirect(reverse('home'))
+            messages.error(request, "Please add items to your \
+                bag before making a purchase")
+            return redirect(reverse('index'))
         
         current_bag = bag_contents(request)
         total = current_bag['total']
