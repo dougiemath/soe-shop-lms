@@ -117,6 +117,14 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
 }
 
+/* ...........................................allauth */
+
+.allauth-form-inner-content > form > .form-group > div > input{
+    border: #0cad95 1px solid;
+    border-radius: 0%;
+    margin: 5px 0px 10px 0px;
+}
+
 /* ............terms and conditions + privacy policy */
 
 .terms-and-conditions{

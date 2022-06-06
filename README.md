@@ -21,9 +21,9 @@ Wireframes - Shop
 - [Mobile View - Shopping Bag](media/wireframes/desktop_shop/4_mobile_view_course_shopping_bag.jpg)
 - [Mobile View - Checkout](media/wireframes/desktop_shop/5_mobile_view_checkout.jpg)
 
-Ongoing Bug discovery and fixes
+### Ongoing Bug discovery and fixes
 
-| Bug Number | Issue | Fix |
+| Bug No' | Issue | Fix |
 |---|---|---|
 | 1 | Database isn't connecting and error was displaying in terminal stating 'FATAL:  no pg_hba.conf entry for host "34.76.234.132", user "zfbtmtppxoejuc", database "de76aaatkpqei5", no encryption' | Heroku conducted maintenance on Postgresql database and change the database url and emailed me to inform me.  I have updated the url in my env.py file and it seems to be working fine. |
 | 2 | Repeat of bug number 1 - Added new Postgresql DATABASE_URL to env.py, will request further information from mentor/slack community |   |
@@ -32,6 +32,10 @@ Ongoing Bug discovery and fixes
 | 5 | embedvideo package ran locally but video wouldn't display as embedded address was changed from 'Https' to 'Http' | Added Content Security Policy to base.html meta |
 | 6 | Can access certain pages without logging in | Login_required decorators added to checkout and profiles pages |
 
+### Ongoing Testing
+| Test No' | Issue | Expected Result | Actual Result |
+|---|---|---|---|
+| 1 | Attempted to access pages that are notavailable to the public | Entering the url to 'protected' pages (bag.html, checkout.html, checkout-success.html, lms.html, lms-content.html) should redirect user to a login page | After applying login-decorators to each of the aforementioned pages, user is redirected accordingly. |
 
 ### Technologies Used
 
