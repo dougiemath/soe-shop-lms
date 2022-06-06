@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.contrib import messages
 from django.conf import settings
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
+
 
 import json
 import stripe
@@ -32,7 +34,7 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
-
+@login_required
 def checkout(request):
     """
     function to checkout purchases
@@ -128,6 +130,7 @@ def checkout(request):
 
     return render(request, template, context)
 
+@login_required
 def checkout_success(request, order_number):
     """
     Handle successful checkouts

@@ -1,14 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from courses.models import Course
 
-# Create your views here.
-
+@login_required
 def bag(request):
     """A view to return the shopping bag"""
     return render(request, 'bag/bag.html')
 
+@login_required
 def add_to_bag(request, item_id):
     """add an item to the shopping bag"""
 
@@ -27,6 +28,7 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
     return redirect(redirect_url)
 
+@login_required
 def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
 

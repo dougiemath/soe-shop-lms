@@ -5,10 +5,14 @@
 
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-12">
             <hr>
             <h2 class="logo-font mb-4">{{ user.username }}'s profile</h2>
             <hr>
+        </div>
+        <div class="col-12 my-3 text-center py-3 lms-access">
+            <h2 class="logo-font mb-4">Click here to access course content</h2>
+            <a href="{% url 'lms' %} " class="btn btn-outline-success text-uppercase">enter LMS</a>
         </div>
         <div class="col-12">
             <div class="order-history table-responsive">
