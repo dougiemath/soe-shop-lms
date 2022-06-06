@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% if total %}
+<div class="container-fluid">
+    <div class="row w-100 bag-items d-flex justify-content-center bg-success">
+        <div class="col-12 text-center bg-white p-2">
+            <a class="footer-links p-2 text-center" href="{% url 'bag' %}">View Bag
+                <ion-icon name="bag-handle-outline"></ion-icon> -
+                £{{ total|floatformat:2 }}
+            </a>
+        </div>
+    </div>
+</div>
+{% else %}
+{% endif %}
+<div class="container-fluid">
+    <h2 class="m-3">Contact</h2>
+</div>
+
+<div class="container my-2 contact-form">
+    <form method="post">
+    {% csrf_token %}
+        {{form|crispy}}
+        <button class="btn btn-outline-success my-2" type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

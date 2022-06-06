@@ -258,14 +258,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: auto;
 }
 
-.lms-access{
-    border-top: #b877a9 solid 2px;
-    border-bottom: #b877a9 solid 2px;
-}
-
-
-/* ................................lms */
-
 .exam-overview,
 .sample-question,
 .how-to-do-it,
@@ -305,6 +297,14 @@ h1, h2, h3, h4, h5, h6 {
 .progress-bar{
     background: #0cad95;
     height: 2px;
+}
+
+/* .........................Contact Form*/
+.contact-form > form > .form-group > div > input,
+.contact-form > form > .form-group > div > textarea{
+    border: #0cad95 solid 1px;
+    border-radius: 0%;
+    margin: 5px 0px 10px 0px;
 }
 
 

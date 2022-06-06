@@ -10,10 +10,6 @@
             <h2 class="logo-font mb-4">{{ user.username }}'s profile</h2>
             <hr>
         </div>
-        <div class="col-12 my-3 text-center py-3 lms-access">
-            <h2 class="logo-font mb-4">Click here to access course content</h2>
-            <a href="{% url 'lms' %} " class="btn btn-outline-success text-uppercase">enter LMS</a>
-        </div>
         <div class="col-12">
             <div class="order-history table-responsive">
                 <table class="table table-borderless">
@@ -23,11 +19,11 @@
                             <th>Date</th>
                             <th>Course(s) Booked</th>
                             <th>Order Total</th>
+                            <th>Learning Management System</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for order in orders %}
-
                         <tr>
                             <td>
                                 <a href="{% url 'order_history' order.order_number %}" title
@@ -47,6 +43,9 @@
                             </td>
                             <td>
                                 £{{ order.grand_total }}
+                            </td>
+                            <td>
+                                <a href="" class="btn btn-outline-success">Open Course</a>
                             </td>
                         </tr>
 
