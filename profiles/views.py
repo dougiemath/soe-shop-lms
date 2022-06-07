@@ -10,7 +10,11 @@ from courses.models import Course
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
-
+    courses = profile.course_bought.all()
+    # current_course = get_object_or_404(Course, id=?)
+    # if current_course not in courses:
+    #     messages
+    print(courses)
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -22,8 +26,9 @@ def profile(request):
 
     template = 'profiles/profile.html'
     context = {
-        'form':form,
-        'orders':orders
+        'form': form,
+        'orders': orders,
+        'courses':courses,
     }
 
     return render(request, template, context)

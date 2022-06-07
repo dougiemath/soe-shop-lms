@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import ExamSkill
 from profiles.models import UserProfile
+from courses.models import Course
 
 def lms(request):
 
@@ -19,6 +20,12 @@ def lms_content(request, examskill_id):
     """A view to return details for each course/type."""
 
     examskill = get_object_or_404(ExamSkill, pk=examskill_id)
+    profile = get_object_or_404(UserProfile, user=request.user)
+    courses = profile.course_bought.all()
+    current_course = get_object_or_404(Course, examskill=examskill)
+    # current_course = get_object_or_404(Course, id=?)
+    if current_course not in courses:
+        return redirect('index')
     
     context = {
         'examskill': examskill,

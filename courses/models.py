@@ -1,5 +1,6 @@
 from django.db import models
 
+from lms.models import ExamSkill
 
 class Category(models.Model):
 
@@ -23,6 +24,8 @@ class Course(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     course_length = models.IntegerField(null=True, blank=True)
     paid = models.BooleanField(default=False)
+    #examskill onetoone field blank=True, null=True relatedname = summat
+    examskill = models.OneToOneField(ExamSkill, blank=True, null=True, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.name

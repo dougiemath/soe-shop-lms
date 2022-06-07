@@ -27,7 +27,7 @@ class StripeWH_Handler:
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
-
+        print("part 1")
         billing_details = intent.charges.data[0].billing_details
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
@@ -57,9 +57,10 @@ class StripeWH_Handler:
                 user = UserProfile.objects.get(user__username=username)
                 print(user)
                 print(user.course_bought)
-                user.course_bought.add(course)
+                # user.course_bought.add(course)
                 user.save()
                 print(user.course_bought)
+                print(user.course_name)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -78,9 +79,10 @@ class StripeWH_Handler:
                     course = Course.objects.get(id=item_id)
                     print(course)
                     user = UserProfile.objects.get(user__username=username)
+                    print("user")
                     print(user)
-                    # user.course_bought.add(course)
                     user.save()
+                    user.course_bought.add(course)
                     print(user.course_bought)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(

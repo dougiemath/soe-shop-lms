@@ -11,7 +11,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Course)
 class CourseAdmin(SummernoteModelAdmin):
-    list_display = ('name', 'course_length')
+    list_display = ('name', 'course_length') #examskills
     summernote_fields = ('card_description','description')
 
 admin.site.register(Category, CategoryAdmin)
