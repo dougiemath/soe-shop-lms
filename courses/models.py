@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 
 class Category(models.Model):
 
@@ -23,7 +22,7 @@ class Course(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     course_length = models.IntegerField(null=True, blank=True)
-    paid = models.BooleanField(default=False)    
+    paid = models.BooleanField(default=False)
     
     def __str__(self):
         return self.name

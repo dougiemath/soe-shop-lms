@@ -33,9 +33,24 @@ Wireframes - Shop
 | 6 | Can access certain pages without logging in | Login_required decorators added to checkout and profiles pages |
 
 ### Ongoing Testing
-| Test No' | Issue | Expected Result | Actual Result |
+
+**General**
+
+| Test No' | Issue | Steps Carried Out | Result |
 |---|---|---|---|
 | 1 | Attempted to access pages that are notavailable to the public | Entering the url to 'protected' pages (bag.html, checkout.html, checkout-success.html, lms.html, lms-content.html) should redirect user to a login page | After applying login-decorators to each of the aforementioned pages, user is redirected accordingly. |
+
+**Page Specific - Home**
+| Test No' | Issue | Steps Carried Out | Result |
+|---|---|---|---|
+| 1 |Banner serves as link to homepage|Clicked on the banner on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the homepage - **PASS**|
+| 2 |Navbar 'Home' link serves as link to homepage.|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the homepage - **PASS**|
+| 3 |Navbar 'All Courses' link serves as link to view all courses currently uploaded onto site.|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the homepage - **PASS**|
+| 4 |Navbar 'General English' link serves as link to view only courses connected to General English, no Exam courses should be viewable.|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the all courses page, but the results are filtered to only display General English courses - **PASS**|
+| 5 |Navbar 'Exam Skills' link serves as link to view only courses connected to Exam Skills, no General English Courses should be viewable.|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the all courses page, but the results are filtered to only display Exam Skills courses - **PASS**|
+| 6 |Navbar 'login' link serves as link to the login page|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the login page - **PASS**|
+| 7 |Navbar 'signup' link serves as link to the signup page|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the login page - **PASS**|
+
 
 ### Technologies Used
 

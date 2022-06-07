@@ -24,7 +24,7 @@ def cache_checkout_data(request):
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
-            'save_info': request.POST.get('save_info'),
+            'save_info': request.POST.get('save_info'), 
             'username': request.user,
         })
         return HttpResponse(status=200)
@@ -140,6 +140,8 @@ def checkout_success(request, order_number):
 
     profile = UserProfile.objects.get(user=request.user)
     order.user_profile = profile
+
+
     order.save()
 
     if save_info:

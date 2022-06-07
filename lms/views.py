@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 
 from .models import ExamSkill
+from profiles.models import UserProfile
 
 def lms(request):
 
     examskills = ExamSkill.objects.all()
+    user = get_object_or_404(UserProfile, user=request.user)
 
     context = {
         'examskills': examskills,

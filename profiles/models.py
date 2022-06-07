@@ -4,6 +4,8 @@ from django_countries.fields import CountryField
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from courses.models import Course
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -14,6 +16,9 @@ class UserProfile(models.Model):
     default_county = models.CharField(max_length=80, null=True, blank=True)
     default_postcode = models.CharField(max_length=20, null=True, blank=True)
     default_country = CountryField(blank_label='Country *', null=True, blank=True)
+    # course_bought = models.ManyToManyField(Course)
+    # course_bought = models.ManyToManyField('courses.Course', blank=True)
+    course_bought = models.ManyToManyField('courses.Course', blank=True, related_name="purchased")
 
     def __str__(self):
         return self.user.username

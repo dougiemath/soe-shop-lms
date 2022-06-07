@@ -28,8 +28,6 @@ def contact(request):
                 return HttpResponse('Invalid header found.')
                 
             return redirect(reverse('index'))
-        else:
-            messages.success(request, f'Your email has been sent.  We will contact you shortly.')
 
     form = ContactForm()
     return render(request, "contact/contact.html", {'form': form})
