@@ -43,13 +43,14 @@ class ExamSkill(models.Model):
         ('/speaking.jpg', 'Speaking'),
     ]
     question_image = models.ImageField(choices=THUMBNAIL_IMAGES, default='Reading')
-    question_overview = models.TextField()
-    sample_question_text = models.TextField()
-    sample_question_questions = models.TextField()
-    question_approach = models.TextField()
-    video = EmbedVideoField(blank=True)
-    upload_questions = models.FileField(blank=True)
-    upload_answers = models.FileField(blank=True)
+    question_overview = models.TextField(verbose_name = "Section 1 - Question Overview")
+    sample_question_text = models.TextField(verbose_name = "Section 2 - Sample Passage (can be left blank)", blank=True)
+    sample_question_questions = models.TextField(verbose_name = "Section 2 - Sample Questions")
+    question_approach = models.TextField(verbose_name = "Section 3 - Question Approach")
+    video = EmbedVideoField(blank=True, verbose_name = "Section 3 - Video")
+    further_study = models.TextField(verbose_name = "Section 4 - Further Study Information")
+    upload_questions = models.FileField(blank=True, verbose_name = "Section 4 - Further Practice Questions (PDF)")
+    upload_answers = models.FileField(blank=True, verbose_name = "Section 4 - Further Practice Questions (Answers)")
 
 
     def __str__(self):

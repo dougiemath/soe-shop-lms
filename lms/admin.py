@@ -8,6 +8,6 @@ from .models import ExamSkill
 @admin.register(ExamSkill)
 class LessonAdmin(SummernoteModelAdmin):
     list_display = ('exam_name', 'exam_section', 'question_type', 'video', 'upload_questions')
-    summernote_fields = ('exam_description', 'question_overview', 'sample_question_text', 'sample_question_questions', 'question_approach',)
+    summernote_fields = ('exam_description', 'question_overview', 'sample_question_text', 'sample_question_questions', 'question_approach', 'further_study',)
 
 
