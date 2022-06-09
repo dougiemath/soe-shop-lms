@@ -27,13 +27,13 @@ class ExamSkill(models.Model):
     exam_names = [
         ('KET', 'KET'),
         ('PET', 'PET'),
-        ('FCE', 'FEC'),
+        ('FCE', 'FCE'),
         ('CAE', 'CAE'),
         ('CPE', 'CPE'),
         ('IELTS', 'IELTS'),
     ]
     exam_name = models.CharField(choices=exam_names, max_length=50)
-    SectionType = models.TextChoices('SectionType', 'Reading writing Speaking Listening')
+    SectionType = models.TextChoices('SectionType', 'Reading Writing Speaking Listening')
     exam_section = models.CharField(blank=True, choices=SectionType.choices, max_length=20)
     question_type = models.CharField(max_length=100)
     THUMBNAIL_IMAGES = [

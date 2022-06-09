@@ -34,7 +34,7 @@ def profile(request):
     return render(request, template, context)
 
 def order_history(request, order_number):
-    order = get_object_or_404(Order, order_number=order_number).order_by('date')
+    order = get_object_or_404(Order, order_number=order_number).order_by('-date')
     
     messages.info(request, (
         f'Confirmation of order number {order_number}. '

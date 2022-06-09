@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
         {% for examskill in examskills %}
-        <div class="card m-1" style="width: 18rem;">
+        <div class="card mb-3 p-2 m-2 lms-cards">
             <img class="card-img-top pt-2" src="{% static 'media/' %}{{examskill.question_image}}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title py-3">{{ examskill.exam_name }} - {{ examskill.exam_section }}</h5>

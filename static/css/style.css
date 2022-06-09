@@ -125,6 +125,14 @@ h1, h2, h3, h4, h5, h6 {
     margin: 5px 0px 10px 0px;
 }
 
+#div_id_remember{
+    padding: 0px;
+}
+
+#div_id_remember > #id_remember{
+    margin-right: 10px;
+}
+
 /* ............terms and conditions + privacy policy */
 
 .terms-and-conditions{
@@ -307,6 +315,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 5px 0px 10px 0px;
 }
 
+/* .........................LMS*/
+
+.lms-cards{
+    width: 20rem;
+}
+
 
 /* .............................*/
 /* ........media queries....... */
@@ -346,6 +360,10 @@ h1, h2, h3, h4, h5, h6 {
     .course-card{
         width:96%;
         margin: 1%;
+    }
+
+    .lms-cards{
+        width: 95%;
     }
 
 }
