@@ -1,38 +1,48 @@
 from django.db import models
 from embed_video.fields import EmbedVideoField
 
-
-# Create your models here.
-
-class ExamCategory(models.Model):
+class CourseCategory(models.Model):
     
     class Meta:
-        verbose_name_plural = "Exam Categories"
+        verbose_name_plural = "Course Categories"
         
-    exam_name = [
-        ('KET', 'KET'),
-        ('PET', 'PET'),
-        ('FCE', 'FEC'),
-        ('CAE', 'CAE'),
-        ('CPE', 'CPE'),
-        ('IELTS', 'IELTS'),
-    ]
-    name = models.CharField(choices=exam_name, max_length=50)
+    # exam_name = [
+    #     ('KET', 'KET'),
+    #     ('PET', 'PET'),
+    #     ('FCE', 'FCE'),
+    #     ('CAE', 'CAE'),
+    #     ('CPE', 'CPE'),
+    #     ('IELTS', 'IELTS'),
+    #     ('GEN - A1', 'GEN - A1'),
+    #     ('GEN - A2', 'GEN - A2'),
+    #     ('GEN - B1', 'GEN - B1'),
+    #     ('GEN - B2', 'GEN - B2'),
+    #     ('GEN - C1', 'GEN - C1'),
+    #     ('GEN - C2', 'GEN - C2'),
+    # ]
+    name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
-class ExamSkill(models.Model):
+class CourseSkill(models.Model):
     """defines the model for creating courses in the exams lms"""
-    exam_names = [
+    lesson_names = [
         ('KET', 'KET'),
         ('PET', 'PET'),
         ('FCE', 'FCE'),
         ('CAE', 'CAE'),
         ('CPE', 'CPE'),
         ('IELTS', 'IELTS'),
+        ('GEN - A1', 'GEN - A1'),
+        ('GEN - A2', 'GEN - A2'),
+        ('GEN - B1', 'GEN - B1'),
+        ('GEN - B2', 'GEN - B2'),
+        ('GEN - C1', 'GEN - C1'),
+        ('GEN - C2', 'GEN - C2'),
     ]
-    exam_name = models.CharField(choices=exam_names, max_length=50)
+    category = models.ForeignKey('CourseCategory', null=True, blank=True, on_delete=models.SET_NULL)
+    name = models.CharField(max_length=100)
     SectionType = models.TextChoices('SectionType', 'Reading Writing Speaking Listening')
     exam_section = models.CharField(blank=True, choices=SectionType.choices, max_length=20)
     question_type = models.CharField(max_length=100)
@@ -54,7 +64,7 @@ class ExamSkill(models.Model):
 
 
     def __str__(self):
-        return self.exam_name
+        return str(self.category)
 
     class Meta:
-        ordering = ['exam_name']
+        ordering = ['name']

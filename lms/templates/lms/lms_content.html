@@ -4,15 +4,15 @@
 
 {% block content %}
 <div class="container-fluid p-3 ">
-    <h2 class="mx-3 border-bottom pb-2">{{ examskill.exam_name }} - {{ examskill.exam_section }} -
-        {{ examskill.question_type }}
+    <h2 class="mx-3 border-bottom pb-2">{{ courseskill.course_name }} - {{ courseskill.course_section }} -
+        {{ courseskill.question_type }}
     </h2>
 </div>
 
 <div id="exam-overview" class="container exam-overview p-4 mb-3">
     <h3 class="border-bottom mb-3 pb-2">Overview</h3>
-    <h1><a href="{{examskill.upload.url}}" download>{{examskill.upload}}</a></h1>
-    {{ examskill.question_overview | safe }}
+    <h1><a href="{{courseskill.upload.url}}" download>{{courseskill.upload}}</a></h1>
+    {{ courseskill.question_overview | safe }}
     <div class="nav-button text-end my-3">
         <button type="button" class="btn btn-outline-info" onclick="displaySampleQuestion()">Next
             Section</button>
@@ -23,12 +23,12 @@
 
 <div id="sample-question" class="container sample-question p-4  mb-3">
     <h3 class="border-bottom mb-3 pb-2">Sample</h3>
-    {% if examskill.sample_question_text %}
-    {{ examskill.sample_question_text | safe }}
+    {% if courseskill.sample_question_text %}
+    {{ courseskill.sample_question_text | safe }}
     {% else %}
     {% endif %}
     <div class="table-responsive-sm questions">
-        {{examskill.sample_question_questions | safe}}
+        {{courseskill.sample_question_questions | safe}}
     </div>
     <div class="nav-button d-flex justify-content-between my-3">
         <button type="button" class="btn btn-outline-info" onclick="displayExamOverview()">Previous Section</button>
@@ -40,11 +40,11 @@
 
 <div id="how-to-do-it" class="container how-to-do-it p-4  mb-3">
     <h3 class="border-bottom mb-3 pb-2">How to do it</h3>
-    {% if examskill.video %}
-    <div class="video text-center">{% video examskill.video 'small' %}</div>
+    {% if courseskill.video %}
+    <div class="video text-center">{% video courseskill.video 'small' %}</div>
     {% else %}
     {% endif %}
-    {{examskill.question_approach | safe}}
+    {{courseskill.question_approach | safe}}
     <div class="nav-button d-flex justify-content-between my-3">
         <button type="button" class="btn btn-outline-info" onclick="displaySampleQuestion()">Previous Section</button>
         <button type="button" class="btn btn-outline-info" onclick="displayConclusion()">Next Section</button>
@@ -54,18 +54,18 @@
 </div>
 
 <div id="conclusion" class="container conclusion p-4  mb-3">
-    {% if examskill.upload_questions %}
+    {% if courseskill.upload_questions %}
     <h3 class="border-bottom mb-3 pb-2">Try it yourself</h3>
     <div class="download-task-descrpition">
-        {{examskill.further_study | safe}}
+        {{courseskill.further_study | safe}}
     </div>
     <div class="sample-question-downloads d-flex flex-row my-3">
         <div class="download-questions p-3 col-6 text-end">
-            <a class="btn btn-outline-success" href="{{examskill.upload_questions.url}}" download>Download Sample
+            <a class="btn btn-outline-success" href="{{courseskill.upload_questions.url}}" download>Download Sample
                 Questions</a>
         </div>
         <div class="download-answers p-3 col-6">
-            <a class="btn btn-outline-success" href="{{examskill.upload_answers.url}}" download>Download Sample
+            <a class="btn btn-outline-success" href="{{courseskill.upload_answers.url}}" download>Download Sample
                 Answers</a>
         </div>
     </div>

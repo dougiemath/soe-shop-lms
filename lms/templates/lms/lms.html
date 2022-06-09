@@ -10,13 +10,13 @@
 
 <div class="container-fluid">
     <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
-        {% for examskill in examskills %}
+        {% for courseskill in courseskills %}
         <div class="card mb-3 p-2 m-2 lms-cards">
-            <img class="card-img-top pt-2" src="{% static 'media/' %}{{examskill.question_image}}" alt="Card image cap">
+            <img class="card-img-top pt-2" src="{% static 'media/' %}{{courseskill.question_image}}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title py-3">{{ examskill.exam_name }} - {{ examskill.exam_section }}</h5>
-                <p class="card-text">Question Type - {{ examskill.question_type }}</p>
-                <a href="{% url 'lms_content' examskill.id %}" class="btn btn-outline-success rounded-0">Start Studying</a>
+                <h5 class="card-title py-3">{{ courseskill.course_name }} - {{ courseskill.course_section }}</h5>
+                <p class="card-text">Question Type - {{ courseskill.question_type }}</p>
+                <a href="{% url 'lms_content' courseskill.id %}" class="btn btn-outline-success rounded-0">Start Studying</a>
             </div>
         </div>
         {% endfor %}
