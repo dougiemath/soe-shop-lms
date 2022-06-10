@@ -1,48 +1,25 @@
+
+import uuid
+
 from django.db import models
+from django.urls import reverse
+
 from embed_video.fields import EmbedVideoField
 
 class CourseCategory(models.Model):
     
     class Meta:
         verbose_name_plural = "Course Categories"
-        
-    # exam_name = [
-    #     ('KET', 'KET'),
-    #     ('PET', 'PET'),
-    #     ('FCE', 'FCE'),
-    #     ('CAE', 'CAE'),
-    #     ('CPE', 'CPE'),
-    #     ('IELTS', 'IELTS'),
-    #     ('GEN - A1', 'GEN - A1'),
-    #     ('GEN - A2', 'GEN - A2'),
-    #     ('GEN - B1', 'GEN - B1'),
-    #     ('GEN - B2', 'GEN - B2'),
-    #     ('GEN - C1', 'GEN - C1'),
-    #     ('GEN - C2', 'GEN - C2'),
-    # ]
-    name = models.CharField(max_length=100)
+
+    name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.name
 
 class CourseSkill(models.Model):
     """defines the model for creating courses in the exams lms"""
-    lesson_names = [
-        ('KET', 'KET'),
-        ('PET', 'PET'),
-        ('FCE', 'FCE'),
-        ('CAE', 'CAE'),
-        ('CPE', 'CPE'),
-        ('IELTS', 'IELTS'),
-        ('GEN - A1', 'GEN - A1'),
-        ('GEN - A2', 'GEN - A2'),
-        ('GEN - B1', 'GEN - B1'),
-        ('GEN - B2', 'GEN - B2'),
-        ('GEN - C1', 'GEN - C1'),
-        ('GEN - C2', 'GEN - C2'),
-    ]
-    category = models.ForeignKey('CourseCategory', null=True, blank=True, on_delete=models.SET_NULL)
-    name = models.CharField(max_length=100)
+    category = models.ForeignKey('CourseCategory', blank=True, null=True, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, null=True)
     SectionType = models.TextChoices('SectionType', 'Reading Writing Speaking Listening')
     exam_section = models.CharField(blank=True, choices=SectionType.choices, max_length=20)
     question_type = models.CharField(max_length=100)
@@ -61,10 +38,16 @@ class CourseSkill(models.Model):
     further_study = models.TextField(verbose_name = "Section 4 - Further Study Information")
     upload_questions = models.FileField(blank=True, verbose_name = "Section 4 - Further Practice Questions (PDF)")
     upload_answers = models.FileField(blank=True, verbose_name = "Section 4 - Further Practice Questions (Answers)")
+    course_num = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
 
     def __str__(self):
-        return str(self.category)
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("lms_content", args=[str(self.course_num)])
 
     class Meta:
         ordering = ['name']
+
+    

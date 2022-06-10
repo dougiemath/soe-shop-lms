@@ -22,7 +22,7 @@ def profile(request):
             messages.success(request, 'Profile updated successfully')
 
     form = UserProfileForm(instance=profile)
-    orders = profile.orders.all()
+    orders = profile.orders.all().order_by('-date')
 
     template = 'profiles/profile.html'
     context = {
@@ -35,7 +35,6 @@ def profile(request):
 
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number).order_by('-date')
-    
     messages.info(request, (
         f'Confirmation of order number {order_number}. '
         'A confirmation email was sent on the order date.'

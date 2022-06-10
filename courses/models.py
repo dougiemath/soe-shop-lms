@@ -1,6 +1,6 @@
 from django.db import models
 
-from lms.models import CourseSkill
+from lms.models import CourseSkill, CourseCategory
 
 class Category(models.Model):
 
@@ -23,7 +23,8 @@ class Course(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     course_length = models.IntegerField(null=True, blank=True)
-    courseskill = models.OneToOneField(CourseSkill, blank=True, null=True, on_delete=models.CASCADE, verbose_name="EXAM: (Leave blank if your course is General English)")
+    ##########
+    courseskill = models.ManyToManyField(CourseSkill, blank=True, null=True)
 
     def __str__(self):
         return self.name

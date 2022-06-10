@@ -83,7 +83,9 @@ class StripeWH_Handler:
                     print(user)
                     user.save()
                     user.course_bought.add(course)
+                    print("---------------")
                     print(user.course_bought)
+                    print("---------------")
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
