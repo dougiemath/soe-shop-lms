@@ -69,9 +69,13 @@ def lms(request):
     profile = UserProfile.objects.get(user=request.user)
     course_categories = CourseSkill.objects.filter(category=1)
     courses = profile.course_bought.all()
-    print(courseskills)
+    categorys = CourseCategory.objects.all()
     print("---------------")
-    print(course_categories)
+    print("COURSE SKILLS: ", courseskills)
+    print("---------------")
+    print("COURSE CATEGORIES: ", course_categories)
+    print("---------------")
+    print("CATEGORIES: ", categorys)
     print("---------------")
     print(user)
 
@@ -80,7 +84,9 @@ def lms(request):
 
     context = {
         'courseskills': courseskills,
-        'user':user
+        'user':user,
+        'categorys': categorys,
+        'courses': courses
     }
 
     return render(request, 'lms/lms.html', context)
