@@ -6,19 +6,19 @@ from django.urls import reverse
 
 from embed_video.fields import EmbedVideoField
 
-class CourseCategory(models.Model):
+class LessonCategory(models.Model):
     
     class Meta:
-        verbose_name_plural = "Course Categories"
+        verbose_name_plural = "Lesson Categories"
 
     name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.name
 
-class CourseSkill(models.Model):
+class Lessons(models.Model):
     """defines the model for creating courses in the exams lms"""
-    category = models.ForeignKey('CourseCategory', blank=True, null=True, on_delete=models.CASCADE)
+    category = models.ForeignKey('LessonCategory', blank=True, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, null=True)
     SectionType = models.TextChoices('SectionType', 'Reading Writing Speaking Listening')
     exam_section = models.CharField(blank=True, choices=SectionType.choices, max_length=20)
@@ -49,5 +49,6 @@ class CourseSkill(models.Model):
 
     class Meta:
         ordering = ['name']
+        verbose_name_plural = "Lessons"
 
     

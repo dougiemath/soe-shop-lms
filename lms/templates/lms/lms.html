@@ -7,33 +7,27 @@
 <div class="container-fluid">
     <h2 class="m-3">Let's get started</h2>
 </div>
-User: {{ user }}
-<br>
-Categories: {{ categorys }}
-<br>
-FOR:
-{% for category in categorys %}
-
-{{ category.name }}
-
-{% endfor %}
-
+<div class="container">
+    
+<h2>User:</h2> {{ user }}
 
 <br>
-Courseskills: {{ courseskills }}
+<h2>Courseskills:</h2> {{ lessons }}
 <br>
-{% for courseskill in courseskills %}
-{{ courseskill.category }}
+{% for lesson in lessons %}
+<br>
+{{ lesson.category }}
 {% endfor %}
 
 <br>
 
 <br>
-Courses Bought by user: {{ courses }}
+<h2>Courses Bought by user:</h2> {{ courses_bought }}
 <br>
 
-{% for course in courses %}
-{{ course.courseskill }}
+{% for course in courses_bought %}
+<br>
+{{ course.course_category }}
 <br>
 
 
@@ -42,19 +36,31 @@ Courses Bought by user: {{ courses }}
 
 <br>
 
-
+<h2>For loop:</h2> 
+{% for lesson in lessons %}
+{% for course in courses_bought %}
+    {% if course.course_category == lesson.category %}
+        {{course}}
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+</div>
 
 <div class="container-fluid">
     <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
-        {% for courseskill in courseskills %}
+        {% for lesson in lessons %}
+        {% for course in courses_bought %}
+        {% if course.course_category == lesson.category %}
         <div class="card mb-3 p-2 m-2 lms-cards">
-            <img class="card-img-top pt-2" src="{% static 'media/' %}{{courseskill.question_image}}" alt="Card image cap">
+            <img class="card-img-top pt-2" src="{% static 'media/' %}{{lesson.question_image}}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title py-3">{{ courseskill.category.id }} - {{ courseskill.name }}- {{ courseskill.course_section }}</h5>
-                <p class="card-text">Question Type - {{ courseskill.question_type }}</p>
-                <a href="{% url 'lms_content' courseskill.id %}" class="btn btn-outline-success rounded-0">Start Studying</a>
+                <h5 class="card-title py-3">{{ lesson.category.id }} - {{ lesson.name }}- {{ lesson.course_section }}</h5>
+                <p class="card-text">Question Type - {{ lesson.question_type }}</p>
+                <a href="{% url 'lms_content' lesson.id %}" class="btn btn-outline-success rounded-0">Start Studying</a>
             </div>
         </div>
+        {% endif %}
+        {% endfor %}
         {% endfor %}
     </div>
 </div>

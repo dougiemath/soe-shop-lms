@@ -1,6 +1,6 @@
 from django.db import models
 
-from lms.models import CourseSkill, CourseCategory
+from lms.models import Lessons, LessonCategory
 
 class Category(models.Model):
 
@@ -24,7 +24,7 @@ class Course(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     course_length = models.IntegerField(null=True, blank=True)
     ##########
-    courseskill = models.ForeignKey(CourseCategory, blank=True, null=True, on_delete=models.CASCADE)
+    course_category = models.ForeignKey(LessonCategory, blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

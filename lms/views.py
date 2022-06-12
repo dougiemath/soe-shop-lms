@@ -56,53 +56,59 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .models import CourseSkill, CourseCategory
+from .models import Lessons, LessonCategory
 from profiles.models import UserProfile
 from courses.models import Course
 
 @login_required
 def lms(request):
 
-    courseskills = CourseSkill.objects.all()
+    lessons = Lessons.objects.all()
+
     user = get_object_or_404(UserProfile, user=request.user)
     #profile = get_object_or_404(UserProfile, user=request.user)
     profile = UserProfile.objects.get(user=request.user)
-    course_categories = CourseSkill.objects.filter(category=1)
-    courses = profile.course_bought.all()
-    categorys = CourseCategory.objects.all()
+    course_categories = Lessons.objects.filter(category=1)
+    courses_bought = profile.course_bought.all()
+    lesson_category = LessonCategory.objects.all()
     print("---------------")
-    print("COURSE SKILLS: ", courseskills)
+    print("LESSONS: ", lessons)
     print("---------------")
     print("COURSE CATEGORIES: ", course_categories)
     print("---------------")
-    print("CATEGORIES: ", categorys)
+    print("CATEGORIES: ", lesson_category)
     print("---------------")
     print(user)
 
-    if courseskills not in courses:
-        print(courseskills)
+    # for lesson in lessons:
+    #     for course in courses_bought:
+    #         if course.course_category == lesson.category:
+    #             print(course)
+
+    if lessons not in courses_bought:
+        print(lessons)
 
     context = {
-        'courseskills': courseskills,
-        'user':user,
-        'categorys': categorys,
-        'courses': courses
+        'lessons': lessons,
+        'user': user,
+        'lesson_category': lesson_category,
+        'courses_bought': courses_bought
     }
 
     return render(request, 'lms/lms.html', context)
 
 
-def lms_content(request, courseskill_id):
+def lms_content(request, lessons_id):
     """A view to return details for each course/type."""
 
-    courseskill = get_object_or_404(CourseSkill, pk=courseskill_id)
-    coursenum = courseskill.course_num
+    lessons = get_object_or_404(Lessons, pk=lessons_id)
+    coursenum = lessons.course_num
     print("UUID: ", coursenum)
     profile = get_object_or_404(UserProfile, user=request.user)
     print("PROFILE: ", profile)
     courses = profile.course_bought.all()
     print("COURSES: ", courses)
-    current_course = get_object_or_404(Course, courseskill=courseskill)
+    current_course = get_object_or_404(Course, lessons=lessons)
     print("CURRENT COURSE: ", current_course)
     if current_course not in courses:
         
@@ -111,7 +117,7 @@ def lms_content(request, courseskill_id):
 
     
     context = {
-        'courseskill': courseskill,
+        'lessons': lessons,
     }
 
     return render(request, 'lms/lms_content.html', context)
