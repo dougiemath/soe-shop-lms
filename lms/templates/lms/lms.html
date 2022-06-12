@@ -7,7 +7,43 @@
 <div class="container-fluid">
     <h2 class="m-3">Let's get started</h2>
 </div>
-{{ user }}
+User: {{ user }}
+<br>
+Categories: {{ categorys }}
+<br>
+FOR:
+{% for category in categorys %}
+
+{{ category.name }}
+
+{% endfor %}
+
+
+<br>
+Courseskills: {{ courseskills }}
+<br>
+{% for courseskill in courseskills %}
+{{ courseskill.category }}
+{% endfor %}
+
+<br>
+
+<br>
+Courses Bought by user: {{ courses }}
+<br>
+
+{% for course in courses %}
+{{ course.courseskill }}
+<br>
+
+
+{% endfor %}
+
+
+<br>
+
+
+
 <div class="container-fluid">
     <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
         {% for courseskill in courseskills %}

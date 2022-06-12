@@ -24,7 +24,7 @@ class Course(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     course_length = models.IntegerField(null=True, blank=True)
     ##########
-    courseskill = models.ManyToManyField(CourseSkill, blank=True, null=True)
+    courseskill = models.ForeignKey(CourseCategory, blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
