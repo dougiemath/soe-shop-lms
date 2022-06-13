@@ -9,11 +9,8 @@
         <h2 class="m-3">Edit Lesson Content</h2>
     </div>
 </div>
-
-
 <div class="container-fluid">
     <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
-        
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -36,15 +33,43 @@
                     </td>
                     <td><a href="{% url 'edit_lesson' lesson.id %}" class="btn btn-outline-info rounded-0">Edit Lesson</a>
                     </td>
-                    <td><a href="" class="btn btn-outline-danger rounded-0">Delete Lesson</a>
+                    <td><a href="{% url 'delete_lesson' lesson.id %}" class="btn btn-outline-danger rounded-0">Delete Lesson</a>
                     </td>
                   </tr>
                   {% endfor %}
                 </tbody>
               </table>
         </div>
-
-        
     </div>
+</div>
+
+<div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
+  <div class="table-responsive">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Lesson Name</th>
+              <th scope="col">Course Name</th>
+              <th scope="col">View Lesson</th>
+              <th scope="col">Edit Lesson</th>
+              <th scope="col">Delete Lesson</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for course in courses %}
+            <tr>
+              <th scope="row">{{ course.name }}</th>
+              <td>Price - £{{ course.price }}</td>
+              <td><a href="{% url 'course_details' course.id %}" class="btn btn-outline-success rounded-0">View Course</a>
+              </td>
+              <td><a href="{% url 'edit_shop_content' course.id %}" class="btn btn-outline-info rounded-0">Edit Lesson</a>
+              </td>
+              <td><a href="" class="btn btn-outline-danger rounded-0">Delete Lesson</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+  </div>
 </div>
 {% endblock %}
