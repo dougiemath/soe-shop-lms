@@ -82,12 +82,6 @@ def lms_content(request, lesson_id):
 
     return render(request, 'lms/lms_content.html', context)
 
-@login_required
-def add(request):
-    """returns a contents-style page for 
-    adding new course/shop content"""
-    return render(request, 'lms/add.html')
-
 
 # .......................................
 @login_required
@@ -218,16 +212,6 @@ def delete_lesson(request, lesson_id):
     return redirect(reverse('manage'))
 
 
-
-
-
-
-
-
-
-
-
-
 @login_required
 def edit_shop_content(request, course_id):
     course = get_object_or_404(Course, pk=course_id)
@@ -253,10 +237,10 @@ def edit_shop_content(request, course_id):
 
     return render(request, template, context)
 
-# @login_required
-# def edit_shop_content(request, lesson_id):
+@login_required
+def delete_shop_content(request, course_id):
 
-#     lesson = get_object_or_404(Lessons, pk=lesson_id)
-#     lesson.delete()
-#     messages.success(request, 'Lesson Deleted')
-#     return redirect(reverse('manage'))
+    course = get_object_or_404(Course, pk=course_id)
+    course.delete()
+    messages.success(request, 'Course removed from shop')
+    return redirect(reverse('manage'))
