@@ -224,3 +224,43 @@ def add_new_shop_course(request):
     }
 
     return render(request, template, context)
+
+
+def edit(request):
+    """returns a contents-style page for 
+    editing course/shop content"""
+    lessons = Lessons.objects.all().order_by('category')
+    lesson_category = LessonCategory.objects.all()
+
+    context = {
+        'lessons': lessons,
+        'lesson_category': lesson_category,
+
+    }
+
+    return render(request, 'lms/edit.html', context)
+
+def edit_lesson(request, lesson_id):
+    
+    lesson = get_object_or_404(Lessons, pk=lesson_id)
+    
+    if request.method == 'POST':
+        form = LessonCategoryForm(request.POST, request.FILES, instance=lesson)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Success!')
+            return redirect(reverse('edit'))
+        else:
+            messages.error(request, 'Failed.')
+    else:
+        form = LessonCategoryForm(instance=lesson)
+        messages.info(request, f'You are editing {lesson.name}')
+
+    template = 'lms/edit_lesson.html'
+
+    context = {
+        'form': form,
+        'lesson': lesson,
+    }
+
+    return render(request, template, context)

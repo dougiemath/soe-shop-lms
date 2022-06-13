@@ -321,6 +321,31 @@ h1, h2, h3, h4, h5, h6 {
     width: 20rem;
 }
 
+/* .........................Course Management*/
+
+.add-new-course-form,
+.add-new-lesson-form,
+.add-lesson-category-form{
+    border: #b877a9 1px solid;
+    padding: 20px
+}
+
+.add-new-course-form > form > div > div > .form-control,
+.add-new-lesson-form> form > div > div > .form-control,
+.add-lesson-category-form> form > div > div > .form-control{
+    border: #0cad95 1px solid;
+    border-radius: 0px;
+}
+
+.add-new-course-form > form > div > label,
+.add-new-lesson-form > form > div > label,
+.add-lesson-category-form > form > div > label{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'RaleWay', sans-serif;
+}
+
+
 
 /* .............................*/
 /* ........media queries....... */

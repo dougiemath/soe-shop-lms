@@ -11,7 +11,7 @@
 </div>
 <div class="container my-4">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 add-new-lesson-form">
             <form method="POST" action="{% url 'add_lesson' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
@@ -26,4 +26,9 @@
 <div class="container return-to-shop py-4 border-top">
     <a href="{% url 'add' %}" class="btn btn-outline-success rounded-0">Return to Course Management Without Saving</a>
 </div>
+
 {% endblock %}
+
+
+
+
