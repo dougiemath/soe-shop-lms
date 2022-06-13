@@ -9,10 +9,14 @@ class CategoryAdmin(admin.ModelAdmin):
     ordering = ('friendly_name',)
 
 
+# @admin.register(Course)
+# class CourseAdmin(SummernoteModelAdmin):
+#     list_display = ('name', 'course_length') #examskills
+#     summernote_fields = ('card_description','description')
+
 @admin.register(Course)
-class CourseAdmin(SummernoteModelAdmin):
-    list_display = ('name', 'course_length') #examskills
-    summernote_fields = ('card_description','description')
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ('name', 'course_length') 
 
 admin.site.register(Category, CategoryAdmin)
 

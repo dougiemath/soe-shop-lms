@@ -1,5 +1,7 @@
 from django.db import models
 
+from ckeditor.fields import RichTextField
+
 from lms.models import Lessons, LessonCategory
 
 class Category(models.Model):
@@ -19,7 +21,8 @@ class Category(models.Model):
 class Course(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
-    card_description = models.TextField(null=True, blank=True)
+    # card_description = models.TextField(null=True, blank=True)
+    card_description = RichTextField(null=True, blank=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     course_length = models.IntegerField(null=True, blank=True)

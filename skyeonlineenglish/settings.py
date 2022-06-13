@@ -60,6 +60,9 @@ INSTALLED_APPS = [
     # Embed video
     'embed_video',
 
+    # ckeditor
+    'ckeditor',
+
     # User Apps
     'home',
     'courses',
