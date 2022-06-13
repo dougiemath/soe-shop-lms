@@ -6,9 +6,9 @@ from .models import Lessons, LessonCategory
 
 
 @admin.register(Lessons)
-class LessonAdmin(SummernoteModelAdmin):
+class LessonAdmin(admin.ModelAdmin):
     list_display = ('id', 'category','name', 'exam_section', 'question_type', 'video', 'upload_questions')
-    summernote_fields = ('exam_description', 'question_overview', 'sample_question_text', 'sample_question_questions', 'question_approach', 'further_study',)
+    # summernote_fields = ('exam_description', 'question_overview', 'sample_question_text', 'sample_question_questions', 'question_approach', 'further_study',)
 
 class LessonCategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')

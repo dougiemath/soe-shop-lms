@@ -31,6 +31,7 @@ Wireframes - Shop
 | 4 | Profile page not rendering when function in views.py pulls data from models.py | Created brand new user, seems to work ok after. |
 | 5 | embedvideo package ran locally but video wouldn't display as embedded address was changed from 'Https' to 'Http' | Added Content Security Policy to base.html meta |
 | 6 | Can access certain pages without logging in | Login_required decorators added to checkout and profiles pages |
+| 7 | Summernote fields aren't displaying in the UI, only in the admin| Replaced Summernote with ckeditor|
 
 ### Ongoing Testing
 

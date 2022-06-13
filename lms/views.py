@@ -233,7 +233,7 @@ def edit_shop_content(request, course_id):
     course = get_object_or_404(Course, pk=course_id)
     
     if request.method == 'POST':
-        form = NewShopCourseForm(request.POST, request.FILES, instance=lesson)
+        form = NewShopCourseForm(request.POST, request.FILES, instance=course)
         if form.is_valid():
             form.save()
             messages.success(request, 'Success!')

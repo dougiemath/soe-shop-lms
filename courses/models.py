@@ -23,7 +23,8 @@ class Course(models.Model):
     name = models.CharField(max_length=254)
     # card_description = models.TextField(null=True, blank=True)
     card_description = RichTextField(null=True, blank=True)
-    description = models.TextField()
+    # description = models.TextField()
+    description = RichTextField(null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     course_length = models.IntegerField(null=True, blank=True)
     ##########
