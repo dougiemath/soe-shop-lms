@@ -52,11 +52,12 @@
 
 
 
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .models import Lessons, LessonCategory
+from.forms import LessonForm, LessonCategoryForm, NewShopCourseForm
 from profiles.models import UserProfile
 from courses.models import Course
 
@@ -64,21 +65,20 @@ from courses.models import Course
 def lms(request):
 
     lessons = Lessons.objects.all()
-
     user = get_object_or_404(UserProfile, user=request.user)
-    #profile = get_object_or_404(UserProfile, user=request.user)
     profile = UserProfile.objects.get(user=request.user)
     course_categories = Lessons.objects.filter(category=1)
     courses_bought = profile.course_bought.all()
     lesson_category = LessonCategory.objects.all()
     print("---------------")
-    print("LESSONS: ", lessons)
-    print("---------------")
-    print("COURSE CATEGORIES: ", course_categories)
-    print("---------------")
-    print("CATEGORIES: ", lesson_category)
-    print("---------------")
-    print(user)
+    # print("LESSONS: ", lessons)
+    # print("---------------")
+    # print("COURSE CATEGORIES: ", course_categories)
+    # print("---------------")
+    # print("CATEGORIES: ", lesson_category)
+    # print("---------------")
+    # print(user)
+    print(Lessons)
 
     # for lesson in lessons:
     #     for course in courses_bought:
@@ -98,28 +98,129 @@ def lms(request):
     return render(request, 'lms/lms.html', context)
 
 
-def lms_content(request, lessons_id):
+def lms_content(request, lesson_id):
     """A view to return details for each course/type."""
-
-    lessons = get_object_or_404(Lessons, pk=lessons_id)
-    coursenum = lessons.course_num
+    print("Content")
+    lesson = get_object_or_404(Lessons, pk=lesson_id)
+    coursenum = lesson.course_num
+    lesson_category = lesson.category
+    print("LESSON CATEGORY: ", lesson_category)
     print("UUID: ", coursenum)
     profile = get_object_or_404(UserProfile, user=request.user)
     print("PROFILE: ", profile)
-    courses = profile.course_bought.all()
-    print("COURSES: ", courses)
-    current_course = get_object_or_404(Course, lessons=lessons)
-    print("CURRENT COURSE: ", current_course)
-    if current_course not in courses:
+    courses_bought = profile.course_bought.all()
+    print("COURSES: ", courses_bought)
+    print("LESSON: ", lesson.category)
+    
+    current_course = Course.objects.all()
+    print("00000000000000000000000", current_course)
+
+
+    # for course in courses_bought:
+    #     print(course, lesson_category)
+    #     access = course
+    #     print("888888888888888888888888", access)
+    #     if lesson_category == course.course_category:
+    #         print("yep")
+    #     else:
+    #         print("nope")
+            
+
+
+    # current_course = get_object_or_404(Course, lesson=lesson)
+    # print("CURRENT COURSE: ", current_course)
+    # if current_course not in courses:
         
-        messages.error(request, 'You cannot access this page without buying the course.')
-        return redirect('lms')
+    #     messages.error(request, 'You cannot access this page without buying the course.')
+    #     return redirect('lms')
 
     
     context = {
-        'lessons': lessons,
+        'lesson': lesson,
     }
 
     return render(request, 'lms/lms_content.html', context)
 
 
+def add(request):
+    """returns a contents-style page for 
+    adding new course/shop content"""
+    return render(request, 'lms/add.html')
+
+
+# .......................................
+
+def add_lesson(request):
+    """ Add a lesson to the LMS """
+    if request.method == "POST":
+        form = LessonForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Successfully added lesson")
+            return redirect(reverse('add'))
+        else:
+            messages.error(request, 'Failed to add lesson.  Please check the form.')
+        
+    else:
+        form = LessonForm()
+
+
+    form = LessonForm()
+    template = 'lms/add_lesson.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+    # .......................................
+
+def add_lesson_category(request):
+    """ Add a lesson category to the LMS """
+    if request.method == "POST":
+        form = LessonCategoryForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Successfully added lesson category")
+            return redirect(reverse('add'))
+        else:
+            messages.error(request, 'Failed to add lesson category.  Please check the form.')
+        
+    else:
+        form = LessonCategoryForm()
+
+
+    form = LessonCategoryForm()
+    template = 'lms/add_lesson_category.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+# .......................................
+
+def add_new_shop_course(request):
+    """ Add a lesson category to the LMS """
+    if request.method == "POST":
+        form = NewShopCourseForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Successfully added content to Shop")
+            return redirect(reverse('add'))
+        else:
+            messages.error(request, 'Failed to add content to shop.  Please check the form.')
+        
+    else:
+        form = NewShopCourseForm()
+
+
+    form = NewShopCourseForm()
+    template = 'lms/add_new_shop_course.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

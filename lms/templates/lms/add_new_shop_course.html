@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid px-5">
+    <div class="row border-bottom">
+        <h2 class="m-3">Add New Course to Shop</h2>
+    </div>
+</div>
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <form method="POST" action="{% url 'add_new_shop_course' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-right my-3">
+                    <a class="btn btn-outline-success rounded-0" href="{% url 'index' %}">Cancel and Return to Index</a>
+                    <button class="btn btn-outline-success rounded-0" type="submit">Add New Shop Content</button>
+                </div>
+            </form>
+        </div>            
+    </div>
+</div>
+<div class="container return-to-shop py-4 border-top">
+    <a href="{% url 'add' %}" class="btn btn-outline-success rounded-0">Return to Course Management  Without Saving</a>
+</div>
+{% endblock %}
