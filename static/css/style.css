@@ -76,15 +76,21 @@ h1, h2, h3, h4, h5, h6 {
 .users-page-link,
 .logout-link,
 .login-link,
-.sign-up-link{
+.sign-up-link,
+.manage-item-link{
     font-weight: 700;
 }
 
 .logout-link > .nav-item > .nav-link,
 .users-page-link > .nav-item > .nav-link,
 .login-link > .nav-item > .nav-link,
-.sign-up-link > .nav-item > .nav-link{
+.sign-up-link > .nav-item > .nav-link,
+.manage-item-link > .nav-item > .nav-link{
     color: #0cad95;
+}
+
+.manage-item-link{
+    border: #b877a9 1px solid;
 }
 
 /* .............................footer */
@@ -343,6 +349,19 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
     margin-bottom: 10px;
     font-family: 'RaleWay', sans-serif;
+}
+
+#add-new-content,
+#edit-lesson-content,
+#edit-shop-content{
+    display: none;
+}
+
+
+#add-hide-btn,
+#edit-hide-btn,
+#add-shop-hide-btn{
+    display: none;
 }
 
 

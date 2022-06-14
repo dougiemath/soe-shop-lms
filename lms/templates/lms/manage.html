@@ -4,13 +4,18 @@
 
 {% block content %}
 
-<div class="container-fluid px-5">
-  <div class="row border-bottom">
+<div class="container d-flex flex-row align-items-baseline justify-content-between border-bottom my-4">
+  <div class="">
       <h2 class="m-3">Add New Content</h2>
   </div>
+  <div class="show-hide-btn-down" id="add-show-btn">
+    <h2 onclick="displayAddNewContent()"><ion-icon name="arrow-down-circle-outline"></ion-icon></h2> 
+  </div>
+  <div class="show-hide-btn-down" id="add-hide-btn">
+    <h2 onclick="hideAddNewContent()"><ion-icon name="arrow-up-circle-outline"></ion-icon></h2> 
+  </div>
 </div>
-
-<div class="container mb-4">
+<div class="container mb-4" id="add-new-content">
   <div class="row mt-4 d-flex flex-md-row flex-column justify-content-between">
       <div class="p-4 home-menu-cards rounded">
           <h4 class="courses-title">1. Add A New Course Category</h4>
@@ -37,12 +42,18 @@
   </div>
 </div>
 
-<div class="container-fluid px-5">
-    <div class="row border-bottom">
-        <h2 class="m-3">Edit Lesson Content</h2>
-    </div>
+<div class="container d-flex flex-row align-items-baseline justify-content-between border-bottom my-4">
+  <div class="">
+      <h2 class="m-3">Edit Lesson Content</h2>
+  </div>
+  <div class="show-hide-btn-down" id="edit-show-btn">
+    <h2 onclick="displayEditNewContent()"><ion-icon name="arrow-down-circle-outline"></ion-icon></h2> 
+  </div>
+  <div class="show-hide-btn-down" id="edit-hide-btn">
+    <h2 onclick="hideEditNewContent()"><ion-icon name="arrow-up-circle-outline"></ion-icon></h2> 
+  </div>
 </div>
-<div class="container-fluid">
+<div class="container" id="edit-lesson-content">
     <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
         <div class="table-responsive">
             <table class="table">
@@ -67,7 +78,7 @@
                     <td class="align-middle"><a href="{% url 'edit_lesson' lesson.id %}" class="btn btn-outline-info rounded-0">Edit Lesson</a>
                     </td>
                     <td class="align-middle">
-                      <p class="small text-danger">This action cannot be outdone!</p>
+                      <p class="small text-danger">This action cannot be undone!</p>
                       <a href="{% url 'delete_lesson' lesson.id %}" class="btn btn-outline-danger rounded-0">Delete Lesson</a>
                     </td>
                   </tr>
@@ -77,14 +88,18 @@
         </div>
     </div>
 </div>
-
-<div class="container-fluid px-5">
-  <div class="row border-bottom">
+<div class="container d-flex flex-row align-items-baseline justify-content-between border-bottom my-4">
+  <div class="">
       <h2 class="m-3">Edit Shop Content</h2>
   </div>
+  <div class="show-hide-btn-down" id="add-shop-show-btn">
+    <h2 onclick="displayEditShopContent()"><ion-icon name="arrow-down-circle-outline"></ion-icon></h2> 
+  </div>
+  <div class="show-hide-btn-down" id="add-shop-hide-btn">
+    <h2 onclick="hideEditShopContent()"><ion-icon name="arrow-up-circle-outline"></ion-icon></h2> 
+  </div>
 </div>
-
-<div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
+<div class="container" id="edit-shop-content">
   <div class="table-responsive">
       <table class="table">
           <thead>
@@ -106,7 +121,7 @@
               <td class="align-middle"><a href="{% url 'edit_shop_content' course.id %}" class="btn btn-outline-info rounded-0">Edit Lesson</a>
               </td>
               <td class="align-middle">
-                <p class="small text-danger">This action cannot be outdone!</p>
+                <p class="small text-danger">This action cannot be undone!</p>
                 <a href="{% url 'delete_shop_content' course.id %}" class="btn btn-outline-danger rounded-0">Delete Lesson</a>
               </td>
             </tr>
@@ -116,5 +131,56 @@
   </div>
 </div>
 
+
+<script>
+  let addNewContent = document.getElementById('add-new-content')
+  let showAddBtn = document.getElementById('add-show-btn')
+  let hideAddBtn = document.getElementById('add-hide-btn')
+
+  let EditNewContent = document.getElementById('edit-lesson-content')
+  let showEditBtn = document.getElementById('edit-show-btn')
+  let hideEditBtn = document.getElementById('edit-hide-btn')
+
+  let EditNewShopContent = document.getElementById('edit-shop-content')
+  let showEditShopBtn = document.getElementById('add-shop-show-btn')
+  let hideEditShopBtn = document.getElementById('add-shop-hide-btn')
+
+    function displayAddNewContent() {
+      hideAddBtn.style.display = 'flex';
+      showAddBtn.style.display = 'none';
+      addNewContent.style.display = "block"
+    }
+
+    function hideAddNewContent(){
+      hideAddBtn.style.display = 'none';
+      showAddBtn.style.display = 'flex';
+      addNewContent.style.display = "none"
+    }
+
+    function displayEditNewContent() {
+      hideEditBtn.style.display = 'flex';
+      showEditBtn.style.display = 'none';
+      EditNewContent.style.display = "block"
+    }
+
+    function hideEditNewContent(){
+      hideEditBtn.style.display = 'none';
+      showEditBtn.style.display = 'flex';
+      EditNewContent.style.display = "none"
+    }
+    
+    function displayEditShopContent() {
+      hideEditShopBtn.style.display = 'flex';
+      showEditShopBtn.style.display = 'none';
+      EditNewShopContent.style.display = "block"
+    }
+
+    function hideEditShopContent(){
+      hideEditShopBtn.style.display = 'none';
+      showEditShopBtn.style.display = 'flex';
+      EditNewShopContent.style.display = "none"
+    }
+
+</script>
 
 {% endblock %}

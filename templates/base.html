@@ -94,13 +94,11 @@
                                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                                         </li>
                                     </div>
-                                    {% if request.user.is_superuser %}
-                                    <div class="manage-page-link">
+                                    <div class="manage-item-link">
                                         <li class="nav-item active">
                                             <a class="nav-link" href="{% url 'manage' %}">Manage Content</a>
                                         </li>
                                     </div>
-                                    {% endif %}
                                 </div>
                                 {% else %}
                                 <div class="d-flex flex-column flex-lg-row">
