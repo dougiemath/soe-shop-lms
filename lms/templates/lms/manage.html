@@ -116,13 +116,13 @@
             <tr>
               <th scope="row" class="align-middle">{{ course.name }}</th>
               <td class="align-middle">Price - £{{ course.price }}</td>
-              <td class="align-middle"><a href="{% url 'course_details' course.id %}" class="btn btn-outline-success rounded-0">View Course</a>
+              <td class="align-middle"><a href="{% url 'course_details' course.id %}" class="btn btn-outline-success rounded-0">View Course in Shop</a>
               </td>
-              <td class="align-middle"><a href="{% url 'edit_shop_content' course.id %}" class="btn btn-outline-info rounded-0">Edit Lesson</a>
+              <td class="align-middle"><a href="{% url 'edit_shop_content' course.id %}" class="btn btn-outline-info rounded-0">Edit Course in Shop</a>
               </td>
               <td class="align-middle">
                 <p class="small text-danger">This action cannot be undone!</p>
-                <a href="{% url 'delete_shop_content' course.id %}" class="btn btn-outline-danger rounded-0">Delete Lesson</a>
+                <a href="{% url 'delete_shop_content' course.id %}" class="btn btn-outline-danger rounded-0">Delete Course in Shop</a>
               </td>
             </tr>
             {% endfor %}

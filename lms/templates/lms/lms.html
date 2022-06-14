@@ -17,8 +17,9 @@
         <div class="card mb-3 p-2 m-2 lms-cards">
             <img class="card-img-top pt-2" src="{% static 'media/' %}{{lesson.question_image}}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title py-3">{{ lesson.category.id }} - {{ lesson.name }}- {{ lesson.course_section }}</h5>
-                <p class="card-text">Question Type - {{ lesson.question_type }}</p>
+                <h3 class="card-title">{{ lesson.category }}</h3>
+                <h5 class="card-title">{{ lesson.exam_section }}</h5>
+                <p class="card-text">{{ lesson.name }}</p>
                 <a href="{% url 'lms_content' lesson.id %}" class="btn btn-outline-success rounded-0">Start Studying</a>
             </div>
         </div>
