@@ -4,6 +4,8 @@
 
 {% block content %}
 
+{% if courses_bought %}
+
 <div class="container-fluid">
     <h2 class="m-3">Let's get started</h2>
 </div>
@@ -26,5 +28,13 @@
         {% endfor %}
     </div>
 </div>
+{% else %}
+
+<div class="container-fluid text-center p-5">
+    <h2 class="m-3">You haven't bought any courses yet.</h2>
+    <a href="{% url 'index' %}" class="btn btn-outline-success rounded-0">CLICK HERE TO RETURN HOME</a>
+</div>
+
+{% endif %}
 
 {% endblock %}

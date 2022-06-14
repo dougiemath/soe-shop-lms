@@ -44,37 +44,23 @@ def lms_content(request, lesson_id):
     print("Content")
     lesson = get_object_or_404(Lessons, pk=lesson_id)
     coursenum = lesson.course_num
-    lesson_category = lesson.category
-    print("LESSON CATEGORY: ", lesson_category)
+    current_course = lesson.category
+    print("CURRENT COURSE: ", current_course)
     print("UUID: ", coursenum)
     profile = get_object_or_404(UserProfile, user=request.user)
     print("PROFILE: ", profile)
     courses_bought = profile.course_bought.all()
     print("COURSES: ", courses_bought)
-    print("LESSON: ", lesson.category)
-    
-    current_course = Course.objects.all()
-    print("00000000000000000000000", current_course)
+    print("LESSON: ", lesson.name)
 
-
-    # for course in courses_bought:
-    #     print(course, lesson_category)
-    #     access = course
-    #     print("888888888888888888888888", access)
-    #     if lesson_category == course.course_category:
-    #         print("yep")
-    #     else:
-    #         print("nope")
-            
-
-
-    # current_course = get_object_or_404(Course, lesson=lesson)
-    # print("CURRENT COURSE: ", current_course)
-    # if current_course not in courses:
-        
-    #     messages.error(request, 'You cannot access this page without buying the course.')
-    #     return redirect('lms')
-
+    if str(current_course) not in str(courses_bought):
+        print("CURRENT COURSE: ", current_course)
+        print("COURSES: ", courses_bought)
+        print("YEP")
+        messages.error(request, 'You do not have access to this page.')
+        return redirect('lms')
+    else:
+        print("NOPE")
     
     context = {
         'lesson': lesson,
@@ -83,7 +69,6 @@ def lms_content(request, lesson_id):
     return render(request, 'lms/lms_content.html', context)
 
 
-# .......................................
 @login_required
 def add_lesson(request):
     """ Add a lesson to the LMS """
@@ -109,7 +94,6 @@ def add_lesson(request):
     return render(request, template, context)
 
 
-    # .......................................
 @login_required
 def add_lesson_category(request):
     """ Add a lesson category to the LMS """
@@ -135,7 +119,6 @@ def add_lesson_category(request):
     return render(request, template, context)
 
 
-# .......................................
 @login_required
 def add_new_shop_course(request):
     """ Add a lesson category to the LMS """
