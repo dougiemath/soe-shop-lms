@@ -86,7 +86,7 @@
                                 <div class="d-flex flex-column flex-lg-row">
                                     <div class="users-page-link">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="{% url 'profile' %}">Hi {{ user.username }}!</a>
+                                            <a class="nav-link" href="{% url 'profile' %}">{{ user.username }}'s Profile Page</a>
                                         </li>
                                     </div>
                                     <div class="logout-link">
@@ -94,11 +94,14 @@
                                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                                         </li>
                                     </div>
+                                    {% if request.user.is_superuser %}
                                     <div class="manage-item-link">
                                         <li class="nav-item active">
                                             <a class="nav-link" href="{% url 'manage' %}">Manage Content</a>
                                         </li>
                                     </div>
+                                    {% else %}
+                                    {% endif %}
                                 </div>
                                 {% else %}
                                 <div class="d-flex flex-column flex-lg-row">

@@ -18,6 +18,9 @@
 <div class="container-fluid px-3">
     <h2 class="m-3">Courses:</h2>
 </div>
+
+{% if courses %}
+
 <div class="container-fluid">
     <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
         {% for course in courses %}
@@ -32,4 +35,9 @@
         {% endfor %}
     </div>
 </div>
+{% else %}
+<div class="text-center">
+    <h3 class="p-5">There are currently no courses available</h3>
+</div>
+{% endif %}
 {% endblock %}
