@@ -10,21 +10,13 @@ from courses.models import Course
 
 @login_required
 def lms(request):
-    # gets all lessons
-    lessons = Lessons.objects.all()
-    # gets current logged in user
-    # gets profile details of curent logged in user
+    """displays a contents page for all courses 
+    that have been bought by the user"""
+    lessons = Lessons.objects.all().order_by('-category')
     profile = UserProfile.objects.get(user=request.user)
-    print("...............")
-    print(profile)
-    print("...............")
     course_categories = Lessons.objects.filter(category=1)
     courses_bought = profile.course_bought.all()
     lesson_category = LessonCategory.objects.all()
-    if request.user.is_authenticated:
-        print("user is authenticated")
-    else:
-        print("something went wrong")
 
     context = {
         'lessons': lessons,
@@ -39,26 +31,15 @@ def lms(request):
 @login_required
 def lms_content(request, lesson_id):
     """A view to return details for each course/type."""
-    print("Content")
     lesson = get_object_or_404(Lessons, pk=lesson_id)
     coursenum = lesson.course_num
     current_course = lesson.category
-    print("CURRENT COURSE: ", current_course)
-    print("UUID: ", coursenum)
     profile = get_object_or_404(UserProfile, user=request.user)
-    print("PROFILE: ", profile)
     courses_bought = profile.course_bought.all()
-    print("COURSES: ", courses_bought)
-    print("LESSON: ", lesson.name)
 
     if str(current_course) not in str(courses_bought):
-        print("CURRENT COURSE: ", current_course)
-        print("COURSES: ", courses_bought)
-        print("YEP")
         messages.error(request, 'You do not have access to this page.')
         return redirect('lms')
-    else:
-        print("NOPE")
     
     context = {
         'lesson': lesson,

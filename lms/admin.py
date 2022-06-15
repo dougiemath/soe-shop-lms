@@ -6,7 +6,7 @@ from .models import Lessons, LessonCategory
 
 @admin.register(Lessons)
 class LessonAdmin(admin.ModelAdmin):
-    list_display = ('category','name', 'exam_section', 'question_type', 'video', 'upload_questions')
+    list_display = ('category', 'id', 'name', 'exam_section', 'question_type', 'video', 'upload_questions')
 
 class LessonCategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)

@@ -26,9 +26,7 @@
     {{ lesson.sample_question_text | safe }}
     {% else %}
     {% endif %}
-    <div class="table-responsive-sm questions">
         {{lesson.sample_question_questions | safe}}
-    </div>
     <div class="nav-button d-flex justify-content-between my-3">
         <button type="button" class="btn btn-outline-info" onclick="displayExamOverview()">Previous Section</button>
         <button type="button" class="btn btn-outline-info" onclick="displayHowToDoIt()">Next Section</button>
