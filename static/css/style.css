@@ -23,8 +23,6 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
-
-
 /* ............................home page */
 
 #home-image{
@@ -157,6 +155,7 @@ h1, h2, h3, h4, h5, h6 {
 /* .............................courses */
 
 .course-card{
+    font-family: 'RaleWay', sans-serif;
     border: solid 0.1px #b877a9;
     background: #ffffff;
     width:30%
@@ -278,7 +277,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: auto;
 }
 
-
 /* .........................Contact Form*/
 .contact-form > form > .form-group > div > input,
 .contact-form > form > .form-group > div > textarea{
@@ -292,7 +290,6 @@ h1, h2, h3, h4, h5, h6 {
 .lms-cards{
     width: 20rem;
 }
-
 
 .exam-overview,
 .sample-question,
@@ -371,7 +368,6 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 
-
 #add-hide-btn,
 #edit-hide-btn,
 #add-shop-hide-btn{
@@ -396,41 +392,32 @@ h1, h2, h3, h4, h5, h6 {
     .home-image{
         width: 95%;
     }
-
     .courses-title{
         margin-top: 10%;
     }
-
     .home-menu-cards, .footer-cards{
         width:100%;
         margin: 1%;
     }
-
     #site-header{
         font-size: 1.5em;
     }
-
     .navbar{
         border-top: 0px;
     }
-
     .header-1{
         display:none;
     }
-
     .header-2{
         display:block;
     }
-
     .course-card{
         width:96%;
         margin: 1%;
     }
-
     .lms-cards{
         width: 95%;
     }
-
 }
   
 /* Media Query for low resolution  Tablets, Ipads */
@@ -439,51 +426,41 @@ h1, h2, h3, h4, h5, h6 {
         width:95%;
         margin: 1%
     }
-
     .navbar{
         border-top: 0px;
     }
-
     .header-1{
         display:none;
     }
-
     .header-2{
         display:block;
     }
-
     .lesson-card{
         width:96%;
         margin: 1%;
     }
-
 }
 
-
-
-  
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px){
     .navbar{
         border-top: 0px;
     }
-
     .header-1{
         display:none;
     }
-
     .header-2{
         display:block;
     }
+}
 
-}  
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px){
     .home-image{
         width: 70%;
     }
 }
-  
+
 /* Media Query for Large screens */
 @media (min-width: 1281px) {
     .home-image{
