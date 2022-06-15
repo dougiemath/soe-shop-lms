@@ -51,10 +51,7 @@ INSTALLED_APPS = [
     # crispyforms
     'crispy_forms',
 
-    # Summernote
-    'django_summernote',
-
-    # Django COuntries
+    # Django Countries
     'django_countries',
 
     # Embed video
