@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container border p-3 my-3">
+    <h3>Email</h3>
+    <hr>
+    <p>Meassage received from <strong>{{ email.email }}</strong> at <em>{{  email.date  }}</em></p>
+    <p>Message Subject: {{  email.subject  }}</p>
+    <hr>
+    <p class="border-bottom">Message:</p>
+    <p>{{  email.message  }}</p>
+    <a href="{% url 'contact_inbox' %}" class="my-3 btn btn-outline-success btn-sm rounded-0">Back to Inbox</a>
+</div>
+
+{% endblock %}

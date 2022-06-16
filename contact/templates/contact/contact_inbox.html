@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% if total %}
+<div class="container-fluid">
+    <div class="row w-100 bag-items d-flex justify-content-center bg-success">
+        <div class="col-12 text-center bg-white p-2">
+            <a class="footer-links p-2 text-center" href="{% url 'bag' %}">View Bag
+                <ion-icon name="bag-handle-outline"></ion-icon> -
+                £{{ total|floatformat:2 }}
+            </a>
+        </div>
+    </div>
+</div>
+{% else %}
+{% endif %}
+<div class="container border-bottom">
+    <h2 class="my-3">Inbox</h2>
+</div>
+<div class="container">
+<table class="table table-sm my-4">
+    <thead>
+      <tr>
+        <th scope="col">From</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Date Received</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for email in emails %}
+      <tr>
+        <th scope="row">{{ email.email }}</th>
+        <td>{{ email.subject|truncatechars:20 }}</td>
+        <td>{{ email.date }}</td>
+        <td><a href="{% url 'contact_received_email' email.id %}" class="btn btn-outline-success btn-sm rounded-0">View Message</a></td>
+        <td><a href="{% url 'delete_email' email.id %}" class="btn btn-outline-danger btn-sm rounded-0">Delete Message</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
