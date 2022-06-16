@@ -17,14 +17,16 @@
 {% else %}
 {% endif %}
 <div class="container border-bottom">
-    <h2 class="my-3">Contact</h2>
+    <h2 class="my-3">Contact {{ message_name }}</h2>
 </div>
 
 <div class="container my-2 contact-form">
     <form method="post">
     {% csrf_token %}
-        {{form|crispy}}
-        <button class="btn btn-outline-success my-2" type="submit">Submit</button>
+    <input type="text" name="message-name" class="form-control" placeholder="Your Name">
+    <input type="email" name="message-email" class="form-control" placeholder="Your Email">
+    <textarea name="message" class="form-control" placeholder="Your Message"></textarea>
+    <button class="btn btn-outline-success my-2" type="submit">Submit</button>
     </form>
 </div>
 
