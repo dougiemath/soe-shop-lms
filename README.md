@@ -3,7 +3,7 @@
 ![Skye Online English - Responsive Views](media/readme_images/responsive_image.jpg)
 
 
-[Skye Online English](https://www.skyeonlineenglish.com/) is an online English language teaching site.  It is currently focussed on providing face-to-face teaching.  This project intends to provide self-study opportunities for langauge students.
+[Skye Online English](https://www.skyeonlineenglish.com/) is an online English language teaching site.  It is currently focussed on providing face-to-face teaching.  This project intends to provide self-study opportunities for langauge students.  Similarly to sites like Udemy, this project aims to provide lifetime access for single purchases.
 
 ## Planning
 
@@ -25,6 +25,74 @@ Wireframes - Shop
 - [Mobile View - Course Details](media/wireframes/desktop_shop/3_mobile_view_course_details.jpg)
 - [Mobile View - Shopping Bag](media/wireframes/desktop_shop/4_mobile_view_course_shopping_bag.jpg)
 - [Mobile View - Checkout](media/wireframes/desktop_shop/5_mobile_view_checkout.jpg)
+
+## Features
+
+![Homepage](media/readme_images/home.jpg)
+
+The homepage / base template allows users almost complete navigation throughout the site.  In the navigation bar there are links to:
+
+- the homepage (current)
+- all courses - a search with no filters applied
+- General English - a search of all published courses with the category 'General English'
+- Exam Skills - a search of all published courses with the ctegory 'Exam Skills'
+- user's Profile Page - a link to the user's order history, personal details and link to the LMS
+- Manage Content (superusers only) - link to content management (lessons, shop content)
+- a search bar - for searching all published courses
+- a link to a contact form
+- a link to the site's privacy policy (footer)
+- a link to the site's terms and conditions (footer)
+- social links
+
+**Searching / Course Results**
+
+![Search Results](media/readme_images/courses_search_results.jpg)
+
+Here we can see the filtered search results in order of course name.  At present there are only 2 courses for testing/display purposes.
+
+![Search Results empty](media/readme_images/courses_search_results_no_results.jpg)
+
+If the search results come up empty, users will see this message.
+
+
+**Course Details**
+
+![Course Details](media/readme_images/course_details_67.jpg)
+
+In the course details page the user can see much more infromation about a course than in the search results.  This image has been zoomed out to 67% to show the 'Add to Bag' feature.  Users can only add it to their shopping if it has not been added already, and if it has not been bought before.  
+
+**Shopping Bag**
+
+![Shopping Bag](media/readme_images/shopping_bag.jpg)
+
+In the shopping bag, users can review all the courses they wish to purchase and remove items.
+
+**Checkout**
+
+![Checkout](media/readme_images/checkout.jpg)
+
+Users can purchase their courses here.  The payment system is Stripe.  Users can enter their billing address here and save it to their profile for faster checkout next time.  
+
+**Post Checkout**
+
+![Checkout Success](media/readme_images/post_checkout.jpg)
+
+This page will provide the user with a summary of what has just been purchased.  There will be a copy of this available in the user's profile page.
+
+**Personal Profile**
+
+![Personal Page](media/readme_images/profile_oreder.jpg)
+
+On this page will be a list of all the user's past orders along with their saved address.  This is also where the user will be able to access the LMS.  This was placed in here intentionally as opposed to in the navigation bar as the principle purpose of this site is to make money so the inital links are for business purposes.
+
+**Contact**
+
+![Contact Form](media/readme_images/contact.jpg)
+
+Users can contact the company with questions/comments
+
+
+
 
 ### Ongoing Bug discovery and fixes
 
