@@ -338,6 +338,14 @@ h1, h2, h3, h4, h5, h6 {
     height: 2px;
 }
 
+.video-mobile-screen{
+    display: none;
+}
+
+.video-full-screen{
+    display: block;
+}
+
 /* .........................Course Management*/
 
 .add-new-course-form,
@@ -417,6 +425,12 @@ h1, h2, h3, h4, h5, h6 {
     }
     .lms-cards{
         width: 95%;
+    }
+    .video-mobile-screen{
+        display:block;
+    }
+    .video-full-screen{
+        display: none;
     }
 }
   

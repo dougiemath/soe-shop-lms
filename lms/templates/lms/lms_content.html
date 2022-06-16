@@ -38,11 +38,12 @@
 <div id="how-to-do-it" class="container how-to-do-it p-4  mb-3">
     <h3 class="border-bottom mb-3 pb-2">How to do it</h3>
     {% if lesson.video %}
-    <div class="video text-center">{% video lesson.video 'small' %}</div>
+    <div class="video-full-screen text-center">{% video lesson.video %}</div>
+    <div class="video-mobile-screen text-center">{% video lesson.video '100% x 70%' %}</div>
     {% else %}
     {% endif %}
     {{lesson.question_approach | safe}}
-    <div class="nav-button d-flex justify-content-between my-3">
+    <div class="nav-button d-flex justify-content-between my-4">
         <button type="button" class="btn btn-outline-info" onclick="displaySampleQuestion()">Previous Section</button>
         <button type="button" class="btn btn-outline-info" onclick="displayConclusion()">Next Section</button>
     </div>
