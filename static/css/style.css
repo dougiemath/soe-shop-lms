@@ -9,7 +9,7 @@ html {
 }
 
 body{
- font-family: 'Lato', sans-serif;
+ font-family: 'Raleway', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,11 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar{
     border-bottom: #b877a9 solid 0.1px;
     border-top: #b877a9 solid 0.1px;
-    font-family: 'Raleway', sans-serif;
-}
-
-.navbar-brand{
-    font-size: 1.5em;
+    font-size: 15px;
 }
 
 .header-2{
@@ -74,21 +70,15 @@ h1, h2, h3, h4, h5, h6 {
 .users-page-link,
 .logout-link,
 .login-link,
-.sign-up-link,
-.manage-item-link{
+.sign-up-link{
     font-weight: 700;
 }
 
 .logout-link > .nav-item > .nav-link,
 .users-page-link > .nav-item > .nav-link,
 .login-link > .nav-item > .nav-link,
-.sign-up-link > .nav-item > .nav-link,
-.manage-item-link > .nav-item > .nav-link{
+.sign-up-link > .nav-item > .nav-link{
     color: #0cad95;
-}
-
-.manage-item-link{
-    border: #b877a9 1px solid;
 }
 
 /* .............................footer */
@@ -155,7 +145,6 @@ h1, h2, h3, h4, h5, h6 {
 /* .............................courses */
 
 .course-card{
-    font-family: 'RaleWay', sans-serif;
     border: solid 0.1px #b877a9;
     background: #ffffff;
     width:30%
@@ -288,14 +277,13 @@ h1, h2, h3, h4, h5, h6 {
 /* .........................LMS*/
 
 .lms-cards{
-    width: 20rem;
+    width: 25%;
 }
 
 .exam-overview,
 .sample-question,
 .how-to-do-it,
 .conclusion{
-    font-family: 'RaleWay', sans-serif;
     border: 1px solid #b877a9;
 }
 
@@ -367,7 +355,6 @@ h1, h2, h3, h4, h5, h6 {
 .add-lesson-category-form > form > div > label{
     margin-top: 10px;
     margin-bottom: 10px;
-    font-family: 'RaleWay', sans-serif;
 }
 
 #add-new-content,

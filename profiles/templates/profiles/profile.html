@@ -4,9 +4,15 @@
 {% block content %}
 
 <div class="container">
-    <div class="col-12 d-flex flex-row justify-content-between py-3 border-bottom">
-        <div><h2 class="logo-font mb-4">{{ user.username }}'s profile</h2></div>
-        <div><a href="{% url 'lms' %}" class="btn btn-outline-success p-3">OPEN LMS</a></div>
+    <div class="col-12 d-flex flex-row justify-content-between py-3 border-bottom align-items-center">
+        <div><h2 class="logo-font">{{ user.username }}'s profile</h2></div>
+        <div class="d-flex">
+            <div><a href="{% url 'lms' %}" class="m-1 btn btn-outline-success rounded-0">OPEN LMS</a></div>
+        {% if request.user.is_superuser %}
+            <div><a href="{% url 'manage' %}" class="m-1 btn btn-outline-success rounded-0">Manage Content</a></div>
+        {% else %}
+        {% endif %}
+        </div>
     </div>
     <div class="col-12 mt-3">
         <h3>Order History</h3>
