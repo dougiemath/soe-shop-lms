@@ -6,6 +6,7 @@ from django.urls import reverse
 
 from embed_video.fields import EmbedVideoField
 from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 
 class LessonCategory(models.Model):
     
@@ -24,12 +25,12 @@ class Lessons(models.Model):
     SectionType = models.TextChoices('SectionType', 'Reading Writing Speaking Listening')
     exam_section = models.CharField(blank=True, choices=SectionType.choices, max_length=20, verbose_name = "If this lesson is for an exam, which section is it for?  Otherwise you can leave this blank.")
     THUMBNAIL_IMAGES = [
-        ('/reading.jpg', 'Reading'),
-        ('/writing.jpg', 'Writing'),
-        ('/listening.jpg', 'Listening'),
-        ('/speaking.jpg', 'Speaking'),
+        ('reading.9b0786861128.jpg', 'Reading'),
+        ('writing.23e6ff8e3f48.jpg', 'Writing'),
+        ('listening.a10f4492e111.jpg', 'Listening'),
+        ('speaking.8e29b8f0faba.jpg', 'Speaking'),
     ]
-    question_image = models.ImageField(choices=THUMBNAIL_IMAGES, default='Reading', verbose_name = "What skill does the lesson relate to?")
+    question_image = CloudinaryField(choices=THUMBNAIL_IMAGES, default='Reading', verbose_name = "What skill does the lesson relate to?")
     question_type = models.CharField(max_length=100, verbose_name = "What kind of question is it?  Is it grammar, vocabulary or a specific exam question?")
     question_overview = RichTextField(verbose_name = "Section 1 - Question Overview")
     sample_question_text = RichTextField(verbose_name = "Section 2 - Sample Passage (can be left blank)", blank=True)
@@ -51,4 +52,3 @@ class Lessons(models.Model):
         ordering = ['name']
         verbose_name_plural = "Lessons"
 
-    
