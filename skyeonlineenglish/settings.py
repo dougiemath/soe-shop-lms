@@ -67,7 +67,7 @@ INSTALLED_APPS = [
 
     # ckeditor
     'ckeditor',
-    'ckeditor_uploader',
+    # 'ckeditor_uploader',
 
     # User Apps
     'home',
