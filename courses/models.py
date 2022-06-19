@@ -21,8 +21,8 @@ class Category(models.Model):
 class Course(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL, verbose_name = "What is category of your lesson?  It can be General English or Exam Skills.")
     name = models.CharField(max_length=254, verbose_name = "What is the name of your course?")
-    card_description = RichTextField(null=True, blank=True, verbose_name = "What is a brief description of your course?  This will appear in the shop's search results.")
-    description = RichTextField(null=True, blank=True, verbose_name = "What is a detailed description of your course?  This will appear on the course's dedicated page, so be as detailed as you like.")
+    card_description = models.TextField(null=True, blank=True, verbose_name = "What is a brief description of your course?  This will appear in the shop's search results.")
+    description = models.TextField(null=True, blank=True, verbose_name = "What is a detailed description of your course?  This will appear on the course's dedicated page, so be as detailed as you like.")
     price = models.DecimalField(max_digits=6, decimal_places=2)
     course_length = models.IntegerField(null=True, blank=True)
     course_category = models.ForeignKey(LessonCategory, null=True, on_delete=models.CASCADE, verbose_name = "Now choose what lessons are included in this course.  This step is very important!")

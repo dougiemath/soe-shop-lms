@@ -1,12 +1,17 @@
 from django.contrib import admin
+from django.db import models
+
 from  embed_video.admin  import  AdminVideoMixin
+from django_summernote.admin import SummernoteModelAdmin
 
 from .models import Lessons, LessonCategory
 
 
 @admin.register(Lessons)
-class LessonAdmin(admin.ModelAdmin):
-    list_display = ('category', 'id', 'name', 'exam_section', 'question_type', 'video', 'upload_questions')
+class LessonAdmin(SummernoteModelAdmin):
+    list_display = ('category', 'name')
+    summernote_fields = '__all__'
+
 
 class LessonCategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)

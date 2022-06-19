@@ -5,7 +5,6 @@ from django.db import models
 from django.urls import reverse
 
 from embed_video.fields import EmbedVideoField
-from ckeditor.fields import RichTextField
 from cloudinary.models import CloudinaryField
 
 class LessonCategory(models.Model):
@@ -32,12 +31,12 @@ class Lessons(models.Model):
     ]
     question_image = models.CharField(choices=THUMBNAIL_IMAGES, default='Reading', verbose_name = "What skill does the lesson relate to (for the thumbnail image)?", max_length=200)   
     question_type = models.CharField(max_length=100, verbose_name = "What kind of question is it?  Is it grammar, vocabulary or a specific exam question?")
-    question_overview = RichTextField(verbose_name = "Section 1 - Question Overview")
-    sample_question_text = RichTextField(verbose_name = "Section 2 - Sample Passage (can be left blank)", blank=True)
-    sample_question_questions = RichTextField(verbose_name = "Section 2 - Sample Questions")
-    question_approach = RichTextField(verbose_name = "Section 3 - Question Approach")
+    question_overview = models.TextField(verbose_name = "Section 2 - What kind of question is it?")
+    sample_question_text = models.TextField(verbose_name = "Section 2 - Sample Passage (can be left blank)", blank=True)
+    sample_question_questions = models.TextField(verbose_name = "Section 2 - Sample Questions")
+    question_approach = models.TextField(verbose_name = "Section 3 - Question Approach")
     video = EmbedVideoField(blank=True, verbose_name = "Section 3 - Video")
-    further_study = RichTextField(verbose_name = "Section 4 - Further Study Information")
+    further_study = models.TextField(verbose_name = "Section 4 - Further Study Information")
     upload_questions = models.FileField(blank=True, verbose_name = "Section 4 - Further Practice Questions (PDF)")
     upload_answers = models.FileField(blank=True, verbose_name = "Section 4 - Further Practice Questions (Answers)")
     course_num = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)

@@ -26,4 +26,6 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('lms/', include('lms.urls')),
     path('contact/', include('contact.urls')),
+    path('tinymce/', include('tinymce.urls')),
+    path('summernote/', include('django_summernote.urls')),
 ]

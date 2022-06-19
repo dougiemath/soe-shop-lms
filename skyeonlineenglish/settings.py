@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['dougiemath-skyeonlineenglish.herokuapp.com', 'localhost']
 
@@ -67,6 +67,12 @@ INSTALLED_APPS = [
 
     # ckeditor
     'ckeditor',
+
+    # Tiny MCE
+    'tinymce',
+
+    # Summernote
+    'django_summernote',
 
     # User Apps
     'home',
@@ -213,6 +219,3 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
-# ckeditor
-CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
