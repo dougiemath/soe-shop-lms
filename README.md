@@ -107,7 +107,7 @@ Users can contact the company with questions/comments
 | 7 | Summernote fields aren't displaying in the UI, only in the admin| Replaced Summernote with ckeditor|
 | 8 | Customers still had access to all courses that weren't paid for | Added for loop to filter course names that match what courses are bought in the user's profile |
 | 9 | Customers can purchase the same thing twice but at different times| Added for loop to add_to_bag function tocompare with items already in user's profile |
-| 10 | After installation of cloudinary, thumbnail images in LMS were not displaying | Renamed images in Lessons model in LMS to reflect names in files stored in Cloudinary |
+| 10 | After installation of cloudinary, thumbnail images in LMS were not displaying | Changed model to Charfield and added the urls of the thumbnails in Cloudinary |
 
 ### Testing
 
