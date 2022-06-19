@@ -16,12 +16,8 @@
         {% for lesson in lessons %}
         {% for course in courses_bought %}
         {% if course.course_category == lesson.category %}
-
-        {{lesson.question_image.url}}
-
-
         <div class="card mb-3 p-2 m-2 lms-cards">
-            <img class="card-img-top pt-2" src="{% static 'media/' %}{{lesson.question_image.url}}" alt="Card image cap">
+            <img class="card-img-top pt-2" src="{{ lesson.question_image }}" alt="Card image cap">
             <div class="card-body">
                 <h3 class="card-title">{{ lesson.category }}</h3>
                 <h5 class="card-title">{{ lesson.exam_section }}</h5>

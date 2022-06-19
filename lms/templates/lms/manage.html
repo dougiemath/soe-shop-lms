@@ -67,8 +67,8 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">Lesson Name</th>
                     <th scope="col">Course Name</th>
+                    <th scope="col">Lesson Name</th>
                     <th scope="col">Lesson Focus</th>
                     <th scope="col">View Lesson</th>
                     <th scope="col">Edit Lesson</th>
@@ -78,8 +78,8 @@
                 <tbody>
                     {% for lesson in lessons %}
                   <tr>
-                    <th scope="row" class="align-middle">{{ lesson.name }}</th>
-                    <td class="align-middle">{{ lesson.category }}</td>
+                    <th scope="row" class="align-middle">{{ lesson.category }}</th>
+                    <td class="align-middle">{{ lesson.name }}</td>
                     <td class="align-middle">{{ lesson.exam_section }}</td>
                     <td class="align-middle"><a href="{% url 'lms_content' lesson.id %}" class="btn btn-outline-success rounded-0">View Lesson</a>
                     </td>

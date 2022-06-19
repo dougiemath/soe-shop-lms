@@ -25,12 +25,12 @@ class Lessons(models.Model):
     SectionType = models.TextChoices('SectionType', 'Reading Writing Speaking Listening')
     exam_section = models.CharField(blank=True, choices=SectionType.choices, max_length=20, verbose_name = "If this lesson is for an exam, which section is it for?  Otherwise you can leave this blank.")
     THUMBNAIL_IMAGES = [
-        ('reading.jpg', 'Reading'),
-        ('writing.jpg', 'Writing'),
-        ('listening.jpg', 'Listening'),
-        ('speaking.jpg', 'Speaking'),
+        ('https://res.cloudinary.com/corderoybear/image/upload/v1655371458/static/media/reading.9b0786861128.jpg', 'Reading'),
+        ('https://res.cloudinary.com/corderoybear/image/upload/v1655371458/static/media/writing.23e6ff8e3f48.jpg', 'Writing'),
+        ('https://res.cloudinary.com/corderoybear/image/upload/v1655371457/static/media/listening.a10f4492e111.jpg', 'Listening'),
+        ('https://res.cloudinary.com/corderoybear/image/upload/v1655371459/static/media/speaking.8e29b8f0faba.jpg', 'Speaking'),
     ]
-    question_image = CloudinaryField(choices=THUMBNAIL_IMAGES, default='Reading', verbose_name = "What skill does the lesson relate to?")
+    question_image = models.CharField(choices=THUMBNAIL_IMAGES, default='Reading', verbose_name = "What skill does the lesson relate to (for the thumbnail image)?", max_length=200)   
     question_type = models.CharField(max_length=100, verbose_name = "What kind of question is it?  Is it grammar, vocabulary or a specific exam question?")
     question_overview = RichTextField(verbose_name = "Section 1 - Question Overview")
     sample_question_text = RichTextField(verbose_name = "Section 2 - Sample Passage (can be left blank)", blank=True)
