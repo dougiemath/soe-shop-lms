@@ -239,12 +239,27 @@ As a User, I want to be able to sort courses by category so that I can find one 
 |Returned to contact form and attempted to submit an incomplete form. Clicked 'Submit'|Form will not submit and cursor jumps to where error is|**PASS**|
 
 As a User, I want to be able to access my paid-for course content so that I can study.
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Attempt to access course without purchasing|||
+|New User|||
+|Logged in a clicked on profile page. |||
+|Clicked 'Open LMS'|Directed to a screen stating 'You haven't bought any courses yet.'|**PASS**|
+|Via URL - if user not authenicated|||
+|Entered URL of course in LMS|Redirected to login page|**PASS**|
+|Via URL - if user is authenticated|||
+|Entered URL of course that has not been purchased|Directed to LMS page with error stating that course has not been purchased|**PASS**|
+|Attempt to access course post-purchase|||
+|Logged in a clicked on profile page. |||
+|Clicked 'Open LMS'|Directed to a screen with all purchased courses/lessons |**PASS**|
+|Clicked on 'Start Studying'| Lesson opens correctly |**PASS**|
+
 As a User, I would like to see my progress throughout each section of the course.
 
 As an Admin, I want to be able to remove products that I no longer need/want.
 As an Admin, I want to be able to edit/update my courses to keep them current.
 As an Admin, I want to be able to add courses to my shop to encourage new business.
-As an Admin I want to be able to view past orders to ensure there is no discrepancy between what the user bought and expected.
+As an Admin, I want to be able to view past orders to ensure there is no discrepancy between what the user bought and expected.
 
 
 

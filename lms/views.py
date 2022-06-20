@@ -101,6 +101,7 @@ def add_lesson(request):
 def add_lesson_category(request):
     """ Add a lesson category to the LMS """
     if request.user.is_superuser:
+        courses = Course.objects.all()
         if request.method == "POST":
             form = LessonCategoryForm(request.POST, request.FILES)
             if form.is_valid():
