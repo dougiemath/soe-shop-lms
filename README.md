@@ -104,58 +104,116 @@ Users can contact the company with questions/comments
 | 4 | Profile page not rendering when function in views.py pulls data from models.py | Created brand new user, seems to work ok after. |
 | 5 | embedvideo package ran locally but video wouldn't display as embedded address was changed from 'Https' to 'Http' | Added Content Security Policy to base.html meta |
 | 6 | Can access certain pages without logging in | Login_required decorators added to checkout and profiles pages |
-| 7 | Summernote fields aren't displaying in the UI, only in the admin| Replaced Summernote with ckeditor|
+| 7 | Summernote fields aren't displaying in the UI, only in the admin| Updated forms.py accordingly |
 | 8 | Customers still had access to all courses that weren't paid for | Added for loop to filter course names that match what courses are bought in the user's profile |
 | 9 | Customers can purchase the same thing twice but at different times| Added for loop to add_to_bag function tocompare with items already in user's profile |
 | 10 | After installation of cloudinary, thumbnail images in LMS were not displaying | Changed model to Charfield and added the urls of the thumbnails in Cloudinary |
 
 ### Testing
 
-**General**
+Manual Testing
 
-| Test No' | Issue | Steps Carried Out | Result |
-|---|---|---|---|
-| 1 | Attempted to access pages that are notavailable to the public | Entering the url to 'protected' pages (bag.html, checkout.html, checkout-success.html, lms.html, lms-content.html) should redirect user to a login page | Redirects working correctly - **PASS** |
-| 2 | Attempted to access pages that are only available to superusers | Entered the url to content management pages as a logged-in and non-logged-in user | I was unable to access the pages without superuser access - **PASS** |
+There was no automated testing carried out during this project. Each User Story was manually tested as follows:
 
-**Page Specific - Home**
-| Test No' | Issue | Steps Carried Out | Result |
-|---|---|---|---|
-| 1 |Banner serves as link to homepage|Clicked on the banner on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the homepage - **PASS**|
-| 2 |Navbar 'Home' link serves as a link to homepage.|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the homepage - **PASS**|
-| 3 |Navbar 'All Courses' link serves as a link to view all courses currently uploaded onto site.|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the homepage - **PASS**|
-| 4 |Navbar 'General English' link serves as a link to view only courses connected to General English, no Exam courses should be viewable.|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the all courses page, but the results are filtered to only display General English courses - **PASS**|
-| 5 |Navbar 'Exam Skills' link serves as a link to view only courses connected to Exam Skills, no General English Courses should be viewable.|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the all courses page, but the results are filtered to only display Exam Skills courses - **PASS**|
-| 6 |Navbar 'login' link serves as a link to the login page|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the login page - **PASS**|
-| 7 |Navbar 'signup' link serves as a link to the signup page|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the signup page - **PASS**|
-| 8 |Navbar 'Search Bar' should search through title and description for search results. |Entered three search terms - IELTS / English / ability |Searching for IELTS returned only the IELTS courses, searching for English returned all courses as 'English' is in all descriptions and searching for 'ability' only returned the courses with the word 'ability' in the description - **PASS**|
-| 9 |Main body Links - Clicking on 'view details' in 'Exam Courses box will view only courses connected to Exam Skills, no General English Courses should be viewable.|Clicked on the link|When hovering over the button, the intended address appears in the bottom of the screen.  Clicking takes the user to the all courses page, but the results are filtered to only display Exam Skills courses - **PASS**|
-| 10 |Main body Links - Clicking on 'view details' in 'General English box will view only courses connected to General English, no Exam Skills Courses should be viewable.|Clicked on the link|When hovering over the button, the intended address appears in the bottom of the screen.  Clicking takes the user to the all courses page, but the results are filtered to only display General English courses - **PASS**|
-| 11 |Main Body Links - Clicking 'Get in Touch' in the 'Get in Touch' box will take the user to the contact page.|Clicked on the link|When hovering over the button, the intended address appears in the bottom of the screen.  Clicking takes the user to the all contact page - **PASS**|
-| 12 |Footer Link 'Home' serves as link to homepage.|Clicked on the link on all pages|When hovering over the link in the footer, the intended address appears in the bottom of the screen.  Clicking takes the user to the homepage - **PASS**|
-| 13 |Footer Link 'All Courses' serves as a link to the All Courses page.|Clicked on the link on all pages|When hovering over the link in the footer, the intended address appears in the bottom of the screen.  Clicking takes the user to the All Courses page - **PASS**|
-| 14 |Footer Link 'General English' serves as link to view only courses connected to General English, no Exam courses should be viewable.  At present, there are no General English Courses available so the link should return  no courses accordingly |Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the all courses page, but the results are filtered to only display General English courses.  As there are none, a message is displayed - **PASS**|
-| 15 |Footer Link 'Exam Skills' serves as link to view only courses connected to Exam Skills, no General English Courses should be viewable.|Clicked on the link on all pages|When hovering over the banner, the intended address appears in the bottom of the screen.  Clicking takes the user to the all courses page, but the results are filtered to only display Exam Skills courses - **PASS**|
-| 16 |Footer Link 'Privacy Policy' link serves as a link to the Privacy Policy page.|Clicked on the link on all pages|When hovering over the link, the intended address appears in the bottom of the screen.  Clicking takes the user to the Privacy Policy - **PASS**|
-| 17 |Footer Link 'Terms and Conditions' link serves as a link to the Terms and Conditions page.|Clicked on the link on all pages|When hovering over the link, the intended address appears in the bottom of the screen.  Clicking takes the user to the Privacy Policy - **PASS**|
-| 18 |Footer Link 'Contact Us' link serves as a link to the Contact Us page.|Clicked on the link on all pages|When hovering over the link, the intended address appears in the bottom of the screen.  Clicking takes the user to the Contact Us page - **PASS**|
-| 19 |Footer Link 'Facebook' link serves as a link to Facebook.|Clicked on the link on all pages|When hovering over the link, the intended address appears in the bottom of the screen.  Clicking takes the user to Facebook - **PASS**|
-| 20 |Footer Link 'Instagram' link serves as a link to Instagram.|Clicked on the link on all pages|When hovering over the link, the intended address appears in the bottom of the screen.  Clicking takes the user to Instagram - **PASS**|
-| 21 |Footer Link 'LinkedIn' link serves as a link to LinkedIn.|Clicked on the link on all pages|When hovering over the link, the intended address appears in the bottom of the screen.  Clicking takes the user to LinkedIn - **PASS**|
-| 22 |Footer Link 'Youtube' link serves as a link to Youtube.|Clicked on the link on all pages|When hovering over the link, the intended address appears in the bottom of the screen.  Clicking takes the user to Youtube - **PASS**|
+User Stories
 
-**Page Specific - Courses**
-| Test No' | Issue | Steps Carried Out | Result |
-|---|---|---|---|
-| 1 | Each course 'card' should link to a page dedicated to that course |Clicked the links| Hovering over the 'MORE DETAILS' button I can see that the urls are the same with the exception of the final integer.  Clicking the buttons takes me to the expected pages - **PASS** |
-| 2 | When returning to this page after adding items tot he shopping bag should display a floating div at the bottom which will link to the bag | After clicking 'MORE DETAILS' to be taken to the course's details page, I clicked 'Add to Bag' which displayed a message confirming that the item was added to the bag.  The floating div appeared at the bottom of the screen.  I navigated back to the courses page. | The floating div remains as expected and clicking the link takes me straight to the shopping bag - **PASS** |
+**As a User, I want to be able to view a list of available courses so that I can choose which one(s) to buy.**
 
-**Page Specific - Course's Details**
-| Test No' | Issue | Steps Carried Out | Result |
-|---|---|---|---|
-| 1 | Clicking 'add to bag' should only add the item to the bag. | As the floating div was not present, the bag was empty, however I navigated to the 'bag.html' url to confirm.  Then I returned to the course details page and clicked add to bag.  A success message appeared in the top corner and the floating div at the base | On navigating to the bag, I can see the item that I added - **PASS** |
-| 2 | Users should not be able to add the same product twice | After completing the first test, I navigated back to the same course page and clicked 'Add to Bag' again. | An error message appeared in the top corner telling me that the item is already in the bag.  The value in the floating div hasn't changed and on navigation to the bag I can only see the item once - **PASS** |
-| 3 | Users should only be able to buy a course once.  They cannot buy it a second time as they already have lifetime access| After simulating payment via stripe, I navigated back to the course page and clicked 'Add to Bag' | An error appeared in the top corner telling me that it has already been purchased.  Test was repeated by setting items to 'bought' in the djjango admin panel - **PASS**|
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Entered the site's url|Homepage displays correctly|-|
+|Selected 'All courses' from the nav bar|A list of all (2 for development purposes) display in the form of cards|**PASS**|
+|Selected 'All courses' from the footer|A list of all (2 for development purposes) display in the form of cards|**PASS**|
+
+As a User, I want to be able to sort courses by category so that I can find one more suited to my needs more quickly.
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Entered the site's url|Homepage displays correctly|-|
+|Selected 'General English' from the nav bar|An error displays stating that there are no general English courses available at this time|**PASS**|
+|Selected 'General English' from the footer|An error displays that there are no courses that match this search|**PASS**|
+|Selected 'Exam Skills' from the nav bar|The two exam skills courses display correctly|**PASS**|
+|Selected 'Exam Skills' from the footer|The two exam skills courses display correctly|**PASS**|
+|Entered an exam name (IELTS) into the search bar|Only the IELTS course displayed|**PASS**|
+|Entered 'English' into the search bar|Both courses displayed|**PASS**|
+|Entered 'Cake'|An error displays that there are no courses that match this search|**PASS**|
+
+
+**As a User, I want to be able to view more details about a specific course so that I can make an informed decision before I purchase.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Entered the site's url|Homepage displays correctly|-|
+|Selected 'All courses' from the nav bar|A list of all (2 for development purposes) display in the form of cards|-|
+|Selected 'More Details' fromm the bottom of the course cards|A new page opened up with more information about the specific course I selected.|**PASS**|
+|Returned to 'All courses' and selected 'More Details' on a differernt course|A new page opened up with more information about the specific course I selected.|**PASS**|
+
+**As a User, I want to view all the items in my bag before purchasing.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Entered the site's url|Homepage displays correctly|-|
+|Selected 'All courses' from the nav bar|A list of all (2 for development purposes) display in the form of cards|-|
+|Selected 'More Details' fromm the bottom of the course cards|A new page opened up with more information about the specific course I selected.|-|
+|Selected 'Add to Bag'|Page refreshes and displays message stating that the item was successfully added, link appears at the bottom of the page with bag total|-|
+|Returned to 'All courses' and selected 'More Details' on a differernt course|A new page opened up with more information about the specific course I selected.|-|
+|Selected 'Add to Bag'|Page refreshes and displays message stating that the item was successfully added, link appears at the bottom of the page with bag total|-|
+|Clicked on 'View Bag' at the base of page|Directed to 'Shopping Bag' page where I can see both of the items that I added|**PASS**|
+
+**As I User, I want to be able to view the items in my bag at checkout so that I have a final chance to decide if I want to purchase.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Repeated steps above to add items to bag|Directed to Shopping bag page|-|
+|Clicked on 'Secure Checkout' button|Directed to checkout page where user can pay for items||
+|Button to return to Shopping Present|||
+|Clicked button to return to Shopping Bag|Directed back to shopping bag where I can adjust the items|**PASS**|
+
+**As a User, I want to be able to purchase items securely.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Repeated steps above to add items to bag|Directed to Shopping bag page|-|
+|Clicked on 'Secure Checkout' button|Directed to checkout page where user can pay for items||
+|Filled in personal details and added Stripe Test number from Stripe documentation.  Clicked on 'Complete Payment|Overlay loads asking user to wait||
+|On completion of payment, page directs to 'Order Confirmation' page and displays message confirming purchase has been made||**PASS**|
+|Accessed Stripe Dashboard|Accessed webhooks in Stripe's dashboard to confirm if payment was successful. Stripe shows response code 200 for payment intent, charges and balance|**PASS**|
+
+**As a User I want to be able to store my personal data so that I can use it again without having to reinput it.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Repeated above steps to make a purchase but ensure that 'Remember my Details is selected|On successful payment, address is shown in order confirmation page||
+|Clicked 'User's Profile Page'in nav bar|Address entered is displayed as it was entered in checkout|**PASS**|
+|Accessed User Profile in admin panel|Address is displayed correctly|**PASS**|
+
+**As a User, I want to be able to see all of my past purchases in order to ensure that I don't purchase something twice.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|After making a purchase, I clicked on 'User's Profile Page'|Past order(s) displayed in a table||
+|I clicked on the order number of my purchase|Directed to a copy of the order confirmation page for the order in question|**PASS**|
+- **NOTE**: the function to add items to the shopping bag has also been modified to compare against past orders.  It is not possible for the user to add a course to the bag if it has already been purchased.  An error will display if the user tries to do so.
+
+As a User I want to be able to recover my password if I forget it.
+As a User, I want to be able to email the company with any questions that I may have.
+As a User, I want to receive an email after signing up to verify that my account creation was successful.
+
+As a User, I want to be able to access my paid-for course content so that I can study.
+As a User, I would like to see my progress throughout each section of the course.
+
+As a User, I want to be able to log in to see my personal data and log out when I am finished.
+As a User, I want to be able to register for an account to allow for quicker access at a later date.
+
+
+
+As an Admin, I want to be able to remove products that I no longer need/want.
+As an Admin, I want to be able to edit/update my courses to keep them current.
+As an Admin, I want to be able to add courses to my shop to encourage new business.
+As an Admin I want to be able to view past orders to ensure there is no discrepancy between what the user bought and expected.
+
+
+
 
 ### Technologies Used
 
@@ -178,7 +236,7 @@ Users can contact the company with questions/comments
 - [Django version 3.2.13](https://www.djangoproject.com/)
 - [Allauth version 0.50.0](https://django-allauth.readthedocs.io/en/latest/index.html)
 - [Crispy Forms version 1.14.0](https://django-crispy-forms.readthedocs.io/en/latest/install.html)
-- [ckeditor vesion 6.4.2](https://ckeditor.com/)
+- [Summernote version 0.8.20.0](https://pypi.org/project/django-summernote/)
 - [Django Countries version 7.3.2](https://pypi.org/project/django-countries/#installation)
 - [Stripe](http://stripe.com/)
 - [Embed Video version 1.4.4](https://pypi.org/project/django-embed-video/)

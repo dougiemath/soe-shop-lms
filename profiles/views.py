@@ -14,10 +14,6 @@ def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
     courses = profile.course_bought.all()
-    # current_course = get_object_or_404(Course, id=?)
-    # if current_course not in courses:
-    #     messages
-    print(courses)
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -39,7 +35,7 @@ def profile(request):
 
 @login_required
 def order_history(request, order_number):
-    order = get_object_or_404(Order, order_number=order_number).order_by('-date')
+    order = get_object_or_404(Order, order_number=order_number)
     messages.info(request, (
         f'Confirmation of order number {order_number}. '
         'A confirmation email was sent on the order date.'
