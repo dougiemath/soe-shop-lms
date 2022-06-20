@@ -216,7 +216,7 @@ As a User, I want to be able to sort courses by category so that I can find one 
 |After signing up and logging in, clicked on logout button in nav bar|Directed to page asking if I want to sign out||
 |Clicked sign out|logged out of site, directed to home page with options to sign up and log in present in nav bar|**PASS**|
 
-As a User I want to be able to recover my password if I forget it.
+**As a User I want to be able to recover my password if I forget it.**
 
 |**Test**|**Result**|**Verdict**|
 |---|---|---|
@@ -228,7 +228,15 @@ As a User I want to be able to recover my password if I forget it.
 |Entered 2 passwords that are the same|Page refreshes confirming that I have changed my password successfully||
 |Navigated to log in screen to log in with new password|Logged in successfully|**PASS**|
 
-As a User, I want to be able to email the company with any questions that I may have.
+**As a User, I want to be able to email the company with any questions that I may have.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Entered site url and clicked on 'Get In Touch'|Directed to a contact form||
+|Entered data into form correctly and clicked 'Submit'|Page refreshed and a message displayed stating that the email was sent||
+|Logged in as an Admin and clicked on 'Admin's Profile'|||
+|Clicked on 'Go to Inbox'|The email that was sent has been received and is stored here|**PASS**|
+|Returned to contact form and attempted to submit an incomplete form. Clicked 'Submit'|Form will not submit and cursor jumps to where error is|**PASS**|
 
 As a User, I want to be able to access my paid-for course content so that I can study.
 As a User, I would like to see my progress throughout each section of the course.
