@@ -195,17 +195,43 @@ As a User, I want to be able to sort courses by category so that I can find one 
 |I clicked on the order number of my purchase|Directed to a copy of the order confirmation page for the order in question|**PASS**|
 - **NOTE**: the function to add items to the shopping bag has also been modified to compare against past orders.  It is not possible for the user to add a course to the bag if it has already been purchased.  An error will display if the user tries to do so.
 
+
+**As a User, I want to be able to register for an account to allow for quicker access at a later date.**
+&
+**As a User, I want to be able to log in to see my personal data and log out when I am finished.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Clicked 'Sign Up' in the nav bar|Directed to sign-up page||
+|*Duplicate Email*|||
+|Attempted to sign up using an email which already has an account|Page refreshes and error states: A user is already registered with this e-mail address.|**PASS**|
+|*Duplicate Username*|||
+|Attempted to sign up with a username that already exists|Page refreshes and error states: A user with that username already exists.|**PASS**|
+|*New User*|||
+|Added unique username and email address|Received email asking to confirm that I have signed up||
+|Clicked link in email|Directed to page asking for further confirmation||
+|Clicked confirm|Redirected to Log In page with message confirming that an account was set up||
+|Entered new username and password|Logged in Succesfully|**PASS**|
+|*Log Out*|||
+|After signing up and logging in, clicked on logout button in nav bar|Directed to page asking if I want to sign out||
+|Clicked sign out|logged out of site, directed to home page with options to sign up and log in present in nav bar|**PASS**|
+
 As a User I want to be able to recover my password if I forget it.
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Entered site url and clicked 'Log In'|Directed to log in page||
+|Clicked 'Forgot Password' below login form|Directed to a screen requesting email address||
+|Entered email address and clicked 'Reset my Passord'|An email was sent to the email address I entered||
+|Email contains a link to reset passsword, clicked it|Directed to screen asking for new password||
+|Entered 2 different passwords to test|Page refreshes telling me that they need to be the same|**PASS**|
+|Entered 2 passwords that are the same|Page refreshes confirming that I have changed my password successfully||
+|Navigated to log in screen to log in with new password|Logged in successfully|**PASS**|
+
 As a User, I want to be able to email the company with any questions that I may have.
-As a User, I want to receive an email after signing up to verify that my account creation was successful.
 
 As a User, I want to be able to access my paid-for course content so that I can study.
 As a User, I would like to see my progress throughout each section of the course.
-
-As a User, I want to be able to log in to see my personal data and log out when I am finished.
-As a User, I want to be able to register for an account to allow for quicker access at a later date.
-
-
 
 As an Admin, I want to be able to remove products that I no longer need/want.
 As an Admin, I want to be able to edit/update my courses to keep them current.

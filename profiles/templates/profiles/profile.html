@@ -10,6 +10,7 @@
             <div><a href="{% url 'lms' %}" class="m-1 btn btn-outline-success rounded-0">OPEN LMS</a></div>
         {% if request.user.is_superuser %}
             <div><a href="{% url 'manage' %}" class="m-1 btn btn-outline-success rounded-0">Manage Content</a></div>
+            <div><a href="{% url 'contact_inbox' %}" class="m-1 btn btn-outline-success rounded-0">Go to Inbox</a></div>
         {% else %}
         {% endif %}
         </div>
