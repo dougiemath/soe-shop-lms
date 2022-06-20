@@ -65,9 +65,6 @@ INSTALLED_APPS = [
     # Embed video
     'embed_video',
 
-    # ckeditor
-    'ckeditor',
-
     # Summernote
     'django_summernote',
 
