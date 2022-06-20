@@ -12,6 +12,7 @@ def contact(request):
             form.save()
             messages.success(request, f'Thanks for your email, we will contact you shortly.')
             return redirect('index')
+ 
     form = ContactForm()
     context = {'form': form}
     return render(request, 'contact/contact.html', context)
