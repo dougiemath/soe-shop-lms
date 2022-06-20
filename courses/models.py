@@ -1,7 +1,5 @@
 from django.db import models
 
-from ckeditor.fields import RichTextField
-
 from lms.models import Lessons, LessonCategory
 
 class Category(models.Model):
