@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/courses/</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/courses/?category=general_eng</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/courses/?category=exams</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/contact/</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/privacy_policy/</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/terms_and_conditions/</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/courses/1/</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/courses/3/</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://dougiemath-skyeonlineenglish.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-06-21T10:17:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
