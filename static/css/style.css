@@ -267,8 +267,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* .........................Contact Form*/
+
+
 .contact-form > form > .form-group > div > input,
-.contact-form > form > .form-group > div > textarea{
+.contact-form > form > .form-group > div > textarea,
+.contact-form > form > .form-group > div > select{
     border: #0cad95 solid 1px;
     border-radius: 0%;
     margin: 5px 0px 10px 0px;

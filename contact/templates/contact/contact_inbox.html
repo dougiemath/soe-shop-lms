@@ -24,6 +24,7 @@
         <th scope="col">Date Received</th>
         <th scope="col"></th>
         <th scope="col"></th>
+        <th scope="col">Signed up?</th>
       </tr>
     </thead>
     <tbody>
@@ -34,6 +35,13 @@
         <td>{{ email.date }}</td>
         <td><a href="{% url 'contact_received_email' email.id %}" class="btn btn-outline-success btn-sm rounded-0">View Message</a></td>
         <td><a href="{% url 'delete_email' email.id %}" class="btn btn-outline-danger btn-sm rounded-0">Delete Message</a></td>
+        <td>
+          {% if email.newsletter == True %}
+          Yes!!!
+          {% else %}
+          No
+          {% endif %}
+          </td>
       </tr>
       {% endfor %}
     </tbody>

@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% load static %}
 
 {% block content %}
@@ -21,10 +20,10 @@
 </div>
 
 <div class="container my-2 contact-form">
-    <form action="" method="post">
+    <form method="post">
         {% csrf_token %}
         {{ form | crispy}}
-        <input type="submit" value="Submit" class="btn btn-outline-success btn-sm rounded-0">
+        <input type="submit" value="Submit" class="btn btn-outline-success btn-sm rounded-0 my-3">
      </form>
 </div>
 
