@@ -108,6 +108,7 @@ Users can contact the company with questions/comments
 | 8 | Customers still had access to all courses that weren't paid for | Added for loop to filter course names that match what courses are bought in the user's profile |
 | 9 | Customers can purchase the same thing twice but at different times| Added for loop to add_to_bag function tocompare with items already in user's profile |
 | 10 | After installation of cloudinary, thumbnail images in LMS were not displaying | Changed model to Charfield and added the urls of the thumbnails in Cloudinary |
+|11|Superusers do not have access to courses unless they purchase them|Wrapped view code for LMS content in if statement|
 
 ### Testing
 
@@ -238,7 +239,8 @@ As a User, I want to be able to sort courses by category so that I can find one 
 |Clicked on 'Go to Inbox'|The email that was sent has been received and is stored here|**PASS**|
 |Returned to contact form and attempted to submit an incomplete form. Clicked 'Submit'|Form will not submit and cursor jumps to where error is|**PASS**|
 
-As a User, I want to be able to access my paid-for course content so that I can study.
+**As a User, I want to be able to access my paid-for course content so that I can study.**
+
 |**Test**|**Result**|**Verdict**|
 |---|---|---|
 |Attempt to access course without purchasing|||
@@ -256,12 +258,68 @@ As a User, I want to be able to access my paid-for course content so that I can 
 
 As a User, I would like to see my progress throughout each section of the course.
 
-As an Admin, I want to be able to remove products that I no longer need/want.
-As an Admin, I want to be able to edit/update my courses to keep them current.
-As an Admin, I want to be able to add courses to my shop to encourage new business.
-As an Admin, I want to be able to view past orders to ensure there is no discrepancy between what the user bought and expected.
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Logged into the LMS|||
+|Chose lesson to study|At the bottom of the content is a blue bar showing my progress|**PASS**|
 
+**As an Admin, I want to be able to add courses to my shop to encourage new business.**
 
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Logged into site as superuser|'Profile Link' is now showing as admin's (signed in superuser) page||
+|Clicked admin's Page|Directed to 'Manage Content' page||
+|Clicked the arrow beside 'Add New Content'|3 options appear: Add a New Course Category, Add A New Lesson, Add New Course to the Shop ||
+|*Add a New Course Category*|||
+|Clicked button stating 'Add a New Course Category'|Directed to single firled form asking for a unique form category||
+|Entered IELTS as form category| Error appears in corner stating that the lesson category cannot be added|**PASS**|
+|Entered new category 'cake'|page redirected to 'manage' with confirmation that category has been added.  Logged into django admin to confirm.|**PASS**|
+|*Add A New Lesson*|||
+|Completed form adding test content in each field|||
+|Returned to 'manage' and clicked on the arrow beside 'Edit Lesson Content'|New lesson is displayed on list of lessons||
+|Clicked 'View Lesson' next to the added lesson|Lesson opens in LMS content|**PASS**|
+|Completed form adding test leaving out required fields|Form will not submit if a required field is not filled and the cursor will jump to the problematic field|**PASS**|
+|*Add New Course to the Shop*|||
+|Completed form adding test content in each field|||
+|Returned to 'manage' and clicked on the arrow beside 'Edit Shop Content'|New shop content is displayed on list of shop courses|**PASS**|
+|Clicked on Exam Skills |Can see new course on display in shop|**PASS**|
+|Completed form adding test leaving out required fields|Form will not submit if a required field is not filled and the cursor will jump to the problematic field|**PASS**|
+
+- NOTE, it was decided not to give end users the ability to remove lesson categories in the UI as the potential for deleting more content than anticipated is high.  This feeature is to remain in the django admin.
+
+**As an Admin, I want to be able to edit/update my courses to keep them current.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Logged into site as superuser|'Profile Link' is now showing as admin's (signed in superuser) page||
+|Clicked admin's Page|Directed to 'Manage Content' page||
+|Clicked on the arrow next to 'Edit Lesson Content'|Displays a dropdown list of all lessons and all courses||
+|Clicked 'Edit Lesson' next to the lesson I wanted to edit|Directed to a page with a similar form to the 'Add Lesson' form||
+|Updated fields and clicked 'update'|Redirects to 'manage' with 'success' message displayed||
+|Clicked on the arrow next to 'Edit Lesson Content' and clicked 'Edit Lesson' next to the lesson I just edited|Changes are reflected.  Logged into Django admin to confirm|**PASS**|
+|Tried to remove a 'required field|Form wouldn't save and cursor jumped to problematic field|**PASS**|
+
+**As an Admin, I want to be able to remove courses that I no longer need/want.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Logged into site as superuser|'Profile Link' is now showing as admin's (signed in superuser) page||
+|Clicked admin's Page|Directed to 'Manage Content' page||
+|*Lessons*|||
+|Clicked on the arrow next to 'Edit Lesson Content'|Displays a dropdown list of all lessons and all courses||
+|Clicked 'Delete Lesson' next to the lesson I don't want|Page refreshes and lesson disappears from list.  Logged into Django admin to confirm.|**PASS**|
+|*Shop Content*|||
+|Clicked on the arrow next to 'Edit Shop Content'|Displays a dropdown list of all shop content||
+|Clicked 'Course in Shop' next to the course I don't want|Page refreshes and course disappears from list.  Logged into Django admin to confirm.|**PASS**|
+
+**As an Admin, I want to be able to view past orders to ensure there is no discrepancy between what the user bought and expected.**
+
+|**Test**|**Result**|**Verdict**|
+|---|---|---|
+|Logged into Django Admin site|||
+|Clicked 'Orders' in 'Checkout Section' on the left|A list of all orders is displayed|**PASS**|
+
+- NOTE, it was decided to keep this in the Django admin site as this has the potential to be a very, very large database.
 
 
 ### Technologies Used
@@ -278,7 +336,6 @@ As an Admin, I want to be able to view past orders to ensure there is no discrep
 
 - [Bootstrap version 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
 - [jQuery Version 3.6](https://jquery.com/)
-
 
 **Packages**
 

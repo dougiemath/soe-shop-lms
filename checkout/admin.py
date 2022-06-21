@@ -19,6 +19,8 @@ class OrderAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'order_number', 'date', 
                     )
+    search_fields = ('name', 'email', 'order_number',
+                    'date',)
 
     ordering = ('-date',)
 

@@ -37,13 +37,15 @@ def lms_content(request, lesson_id):
     profile = get_object_or_404(UserProfile, user=request.user)
     courses_bought = profile.course_bought.all()
 
-    if str(current_course) not in str(courses_bought):
-        messages.error(request, 'You do not have access to this page.')
-        return redirect('lms')
-    
     context = {
         'lesson': lesson,
     }
+
+    if request.user.is_superuser:
+        return render(request, 'lms/lms_content.html', context)
+    elif str(current_course) not in str(courses_bought):
+        messages.error(request, 'You do not have access to this page.')
+        return redirect('lms')  
 
     return render(request, 'lms/lms_content.html', context)
 
@@ -79,7 +81,7 @@ def add_lesson(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, "Successfully added lesson")
-                return redirect(reverse('add'))
+                return redirect(reverse('manage'))
             else:
                 messages.error(request, 'Failed to add lesson.  Please check the form.')
         else:
@@ -107,7 +109,7 @@ def add_lesson_category(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, "Successfully added lesson category")
-                return redirect(reverse('add'))
+                return redirect(reverse('manage'))
             else:
                 messages.error(request, 'Failed to add lesson category.  Please check the form.') 
         else:
@@ -134,7 +136,7 @@ def add_new_shop_course(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, "Successfully added content to Shop")
-                return redirect(reverse('add'))
+                return redirect(reverse('manage'))
             else:
                 messages.error(request, 'Failed to add content to shop.  Please check the form.')
             

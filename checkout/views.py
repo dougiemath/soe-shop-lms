@@ -4,7 +4,6 @@ from django.conf import settings
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 
-
 import json
 import stripe
 
@@ -171,3 +170,4 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+

@@ -1,4 +1,3 @@
-
 import uuid
 
 from django.db import models
@@ -12,14 +11,14 @@ class LessonCategory(models.Model):
     class Meta:
         verbose_name_plural = "Lesson Categories"
 
-    name = models.CharField(max_length=100, unique=True, verbose_name = "What is the name of the new category?")
+    name = models.CharField(max_length=100, unique=True, verbose_name = "What is the name of the new category? (For example, IELTS, FCE, General English?) MUST BE UNIQUE and have NO PUNCTUATION")
 
     def __str__(self):
         return self.name
 
 class Lessons(models.Model):
     """defines the model for creating courses in the exams lms"""
-    category = models.ForeignKey('LessonCategory', blank=True, null=True, on_delete=models.CASCADE, verbose_name = "Choose a category for this lesson.  If it is a new category, not in the list, you will need to create a category in the previous section first:")
+    category = models.ForeignKey('LessonCategory', null=True, on_delete=models.CASCADE, verbose_name = "Choose a category for this lesson.  If it is a new category, not in the list, you will need to create a category in the previous section first:")
     name = models.CharField(max_length=100, null=True)
     SectionType = models.TextChoices('SectionType', 'Reading Writing Speaking Listening')
     exam_section = models.CharField(blank=True, choices=SectionType.choices, max_length=20, verbose_name = "If this lesson is for an exam, which section is it for?  Otherwise you can leave this blank.")
@@ -35,11 +34,11 @@ class Lessons(models.Model):
     sample_question_text = models.TextField(verbose_name = "Section 2 - Sample Passage (can be left blank)", blank=True)
     sample_question_questions = models.TextField(verbose_name = "Section 2 - Sample Questions")
     question_approach = models.TextField(verbose_name = "Section 3 - Question Approach")
-    video = EmbedVideoField(blank=True, verbose_name = "Section 3 - Video")
+    video = EmbedVideoField(blank=True, verbose_name = "Section 3 - Video (can be left blank)")
     further_study = models.TextField(verbose_name = "Section 4 - Further Study Information")
-    upload_questions = models.FileField(blank=True, verbose_name = "Section 4 - Further Practice Questions (PDF)")
-    upload_answers = models.FileField(blank=True, verbose_name = "Section 4 - Further Practice Questions (Answers)")
-    course_num = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    upload_questions = models.FileField(blank=True, verbose_name = "Section 4 - Further Practice Questions (PDF) (can be left blank)")
+    upload_answers = models.FileField(blank=True, verbose_name = "Section 4 - Further Practice Questions (Answers) (can be left blank)")
+    # course_num = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
     def __str__(self):
         return self.name

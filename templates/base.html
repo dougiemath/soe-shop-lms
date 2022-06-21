@@ -85,9 +85,15 @@
                                 {% if user.is_authenticated %}
                                 <div class="d-flex flex-column flex-lg-row">
                                     <div class="users-page-link">
+                                        {% if request.user.is_superuser %}
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="{% url 'manage' %}">{{ user.username }}'s' Page</a>
+                                        </li>
+                                        {% else %}
                                         <li class="nav-item active">
                                             <a class="nav-link" href="{% url 'profile' %}">{{ user.username }}'s Profile Page</a>
                                         </li>
+                                        {% endif %}
                                     </div>
                                     <div class="logout-link">
                                         <li class="nav-item active">

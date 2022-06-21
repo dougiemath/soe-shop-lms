@@ -3,143 +3,144 @@
 {% load static %}
 
 {% block content %}
+<div class="container">
+  <div class="col-12 d-flex flex-row justify-content-between py-3 border-bottom align-items-center">
+    <div>
+      <h2 class="m-3">Manage Content</h2>
+    </div>
+    <div class="d-flex">
+        <div><a href="{% url 'lms' %}" class="m-1 btn btn-outline-success rounded-0">OPEN LMS</a></div>
+        <div><a href="{% url 'manage' %}" class="m-1 btn btn-outline-success rounded-0">Manage Content</a></div>
+        <div><a href="{% url 'contact_inbox' %}" class="m-1 btn btn-outline-success rounded-0">Go to Inbox</a></div>
+    </div>
+  </div>
+  <div class="col-12 d-flex flex-row justify-content-between py-3 border-bottom align-items-center">
+    <div class="">
+        <h2 class="m-3">Add New Content</h2>
+    </div>
+    <div class="show-hide-btn-down" id="add-show-btn">
+      <h2 onclick="displayAddNewContent()"><ion-icon name="arrow-down-circle-outline"></ion-icon></h2> 
+    </div>
+    <div class="show-hide-btn-down" id="add-hide-btn">
+      <h2 onclick="hideAddNewContent()"><ion-icon name="arrow-up-circle-outline"></ion-icon></h2> 
+    </div>
+  </div>
+  <div class="container mb-4" id="add-new-content">
+    <div class="row mt-4 d-flex flex-md-row flex-column justify-content-between">
+        <div class="p-4 home-menu-cards rounded">
+            <h4 class="courses-title">1. Add A New Course Category</h4>
+            <hr>
+            <p class="lead">If you are adding a new lesson to a brand new course, then you need to add the new course here.</p>
+            <p class="lead">If you are adding a new lesson to an existing course, you can skip this step.</p>
+            <p><a href ="{% url 'add_lesson_category' %}" class="btn btn-outline-success rounded-0" role="button">Add New Course Category</a></p>
+        </div>
 
-<div class="container d-flex flex-row align-items-baseline justify-content-between border-bottom my-4">
-  <div class="">
-      <h2 class="m-3">Check for new messages</h2>
-  </div>
-<div>
-  <a href="{% url 'contact_inbox' %}" class="btn btn-outline-success rounded-0">Go To Inbox</a>
-</div>
-</div>
-<div class="container d-flex flex-row align-items-baseline justify-content-between border-bottom my-4">
-  <div class="">
-      <h2 class="m-3">Add New Content</h2>
-  </div>
-  <div class="show-hide-btn-down" id="add-show-btn">
-    <h2 onclick="displayAddNewContent()"><ion-icon name="arrow-down-circle-outline"></ion-icon></h2> 
-  </div>
-  <div class="show-hide-btn-down" id="add-hide-btn">
-    <h2 onclick="hideAddNewContent()"><ion-icon name="arrow-up-circle-outline"></ion-icon></h2> 
-  </div>
-</div>
-<div class="container mb-4" id="add-new-content">
-  <div class="row mt-4 d-flex flex-md-row flex-column justify-content-between">
-      <div class="p-4 home-menu-cards rounded">
-          <h4 class="courses-title">1. Add A New Course Category</h4>
-          <hr>
-          <p class="lead">If you are adding a new lesson to a brand new course, then you need to add the new course here.</p>
-          <p class="lead">If you are adding a new lesson to an existing course, you can skip this step.</p>
-          <p><a href ="{% url 'add_lesson_category' %}" class="btn btn-outline-success rounded-0" role="button">Add New Course Category</a></p>
-      </div>
+        <div class="p-4 home-menu-cards rounded">
+            <h4 class="courses-title">2. Add A New Lesson</h4>
+            <hr>
+            <p class="lead">Add the content of your new lesson here.  Follow the instructions in the form to create an intuitive new lesson.</p>
+                <p><a href ="{% url 'add_lesson' %}" class="btn btn-outline-success rounded-0" role="button">Add New Lesson</a></p>
+        </div>
 
-      <div class="p-4 home-menu-cards rounded">
-          <h4 class="courses-title">2. Add A New Lesson</h4>
-          <hr>
-          <p class="lead">Add the content of your new lesson here.  Follow the instructions in the form to create an intuitive new lesson.</p>
-              <p><a href ="{% url 'add_lesson' %}" class="btn btn-outline-success rounded-0" role="button">Add New Lesson</a></p>
-      </div>
-
-      <div class="p-4 home-menu-cards rounded">
-          <h4 class="courses-title">3. Add New Course to the Shop</h4>
-          <hr>
-          <p class="lead">If you created a new course, then you will need to add this new course to the shop.  Do this by following the instructions here.</p>
-          <p class="lead">If you didn't add a new course, you can skip this step.</p>
-              <p><a href ="{% url 'add_new_shop_course' %}" class="btn btn-outline-success rounded-0" role="button">Update Shop</a></p>
-      </div>
-  </div>
-</div>
-
-<div class="container d-flex flex-row align-items-baseline justify-content-between border-bottom my-4">
-  <div class="">
-      <h2 class="m-3">Edit Lesson Content</h2>
-  </div>
-  <div class="show-hide-btn-down" id="edit-show-btn">
-    <h2 onclick="displayEditNewContent()"><ion-icon name="arrow-down-circle-outline"></ion-icon></h2> 
-  </div>
-  <div class="show-hide-btn-down" id="edit-hide-btn">
-    <h2 onclick="hideEditNewContent()"><ion-icon name="arrow-up-circle-outline"></ion-icon></h2> 
-  </div>
-</div>
-<div class="container" id="edit-lesson-content">
-    <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Course Name</th>
-                    <th scope="col">Lesson Name</th>
-                    <th scope="col">Lesson Focus</th>
-                    <th scope="col">View Lesson</th>
-                    <th scope="col">Edit Lesson</th>
-                    <th scope="col">Delete Lesson</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    {% for lesson in lessons %}
-                  <tr>
-                    <th scope="row" class="align-middle">{{ lesson.category }}</th>
-                    <td class="align-middle">{{ lesson.name }}</td>
-                    <td class="align-middle">{{ lesson.exam_section }}</td>
-                    <td class="align-middle"><a href="{% url 'lms_content' lesson.id %}" class="btn btn-outline-success rounded-0">View Lesson</a>
-                    </td>
-                    <td class="align-middle"><a href="{% url 'edit_lesson' lesson.id %}" class="btn btn-outline-info rounded-0">Edit Lesson</a>
-                    </td>
-                    <td class="align-middle">
-                      <p class="small text-danger">This action cannot be undone!</p>
-                      <a href="{% url 'delete_lesson' lesson.id %}" class="btn btn-outline-danger btn-sm rounded-0">Delete Lesson</a>
-                    </td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
+        <div class="p-4 home-menu-cards rounded">
+            <h4 class="courses-title">3. Add New Course to the Shop</h4>
+            <hr>
+            <p class="lead">If you created a new course, then you will need to add this new course to the shop.  Do this by following the instructions here.</p>
+            <p class="lead">If you didn't add a new course, you can skip this step.</p>
+                <p><a href ="{% url 'add_new_shop_course' %}" class="btn btn-outline-success rounded-0" role="button">Update Shop</a></p>
         </div>
     </div>
-</div>
-<div class="container d-flex flex-row align-items-baseline justify-content-between border-bottom my-4">
-  <div class="">
-      <h2 class="m-3">Edit Shop Content</h2>
   </div>
-  <div class="show-hide-btn-down" id="add-shop-show-btn">
-    <h2 onclick="displayEditShopContent()"><ion-icon name="arrow-down-circle-outline"></ion-icon></h2> 
-  </div>
-  <div class="show-hide-btn-down" id="add-shop-hide-btn">
-    <h2 onclick="hideEditShopContent()"><ion-icon name="arrow-up-circle-outline"></ion-icon></h2> 
-  </div>
-</div>
-<div class="container" id="edit-shop-content">
-  <div class="table-responsive">
-      <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Lesson Name</th>
-              <th scope="col">Course Name</th>
-              <th scope="col">View Lesson</th>
-              <th scope="col">Edit Lesson</th>
-              <th scope="col">Delete Lesson</th>
-            </tr>
-          </thead>
-          <tbody>
-              {% for course in courses %}
-            <tr>
-              <th scope="row" class="align-middle">{{ course.name }}</th>
-              <td class="align-middle">Price - £{{ course.price }}</td>
-              <td class="align-middle"><a href="{% url 'course_details' course.id %}" class="btn btn-outline-success rounded-0">View Course in Shop</a>
-              </td>
-              <td class="align-middle"><a href="{% url 'edit_shop_content' course.id %}" class="btn btn-outline-info rounded-0">Edit Course in Shop</a>
-              </td>
-              <td class="align-middle">
-                <p class="small text-danger">This action cannot be undone!</p>
-                <a href="{% url 'delete_shop_content' course.id %}" class="btn btn-outline-danger btn-sm rounded-0">Delete Course in Shop</a>
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-  </div>
-</div>
 
-
+  <div class="col-12 d-flex flex-row justify-content-between py-3 border-bottom align-items-center">
+    <div class="">
+        <h2 class="m-3">Edit Lesson Content</h2>
+    </div>
+    <div class="show-hide-btn-down" id="edit-show-btn">
+      <h2 onclick="displayEditNewContent()"><ion-icon name="arrow-down-circle-outline"></ion-icon></h2> 
+    </div>
+    <div class="show-hide-btn-down" id="edit-hide-btn">
+      <h2 onclick="hideEditNewContent()"><ion-icon name="arrow-up-circle-outline"></ion-icon></h2> 
+    </div>
+  </div>
+  <div class="container" id="edit-lesson-content">
+      <div class="row mt-4 mx-auto d-flex flex-md-row flex-column">
+          <div class="table-responsive">
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Course Name</th>
+                      <th scope="col">Lesson Name</th>
+                      <th scope="col">Lesson Focus</th>
+                      <th scope="col">View Lesson</th>
+                      <th scope="col">Edit Lesson</th>
+                      <th scope="col">Delete Lesson</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      {% for lesson in lessons %}
+                    <tr>
+                      <th scope="row" class="align-middle">{{ lesson.category }}</th>
+                      <td class="align-middle">{{ lesson.name }}</td>
+                      <td class="align-middle">{{ lesson.exam_section }}</td>
+                      <td class="align-middle"><a href="{% url 'lms_content' lesson.id %}" class="btn btn-outline-success rounded-0">View Lesson</a>
+                      </td>
+                      <td class="align-middle"><a href="{% url 'edit_lesson' lesson.id %}" class="btn btn-outline-info rounded-0">Edit Lesson</a>
+                      </td>
+                      <td class="align-middle">
+                        <p class="small text-danger">This action cannot be undone!</p>
+                        <a href="{% url 'delete_lesson' lesson.id %}" class="btn btn-outline-danger btn-sm rounded-0">Delete Lesson</a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+          </div>
+      </div>
+  </div>
+  <div class="col-12 d-flex flex-row justify-content-between py-3 border-bottom align-items-center">
+    <div class="">
+        <h2 class="m-3">Edit Shop Content</h2>
+    </div>
+    <div class="show-hide-btn-down" id="add-shop-show-btn">
+      <h2 onclick="displayEditShopContent()"><ion-icon name="arrow-down-circle-outline"></ion-icon></h2> 
+    </div>
+    <div class="show-hide-btn-down" id="add-shop-hide-btn">
+      <h2 onclick="hideEditShopContent()"><ion-icon name="arrow-up-circle-outline"></ion-icon></h2> 
+    </div>
+  </div>
+  <div class="container" id="edit-shop-content">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Lesson Name</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">View Lesson</th>
+                <th scope="col">Edit Lesson</th>
+                <th scope="col">Delete Lesson</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for course in courses %}
+              <tr>
+                <th scope="row" class="align-middle">{{ course.name }}</th>
+                <td class="align-middle">Price - £{{ course.price }}</td>
+                <td class="align-middle"><a href="{% url 'course_details' course.id %}" class="btn btn-outline-success rounded-0">View Course in Shop</a>
+                </td>
+                <td class="align-middle"><a href="{% url 'edit_shop_content' course.id %}" class="btn btn-outline-info rounded-0">Edit Course in Shop</a>
+                </td>
+                <td class="align-middle">
+                  <p class="small text-danger">This action cannot be undone!</p>
+                  <a href="{% url 'delete_shop_content' course.id %}" class="btn btn-outline-danger btn-sm rounded-0">Delete Course in Shop</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>
 <script>
   let addNewContent = document.getElementById('add-new-content')
   let showAddBtn = document.getElementById('add-show-btn')
