@@ -8,6 +8,25 @@
 ## Planning
 
 User Stories - 
+- As a User, I want to be able to view a list of available courses so that I can choose which one(s) to buy.
+- As a User, I want to be able to sort courses by category so that I can find one more suited to my needs more quickly.
+- As a User, I want to be able to view more details about a specific course so that I can make an informed decision before I purchase.
+- As a User, I want to view all the items in my bag before purchasing.
+- As a User, I want to be able to view the items in my bag at checkout so that I have a final chance to decide if I want to purchase.
+- As a User, I want to be able to purchase items securely.
+- As a User I want to be able to store my personal data so that I can use it again without having to reinput it.
+- As a User, I want to be able to see all of my past purchases in order to ensure that I don't purchase something twice.
+- As a User, I want to be able to register for an account to allow for quicker access at a later date.
+- As a User, I want to be able to log in to see my personal data and log out when I am finished.
+- As a User I want to be able to recover my password if I forget it.
+- As a User, I want to be able to email the company with any questions that I may have.
+- As a User, I want to be able to access my paid-for course content so that I can study.
+- As a User, I would like to see my progress throughout each section of the course.
+- As an Admin, I want to be able to add courses to my shop to encourage new business.
+- As an Admin, I want to be able to edit/update my courses to keep them current.
+- As an Admin, I want to be able to remove courses that I no longer need/want.
+- As an Admin, I want to be able to view past orders to ensure there is no discrepancy between what the user bought and expected.
+
 
 Wireframes - Shop
 
@@ -25,6 +44,16 @@ Wireframes - Shop
 - [Mobile View - Course Details](media/wireframes/desktop_shop/3_mobile_view_course_details.jpg)
 - [Mobile View - Shopping Bag](media/wireframes/desktop_shop/4_mobile_view_course_shopping_bag.jpg)
 - [Mobile View - Checkout](media/wireframes/desktop_shop/5_mobile_view_checkout.jpg)
+
+Wireframes - LMS
+
+**Desktop**
+- [Desktop View - LMS](media/wireframes/desktop_shop/1_lms_desktop_view.jpg)
+- [Desktop View - LMS - Content](media/wireframes/desktop_shop/3_lms_content_desktop_view.jpg)
+
+**Mobile**
+- [Mobile View - LMS](media/wireframes/desktop_shop/2_lms_mobile_view.jpg)
+- [Mobile View - LMS - Content](media/wireframes/desktop_shop/4_lms_content_mobile_view.jpg)
 
 ## Features
 
@@ -92,8 +121,6 @@ On this page will be a list of all the user's past orders along with their saved
 Users can contact the company with questions/comments
 
 
-
-
 ### Ongoing Bug discovery and fixes
 
 | Bug No' | Issue | Fix |
@@ -112,11 +139,11 @@ Users can contact the company with questions/comments
 
 ### Testing
 
-Manual Testing
+#### Manual Testing
 
 There was no automated testing carried out during this project. Each User Story was manually tested as follows:
 
-User Stories
+#### User Stories
 
 **As a User, I want to be able to view a list of available courses so that I can choose which one(s) to buy.**
 
@@ -126,7 +153,7 @@ User Stories
 |Selected 'All courses' from the nav bar|A list of all (2 for development purposes) display in the form of cards|**PASS**|
 |Selected 'All courses' from the footer|A list of all (2 for development purposes) display in the form of cards|**PASS**|
 
-As a User, I want to be able to sort courses by category so that I can find one more suited to my needs more quickly.
+**As a User, I want to be able to sort courses by category so that I can find one more suited to my needs more quickly**.
 
 |**Test**|**Result**|**Verdict**|
 |---|---|---|
@@ -256,7 +283,7 @@ As a User, I want to be able to sort courses by category so that I can find one 
 |Clicked 'Open LMS'|Directed to a screen with all purchased courses/lessons |**PASS**|
 |Clicked on 'Start Studying'| Lesson opens correctly |**PASS**|
 
-As a User, I would like to see my progress throughout each section of the course.
+**As a User, I would like to see my progress throughout each section of the course.**
 
 |**Test**|**Result**|**Verdict**|
 |---|---|---|
@@ -320,7 +347,6 @@ As a User, I would like to see my progress throughout each section of the course
 |Clicked 'Orders' in 'Checkout Section' on the left|A list of all orders is displayed|**PASS**|
 
 - NOTE, it was decided to keep this in the Django admin site as this has the potential to be a very, very large database.
-
 
 ### Technologies Used
 
