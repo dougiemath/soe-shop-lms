@@ -348,6 +348,66 @@ There was no automated testing carried out during this project. Each User Story 
 
 - NOTE, it was decided to keep this in the Django admin site as this has the potential to be a very, very large database.
 
+### Validation
+
+#### Pep8 - Python/Django
+
+|**Bag App**|Results|
+|---|---|
+|[admin.py](media/validation/pep8/bag_app/1_bag_admin_pep8.jpg)|**All Right**|
+|[contexts.py](media/validation/pep8/bag_app/2_bag_contexts_pep8.jpg)|**All Right**|
+|[urls.py](media/validation/pep8/bag_app/3_bag_urls_pep8.jpg)|**All Right**|
+|[views.py](media/validation/pep8/bag_app/4_bag_views_pep8.jpg)|**All Right**|
+
+|**Checkout App**|Results|Info|
+|---|---|---|
+|[admin.py](media/validation/pep8/checkout_app/1_checkout_admin_pep8.jpg)|**All Right**||
+|[apps.py](media/validation/pep8/checkout_app/2_checkout_apps_pep8.jpg)|**All Right**||
+|[forms.py](media/validation/pep8/checkout_app/3_checkout_forms_pep8.jpg)|**All Right**||
+|[models.py](media/validation/pep8/checkout_app/4_checkout_models_pep8.jpg)|**All Right**||
+|[urls.py](media/validation/pep8/checkout_app/5_checkout_urls_pep8.jpg)|**All Right**||
+|[views.py](media/validation/pep8/checkout_app/6_checkout_views_pep8.jpg)|**All Right**||
+|[webhook_handlers.py](media/validation/pep8/checkout_app/7_checkout_webhook_handler_pep8.jpg)|**All Right**||
+|[webhooks.py](media/validation/pep8/checkout_app/8_checkout_webhooks_pep8.jpg)|*Issue*|Line 43 is too long, however it was decided not to break the line of code as there is no logical place to divide it (see image)|
+
+|**Contact App**|Results|
+|---|---|
+|[admin.py](media/validation/pep8/contact_app/1_contact_admin_pep8.jpg)|**All Right**|
+|[forms.py](media/validation/pep8/contact_app/2_contact_forms_pep8.jpg)|**All Right**|
+|[models.py](media/validation/pep8/contact_app/3_contact_models_pep8.jpg)|**All Right**|
+|[urls.py](media/validation/pep8/contact_app/4_contact_urls_pep8.jpg)|**All Right**|
+|[views.py](media/validation/pep8/contact_app/5_contact_views_pep8.jpg)|**All Right**|
+
+|**Courses App**|Results|Info|
+|---|---|---|
+|[admin.py](media/validation/pep8/courses_app/1_courses_admin_pep8.jpg)|**All Right**||
+|[forms.py](media/validation/pep8/courses_app/2_courses_forms_pep8.jpg)|**All Right**||
+|[models.py](media/validation/pep8/courses_app/3_courses_models_pep8.jpg)|**All Right**||
+|[urls.py](media/validation/pep8/courses_app/4_courses_urls_pep8.jpg)|**All Right**||
+|[views.py](media/validation/pep8/courses_app/5_courses_views_pep8.jpg)|*Issue*|Line 27 is too long however as there is no logical place to break the line it was decided to keep it|
+
+|**Home App**|Results|
+|---|---|
+|[urls.py](media/validation/pep8/home_app/1_home_urls_pep8.jpg)|**All Right**|
+|[views.py](media/validation/pep8/home_app/2_home_views_pep8.jpg)|**All Right**|
+
+|**LMS App**|Results|Info|
+|---|---|---|
+|[admin.py](media/validation/pep8/lms_app/1_lms_admin_pep8.jpg)|**All Right**||
+|[forms.py](media/validation/pep8/lms_app/2_lms_forms_pep8.jpg)|**All Right**||
+|[models.py](media/validation/pep8/lms_app/3_lms_models_pep8.jpg)|*Issue*|There are four images that are available for selection in the Lesson model.  These images were added via url as there was an issue linking to static images in Cloudinary.  After checking the [pep8 guide](https://peps.python.org/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds), it was decided that using a url shortner would affect the readability of the code and thus should be left as is.|
+|[urls.py](media/validation/pep8/lms_app/4_lms_urls_pep8.jpg)|**All Right**||
+|[views.py](media/validation/pep8/lms_app/5_lms_views_pep8.jpg)|**All Right**||
+
+|**Profiles App**|Results|Info|
+|---|---|---|
+|[admin.py](media/validation/pep8/profiles_app/1_profiles_admin_pep8.jpg)|**All Right**||
+|[forms.py](media/validation/pep8/profiles_app/2_lms_forms_pep8.jpg)|*Issue*|Line 33 is too long, but as there is no logical place to break the code, it was decided to leave it as is. |
+|[models.py](media/validation/pep8/profiles_app/3_lms_models_pep8.jpg)|**All Right**||
+|[urls.py](media/validation/pep8/profiles_app/4_lms_urls_pep8.jpg)|**All Right**||
+|[views.py](media/validation/pep8/profiles_app/5_lms_views_pep8.jpg)|**All Right**||
+
+
 ### Technologies Used
 
 **Languages**
