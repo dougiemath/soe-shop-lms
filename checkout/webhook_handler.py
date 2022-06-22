@@ -7,6 +7,7 @@ from profiles.models import UserProfile
 import json
 import time
 
+
 class StripeWH_Handler:
 
     def __init__(self, request):
@@ -27,7 +28,6 @@ class StripeWH_Handler:
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
-        print("part 1")
         billing_details = intent.charges.data[0].billing_details
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
@@ -50,19 +50,13 @@ class StripeWH_Handler:
         if order_exists:
             username = intent.metadata.username
             for item_id, item_data in json.loads(bag).items():
-                print(item_id, '1st try')
                 username = intent.metadata.username
                 course = Course.objects.get(id=item_id)
-                print(course)
                 user = UserProfile.objects.get(user__username=username)
-                print(user)
-                print(user.course_bought)
-                # user.course_bought.add(course)
                 user.save()
-                print(user.course_bought)
-                print(user.course_name)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                content=f'Webhook received: {event["type"]} '
+                '| SUCCESS: Verified order already in database',
                 status=200)
         else:
             order = None
@@ -74,18 +68,11 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(bag).items():
-                    print(item_id, '2nd try')
                     username = intent.metadata.username
                     course = Course.objects.get(id=item_id)
-                    print(course)
                     user = UserProfile.objects.get(user__username=username)
-                    print("user")
-                    print(user)
                     user.save()
                     user.course_bought.add(course)
-                    print("---------------")
-                    print(user.course_bought)
-                    print("---------------")
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
@@ -100,7 +87,8 @@ class StripeWH_Handler:
                     status=500)
 
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook received: {event["type"]} '
+            '| SUCCESS: Created order in webhook',
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):

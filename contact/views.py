@@ -5,17 +5,24 @@ from django.contrib.auth.decorators import login_required
 from .forms import ContactForm
 from.models import Contact
 
+
 def contact(request):
+    """
+    Function to save data from
+    contact form
+    """
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Thanks for your email, we will contact you shortly.')
+            messages.success(request, f'Thanks for your email,'
+                             'we will contact you shortly.')
             return redirect('index')
- 
+
     form = ContactForm()
     context = {'form': form}
     return render(request, 'contact/contact.html', context)
+
 
 @login_required
 def contact_inbox(request):
@@ -33,6 +40,7 @@ def contact_inbox(request):
         messages.error(request, 'You do not have access to this page.')
         return redirect(reverse('index'))
 
+
 @login_required
 def contact_received_email(request, contact_id):
     """A view to give access to full email."""
@@ -42,12 +50,12 @@ def contact_received_email(request, contact_id):
         context = {
             'email': email,
         }
-        
+
         return render(request, 'contact/contact_received_email.html', context)
     else:
         messages.error(request, 'You do not have access to this page.')
         return redirect(reverse('index'))
-        
+
 
 @login_required
 def delete_email(request, contact_id):

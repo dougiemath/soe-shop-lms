@@ -27,7 +27,7 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
-        'courses':courses,
+        'courses': courses,
     }
 
     return render(request, template, context)

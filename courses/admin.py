@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Category, Course
-# Register your models here.
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('friendly_name', 'name')
@@ -10,7 +10,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('name', 'course_length') 
+    list_display = ('name', 'course_length')
 
 admin.site.register(Category, CategoryAdmin)
-

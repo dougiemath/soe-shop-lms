@@ -6,4 +6,3 @@ from .models import UserProfile
 @admin.register(UserProfile)
 class LessonAdmin(admin.ModelAdmin):
     list_display = ('user',)
-

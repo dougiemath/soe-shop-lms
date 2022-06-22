@@ -2,15 +2,15 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .models import Lessons, LessonCategory
-from.forms import LessonForm, LessonCategoryForm, NewShopCourseForm
 from profiles.models import UserProfile
 from courses.models import Course
+from .models import Lessons, LessonCategory
+from.forms import LessonForm, LessonCategoryForm, NewShopCourseForm
 
 
 @login_required
 def lms(request):
-    """displays a contents page for all courses 
+    """displays a contents page for all courses
     that have been bought by the user"""
     lessons = Lessons.objects.all().order_by('-category')
     profile = UserProfile.objects.get(user=request.user)
@@ -45,14 +45,14 @@ def lms_content(request, lesson_id):
         return render(request, 'lms/lms_content.html', context)
     elif str(current_course) not in str(courses_bought):
         messages.error(request, 'You do not have access to this page.')
-        return redirect('lms')  
+        return redirect('lms')
 
     return render(request, 'lms/lms_content.html', context)
 
 
 @login_required
 def manage(request):
-    """returns a contents-style page for 
+    """returns a contents-style page for
         editing course/shop content"""
     if request.user.is_superuser:
         lessons = Lessons.objects.all().order_by('category')
@@ -83,7 +83,8 @@ def add_lesson(request):
                 messages.success(request, "Successfully added lesson")
                 return redirect(reverse('manage'))
             else:
-                messages.error(request, 'Failed to add lesson.  Please check the form.')
+                messages.error(request, 'Failed to add '
+                               'lesson.  Please check the form.')
         else:
             form = LessonForm()
 
@@ -111,7 +112,9 @@ def add_lesson_category(request):
                 messages.success(request, "Successfully added lesson category")
                 return redirect(reverse('manage'))
             else:
-                messages.error(request, 'Failed to add lesson category.  Please check the form.') 
+                messages.error(request, 'Failed to add '
+                                        'lesson category.  Please check '
+                                        'the form.')
         else:
             form = LessonCategoryForm()
 
@@ -138,8 +141,8 @@ def add_new_shop_course(request):
                 messages.success(request, "Successfully added content to Shop")
                 return redirect(reverse('manage'))
             else:
-                messages.error(request, 'Failed to add content to shop.  Please check the form.')
-            
+                messages.error(request, 'Failed to add content '
+                               'to shop.  Please check the form.')
         else:
             form = NewShopCourseForm()
 
@@ -227,6 +230,7 @@ def edit_shop_content(request, course_id):
     else:
         messages.error(request, 'You do not have access to this page.')
         return redirect(reverse('index'))
+
 
 @login_required
 def delete_shop_content(request, course_id):
