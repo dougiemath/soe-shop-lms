@@ -23,11 +23,11 @@
         <div class="course-details p-3">
             <h2 class>{{ course.name }}</h2>
             <hr class="my-4">
-            <p>{{ course.card_description|safe }}</p>
-            <p class="">{{ course.description | safe }}</p>
+            {{ course.card_description|safe }}
+            {{ course.description | safe }}
             <hr class="my-5">
+            {% if user.is_authenticated %}
             <div class="form">
-                {% if user.is_authenticated %}
                 <form class="form" action="{% url 'add_to_bag' course.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
@@ -39,7 +39,6 @@
                                     <div><h6 class="my-2">£{{ course.price }}</h6></div>
                                     <input class="form-control qty_input my-2 d-none" type="number" name="quantity" value="1"
                                     min="1" max="99" data-item_id="{{ course.id }}" id="id_qty_{{ course.id }}">
-
                                 <input type="submit" class="btn btn-outline-success rounded-0 text-uppercase my-2"
                                     value="Add to Bag">
                                 </div>
@@ -55,12 +54,10 @@
             </div>
             <div class="col-12 d-flex flex-row">
                 <div class="col-6 d-flex justify-content-end px-1">
-                    <p class="py-2"><a class="btn btn-outline-success" href="{% url 'account_login' %}"
-                            type="submit">Log In</a></p>
+                    <p class="py-2"><a class="btn btn-outline-success rounded-0" href="{% url 'account_login' %}">Log In</a></p>
                 </div>
                 <div class="col-6 px-1">
-                    <p class="py-2"><a class="btn btn-outline-success" href="{% url 'account_signup' %}"
-                            type="submit">Sign Up</a></p>
+                    <p class="py-2"><a class="btn btn-outline-success rounded-0" href="{% url 'account_signup' %}">Sign Up</a></p>
                 </div>
             </div>
             {% endif %}

@@ -85,25 +85,25 @@
                                     <a class="nav-link" href="{% url 'courses' %}?category=exams">Exam Skills</a>
                                 </li>
                                 {% if user.is_authenticated %}
-                                        {% if request.user.is_superuser %}
-                                        <li class="nav-item active users-page-link">
-                                            <a class="nav-link" id="user-auth-manage" href="{% url 'manage' %}">{{ user.username }}'s' Page</a>
-                                        </li>
-                                        {% else %}
-                                        <li class="nav-item active users-page-link">
-                                            <a class="nav-link" id="user-auth-profile" href="{% url 'profile' %}">{{ user.username }}'s Profile Page</a>
-                                        </li>
-                                        {% endif %}
-                                        <li class="nav-item active logout-link">
-                                            <a class="nav-link" id="user-auth-logout" href="{% url 'account_logout' %}">Logout</a>
-                                        </li>
+                                    {% if request.user.is_superuser %}
+                                    <li class="nav-item active users-page-link">
+                                        <a class="nav-link" id="user-auth-manage" href="{% url 'manage' %}">{{ user.username }}'s' Page</a>
+                                    </li>
+                                    {% else %}
+                                    <li class="nav-item active users-page-link">
+                                        <a class="nav-link" id="user-auth-profile" href="{% url 'profile' %}">{{ user.username }}'s Profile Page</a>
+                                    </li>
+                                    {% endif %}
+                                    <li class="nav-item active logout-link">
+                                        <a class="nav-link" id="user-auth-logout" href="{% url 'account_logout' %}">Logout</a>
+                                    </li>
                                 {% else %}
-                                        <li class="nav-item active login-link">
-                                            <a class="nav-link" id="user-auth-login" href="{% url 'account_login' %}">Login</a>
-                                        </li>
-                                        <li class="nav-item active sign-up-link">
-                                            <a class="nav-link" id="user-auth-signup" href="{% url 'account_signup' %}">Sign up</a>
-                                        </li>
+                                    <li class="nav-item active login-link">
+                                        <a class="nav-link" id="user-auth-login" href="{% url 'account_login' %}">Login</a>
+                                    </li>
+                                    <li class="nav-item active sign-up-link">
+                                        <a class="nav-link" id="user-auth-signup" href="{% url 'account_signup' %}">Sign up</a>
+                                    </li>
                                 {% endif %}
                             </ul>
                             <div class="form">
@@ -182,13 +182,13 @@
                     <h6 class="menu-card-title">Follow Us</h6>
                     <hr>
                     <div class="social-media-icons d-flex justify-content-around px-5 m-1">
-                        <a href="https://www.facebook.com/skyeonlineenglish/" target="_blank" class="" rel="noopener">
+                        <a href="https://www.facebook.com/skyeonlineenglish/" target="_blank" aria-label="facebook" rel="noopener">
                             <ion-icon name="logo-facebook"></ion-icon>
                         </a>
-                        <a href="https://www.instagram.com/skyeonlineenglish/?hl=en" target="_blank" class="" rel="noopener">
+                        <a href="https://www.instagram.com/skyeonlineenglish/?hl=en" target="_blank" aria-label="instagram" rel="noopener">
                             <ion-icon name="logo-instagram"></ion-icon>
                         </a>
-                        <a href="https://uk.linkedin.com/in/douglasmatheson" target="_blank" class="" rel="noopener">
+                        <a href="https://uk.linkedin.com/in/douglasmatheson" target="_blank" aria-label="linkedin" rel="noopener">
                             <ion-icon name="logo-linkedin"></ion-icon>
                         </a> 
                     </div>
@@ -225,7 +225,7 @@
 </footer>
 
 {% block postload_js %}
-<script type="text/javascript">
+<script>
     $('.toast').toast('show');
 </script>
 {% endblock postload_js %}

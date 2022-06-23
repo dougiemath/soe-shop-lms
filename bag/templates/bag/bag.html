@@ -24,54 +24,41 @@
                                 <small>Remove</small></a>
                         </div>
                     </td>
-                    <td class="bag-item-table-cell d-none d-md-table-cell">
-                        <div class="course-length-title text-center">
+                    <td class="bag-item-table-cell py-4">
+                        <div class="course-length-title text-center my-2">
                             <h6>Course Length</h6>
                         </div>
                         <div class="course-length text-center">
                             <p class="">{{ item.product.course_length }} hours</p>
                         </div>
                     </td>
-                    <td class="bag-item-table-cell d-none d-md-table-cell">
-                        <div class="product-price-title text-end">
+                    <td class="bag-item-table-cell py-4">
+                        <div class="product-price-title text-end my-2">
                             <h6>Price per course</h6>
                         </div>
                         <div class="product-price text-end">
-                            <p class="">£{{ item.product.price }}</p>
+                            <p>£{{ item.product.price }}</p>
                         </div>
                     </td>
-                    <!-- Responsive view  -->
-                    <td class="d-md-none w-25">
-                        <div class="course-length-title">
-                            <h6>Course Length</h6>
-                        </div>
-                        <div class="course-length">
-                            <p class="">{{ item.product.course_length }} hours</p>
-                        </div>
-                        <div class="product-price-title">
-                            <h6>Price per course</h6>
-                        </div>
-                        <div class="product-price border-bottom">
-                            <p class="">£{{ item.product.price }}</p>
-                        </div>
-                    </td>
+                    
                 </tr>
                 {% endfor %}
                 <tr class="text-end border-top-0">
-                    <td colspan="5" class="p-3">
+                    <td></td>
+                    <td></td>
+                    <td class="p-3 text-end">
                         <h4 id="total">Total: £{{ total|floatformat:2 }}</h4>
                     </td>
                 </tr>
-                <tr class="text-end">
-                    <td colspan="5">
-                        <a href="{% url 'courses' %}" class="btn btn-outline-success rounded-0">
-                            <span class="text-uppercase">Back to courses</span>
-                        </a>
-                        <a href="{% url 'checkout' %}" class="btn btn-outline-success rounded-0">
-                            <span class="text-uppercase">Secure Checkout</span>
-                        </a>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="text-end w-100">
+                        <a href="{% url 'courses' %}" class="btn btn-outline-success rounded-0 m-1">
+                            BACK TO COURSES</a>
+                        <a href="{% url 'checkout' %}" class="btn btn-outline-success rounded-0 m-1">
+                            SECURE CHECKOUT</a>
                     </td>
-
                 </tr>
             </table>
         </div>
@@ -95,7 +82,7 @@
 
 {{ block.super }}
 
-<script type="text/javascript">
+<script>
     var removeLinks = document.getElementsByClassName('remove-item')
     for (let removeLink of removeLinks) {
         removeLink.onclick = function () {

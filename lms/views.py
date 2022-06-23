@@ -32,7 +32,6 @@ def lms(request):
 def lms_content(request, lesson_id):
     """A view to return details for each course/type."""
     lesson = get_object_or_404(Lessons, pk=lesson_id)
-    coursenum = lesson.course_num
     current_course = lesson.category
     profile = get_object_or_404(UserProfile, user=request.user)
     courses_bought = profile.course_bought.all()

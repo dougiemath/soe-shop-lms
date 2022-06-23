@@ -32,13 +32,16 @@
                         </td>
                     </tr>
                     {% endfor %}
-                    <td colspan="2" class="border-bottom-0">
-                        <p class="font-weight-bold my-3">
-                            <a href="{% url 'bag' %}" class="btn btn-outline-success btn-sm rounded-0">
-                                 BACK TO SHOPPING BAG
-                            </a>
-                        </p>
-                    </td>
+                    <tr class="border-bottom-0">
+                        <td>
+                            <p class="font-weight-bold my-3">
+                                <a href="{% url 'bag' %}" class="btn btn-outline-success btn-sm rounded-0">
+                                    BACK TO SHOPPING BAG
+                                </a>
+                            </p>
+                        </td>
+                        <td></td>
+                    </tr>
                     <tr class="border-top">
                         <td>
                             <p class="my-4 text-uppercase">Grand total:</p>
