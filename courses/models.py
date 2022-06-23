@@ -44,6 +44,11 @@ class Course(models.Model):
                                         verbose_name="Now choose what"
                                         " lessons are included in this course."
                                         "  This step is very important!")
+    course_meta = models.CharField(blank=True, verbose_name="This field "
+                                   "is for SEO purposes.  Please enter some "
+                                   "tags to describe your course and separate"
+                                   " each tag with a comma.  For example, "
+                                   "'IELTS, English, Exam'", max_length=50)
 
     def __str__(self):
         return self.name

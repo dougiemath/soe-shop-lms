@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+{% block extrameta %}
+<meta name="keywords" content="{{ course.course_meta }}">
+{% endblock extrameta %}
 {% block content %}
 {% if total %}
 <div class="container-fluid">
