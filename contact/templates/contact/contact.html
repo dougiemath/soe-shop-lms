@@ -18,7 +18,6 @@
 <div class="container border-bottom">
     <h2 class="my-3">Contact {{ message_name }}</h2>
 </div>
-
 <div class="container my-2 contact-form">
     <form method="post">
         {% csrf_token %}
@@ -26,5 +25,4 @@
         <input type="submit" value="Submit" class="btn btn-outline-success btn-sm rounded-0 my-3">
      </form>
 </div>
-
 {% endblock %}

@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-
 <div class="container">
     <div class="col-12 d-flex flex-row justify-content-between py-3 border-bottom align-items-center">
         <div><h2 class="logo-font">{{ user.username }}'s profile</h2></div>
@@ -50,7 +49,6 @@
                             £{{ order.grand_total }}
                         </td>
                     </tr>
-
                     {% endfor %}
                 </tbody>
             </table>
@@ -69,7 +67,4 @@
         </form>
     </div>
 </div>
-
-
-
 {% endblock %}

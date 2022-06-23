@@ -7,7 +7,6 @@
     <h2 class="mx-3 border-bottom pb-2">{{ lesson.category }} - {{ lesson.exam_section }} - {{ lesson.name }}
     </h2>
 </div>
-
 <div id="exam-overview" class="container exam-overview p-4 mb-3">
     <h3 class="border-bottom mb-3 pb-2">Overview</h3>
     {{ lesson.question_overview | safe }}
@@ -18,7 +17,6 @@
     <div class="progress-bar col-3 mt-4"></div>
     <div class="progress-bar-text">Progress = 25%</div>
 </div>
-
 <div id="sample-question" class="container sample-question p-4  mb-3">
     <h3 class="border-bottom mb-3 pb-2">Sample</h3>
     {% if lesson.sample_question_text %}
@@ -33,7 +31,6 @@
     <div class="progress-bar col-6 mt-4"></div>
     <div class="progress-bar-text">Progress = 50%</div>
 </div>
-
 <div id="how-to-do-it" class="container how-to-do-it p-4  mb-3">
     <h3 class="border-bottom mb-3 pb-2">How to do it</h3>
     {% if lesson.video %}
@@ -49,7 +46,6 @@
     <div class="progress-bar col-9 mt-4"></div>
     <div class="progress-bar-text">Progress = 75%</div>
 </div>
-
 <div id="conclusion" class="container conclusion p-4  mb-3">
     {% if lesson.upload_questions %}
     <h3 class="border-bottom mb-3 pb-2">Try it yourself</h3>
@@ -67,7 +63,6 @@
         </div>
     </div>
     {% else %}
-   
     {% endif %}
     <div class="nav-button d-flex justify-content-between my-3">
         <button type="button" class="btn btn-outline-info" onclick="displayHowToDoIt()">Previous Section</button>
