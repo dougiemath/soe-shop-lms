@@ -8,6 +8,9 @@ from courses.models import Course
 
 
 class UserProfile(models.Model):
+    """
+    Class for generating personal address
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_phone_number = models.CharField(max_length=20,
                                             null=True, blank=True)

@@ -4,7 +4,10 @@ from lms.models import Lessons, LessonCategory
 
 
 class Category(models.Model):
-
+    """
+    Class for creating course categories, such as
+    exams and general English.
+    """
     class Meta:
         verbose_name_plural = "Categories"
 
@@ -19,6 +22,10 @@ class Category(models.Model):
 
 
 class Course(models.Model):
+    """
+    class for creating courses that will be
+    on display in the shop side of the project
+    """
     category = models.ForeignKey('Category', null=True,
                                  on_delete=models.SET_NULL,
                                  verbose_name="What is category"

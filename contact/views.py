@@ -29,7 +29,6 @@ def contact_inbox(request):
     """A view to create an inbox style page for emails"""
     if request.user.is_superuser:
         emails = Contact.objects.all()
-        print(emails)
 
         context = {
             'emails': emails,

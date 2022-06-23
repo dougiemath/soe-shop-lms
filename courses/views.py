@@ -6,7 +6,6 @@ from . models import Course, Category
 def courses(request):
     """A view to return page which will display all the courses 
     that are available and filter/sort."""
-
     courses = Course.objects.all()
     query = None
     categories = None

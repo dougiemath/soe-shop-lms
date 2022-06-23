@@ -6,7 +6,9 @@ from courses.models import Course
 
 
 class LessonForm(forms.ModelForm):
-
+    """
+    Form for adding a new lesson
+    """
     class Meta:
         model = Lessons
         fields = '__all__'
@@ -24,7 +26,10 @@ class LessonForm(forms.ModelForm):
 
 
 class LessonCategoryForm(forms.ModelForm):
-
+    """
+    Form for adding a new category of lesson (such as 
+    an exam name)
+    """
     class Meta:
         model = LessonCategory
         fields = '__all__'
@@ -34,7 +39,9 @@ class LessonCategoryForm(forms.ModelForm):
 
 
 class NewShopCourseForm(forms.ModelForm):
-
+    """
+    Form for adding a new shop content
+    """
     class Meta:
         model = Course
         fields = '__all__'

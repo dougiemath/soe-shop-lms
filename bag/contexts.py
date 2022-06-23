@@ -5,7 +5,9 @@ from courses.models import Course
 
 
 def bag_contents(request):
-
+    """
+    function to add items to user's bag
+    """
     bag_items = []
     total = 0
     product_count = 0
