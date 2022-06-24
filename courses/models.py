@@ -32,7 +32,8 @@ class Course(models.Model):
                                  " of your lesson? It can be"
                                  "General English or Exam Skills.")
     name = models.CharField(max_length=254,
-                            verbose_name="What is the name of your course?")
+                            verbose_name="What is the name of your course?"
+                            "THIS MUST BE THE SAME AS THE LESSON CATEGORY!")
     card_description = models.TextField(null=True,
                                         verbose_name="What is a brief "
                                         "description of your course?  "

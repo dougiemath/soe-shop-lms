@@ -35,7 +35,10 @@ def lms_content(request, lesson_id):
     current_course = lesson.category
     profile = get_object_or_404(UserProfile, user=request.user)
     courses_bought = profile.course_bought.all()
-
+    print(current_course)
+    print(courses_bought)
+    print(lesson.name)
+    print(lesson.category)
     context = {
         'lesson': lesson,
     }
