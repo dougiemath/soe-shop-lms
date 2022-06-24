@@ -47,18 +47,18 @@
     <div class="progress-bar-text">Progress = 75%</div>
 </div>
 <div id="conclusion" class="container conclusion p-4  mb-3">
-    {% if lesson.upload_questions %}
     <h3 class="border-bottom mb-3 pb-2">Try it yourself</h3>
     <div class="download-task-descrpition">
         {{lesson.further_study | safe}}
     </div>
+    {% if lesson.upload_questions %}
     <div class="sample-question-downloads d-flex flex-row my-3">
         <div class="download-questions p-3 col-6 text-end">
-            <a class="btn btn-outline-success" href="{{lesson.upload_questions.url}}" download>Download Sample
+            <a class="btn btn-outline-success" href="{{lesson.upload_questions.url}}" target="_blank">Download Sample
                 Questions</a>
         </div>
         <div class="download-answers p-3 col-6">
-            <a class="btn btn-outline-success" href="{{lesson.upload_answers.url}}" download>Download Sample
+            <a class="btn btn-outline-success" href="{{lesson.upload_answers.url}}" target="_blank">Download Sample
                 Answers</a>
         </div>
     </div>

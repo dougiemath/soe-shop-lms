@@ -145,7 +145,6 @@ def add_new_shop_course(request):
         else:
             form = NewShopCourseForm()
 
-
         form = NewShopCourseForm()
         template = 'lms/add_new_shop_course.html'
         context = {
@@ -167,13 +166,14 @@ def edit_lesson(request, lesson_id):
             form = LessonForm(request.POST, request.FILES, instance=lesson)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'Success!')
+                messages.success(request, 'You have updated the lesson')
                 return redirect(reverse('manage'))
             else:
                 messages.error(request, 'Failed.')
         else:
             form = LessonForm(instance=lesson)
-            messages.info(request, f'You are editing {lesson.name}')
+            messages.info(request,
+                          f'You are editing {lesson.category}: {lesson.name}')
 
         template = 'lms/edit_lesson.html'
 
@@ -207,7 +207,9 @@ def edit_shop_content(request, course_id):
     if request.user.is_superuser:
         course = get_object_or_404(Course, pk=course_id)
         if request.method == 'POST':
-            form = NewShopCourseForm(request.POST, request.FILES, instance=course)
+            form = NewShopCourseForm(request.POST,
+                                     request.FILES,
+                                     instance=course)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Success!')
