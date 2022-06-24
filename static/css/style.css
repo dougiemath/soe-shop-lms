@@ -14,12 +14,12 @@ body{
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', sans-serif;
-    color:#0cad95
+    color:#0DA97E
 }
 
 .site-title-link,
 .site-title-link:hover{
-    color:#0cad95;
+    color:#0DA97E;
     text-decoration: none;
 }
 
@@ -32,18 +32,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .home-menu{
-    border: solid 0.1px #b877a9;
+    border: solid 0.1px #97688c;
     background: #ffffff;
 }
 
 .home-menu-cards{
-    border: solid 0.1px #b877a9;
+    border: solid 0.1px #97688c;
     width:32%;
     background: #ffffff;
 }
 
 .menu-card-title{
-    color: #0cad95;
+    color: #0DA97E;
 }
 
 .courses-title{
@@ -58,8 +58,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar{
-    border-bottom: #b877a9 solid 0.1px;
-    border-top: #b877a9 solid 0.1px;
+    border-bottom: #97688c solid 0.1px;
+    border-top: #97688c solid 0.1px;
     font-size: 15px;
 }
 
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 .login-link,
 .sign-up-link{
     font-weight: 700;
-    color: #0cad95 !important;
+    color: #0DA97E !important;
     display: inline;
 }
 
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 #user-auth-profile,
 #user-auth-logout,
 #user-auth-login{
-    color: #0cad95 !important;
+    color: #0DA97E !important;
 }
 
 /* .............................footer */
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-links{
     text-decoration: none;
-    color: #b877a9;
+    color: #97688c;
 }
 
 .footer-links:hover{
@@ -105,19 +105,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-media-icons a{
-    color: #b877a9;
+    color: #97688c;
     font-size: 200%;
 }
 
 .social-media-icons a:hover{
-    color: #0cad95;
+    color: #0DA97E;
     text-decoration: underline;
 }
 
 /* ...........................................allauth */
 
 .allauth-form-inner-content > form > .form-group > div > input{
-    border: #0cad95 1px solid;
+    border: #0DA97E 1px solid;
     border-radius: 0%;
     margin: 5px 0px 10px 0px;
 }
@@ -148,17 +148,17 @@ h1, h2, h3, h4, h5, h6 {
 /* .............................courses */
 
 .course-card{
-    border: solid 0.1px #b877a9;
+    border: solid 0.1px #97688c;
     background: #ffffff;
     width:30%
 }
 
 .course-price{
-    color: #b877a9;
+    color: #97688c;
 }
 
 .course-details{
-    border: solid 0.1px #b877a9;
+    border: solid 0.1px #97688c;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -197,7 +197,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .stripe-style-input{
     border-radius:0px;
-    border: #0cad95 solid 1px;
+    border: #0DA97E solid 1px;
 
 }
 
@@ -239,7 +239,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #card-element{
     padding: 20px;
-    border: #0cad95 solid 1px;
+    border: #0DA97E solid 1px;
     width: 100%;
 }
 
@@ -259,7 +259,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .loading-message{
-    border: 1px solid #b877a9;
+    border: 1px solid #97688c;
     background: #ffffff;
     position: absolute;     
     top: 45%;
@@ -274,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-form > form > .form-group > div > input,
 .contact-form > form > .form-group > div > textarea{
-    border: #0cad95 solid 1px;
+    border: #0DA97E solid 1px;
     border-radius: 0%;
     margin: 5px 0px 10px 0px;
 }
@@ -289,18 +289,18 @@ h1, h2, h3, h4, h5, h6 {
 .sample-question,
 .how-to-do-it,
 .conclusion{
-    border: 1px solid #b877a9;
+    border: 1px solid #97688c;
 }
 
 .exam-overview > p > strong,
 .sample-question > p > strong,
 .how-to-do-it > p > strong,
 .conclusion > p > strong{
-    color: #0cad95;
+    color: #0DA97E;
 }
 
 .how-to-do-it > p > em{
-    color: #b877a9;
+    color: #97688c;
 }
 
 .exam-overview > ul{
@@ -314,8 +314,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .how-to-do-it > blockquote{
-    border-top: solid 1px #0cad95;
-    border-bottom: solid 1px #0cad95;
+    border-top: solid 1px #0DA97E;
+    border-bottom: solid 1px #0DA97E;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .progress-bar{
-    background: #0cad95;
+    background: #0DA97E;
     height: 2px;
 }
 
@@ -344,14 +344,14 @@ h1, h2, h3, h4, h5, h6 {
 .add-new-course-form,
 .add-new-lesson-form,
 .add-lesson-category-form{
-    border: #b877a9 1px solid;
+    border: #97688c 1px solid;
     padding: 20px
 }
 
 .add-new-course-form > form > div > div > .form-control,
 .add-new-lesson-form> form > div > div > .form-control,
 .add-lesson-category-form> form > div > div > .form-control{
-    border: #0cad95 1px solid;
+    border: #0DA97E 1px solid;
     border-radius: 0px;
 }
 
@@ -384,12 +384,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .arrow-btns{
-    color: #0cad95;
+    color: #0DA97E;
 }
 
 /* .............................Mail Chimp*/
 #mce-EMAIL{
-    border: #0cad95 solid 1px;
+    border: #0DA97E solid 1px;
     border-radius: 0%;
     margin: 5px 0px 10px 0px;
 }

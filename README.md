@@ -136,6 +136,7 @@ Users can contact the company with questions/comments
 | 9 | Customers can purchase the same thing twice but at different times| Added for loop to add_to_bag function tocompare with items already in user's profile |
 | 10 | After installation of cloudinary, thumbnail images in LMS were not displaying | Changed model to Charfield and added the urls of the thumbnails in Cloudinary |
 |11|Superusers do not have access to courses unless they purchase them|Wrapped view code for LMS content in if statement|
+|12|PDF file were not downloading from lms|Cloudinary free account prevents sending PDF and ZIP files, updated cloudinary settings.|
 
 ### Testing
 
@@ -448,6 +449,6 @@ There was no automated testing carried out during this project. Each User Story 
 
 **Colors** - As taken from source site <https://www.skyeonlineenglish.com>
 
-- Text - [#0cad95](https://g.co/kgs/DqF28c) & [#b877a9](https://g.co/kgs/yjHqid) & [#000000](https://g.co/kgs/xfSLW2) & [#cacecd](https://g.co/kgs/91ighC)
+- Text - [#0DA97E](https://g.co/kgs/zU2fC6) & [#97688c](https://g.co/kgs/bqQVv1) & [#000000](https://g.co/kgs/xfSLW2) & [#cacecd](https://g.co/kgs/91ighC)
 - Backgrounds - [#ffff](https://g.co/kgs/yDTdox)
-- Borders - [#b877a9](https://g.co/kgs/yjHqid)
+- Borders - [#97688c](https://g.co/kgs/bqQVv1)
