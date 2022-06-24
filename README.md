@@ -409,6 +409,31 @@ There was no automated testing carried out during this project. Each User Story 
 |[views.py](media/validation/pep8/profiles_app/5_lms_views_pep8.jpg)|**All Right**||
 
 
+### Information Architecture
+
+#### Data Storage
+
+**Checkout App - Order Model**
+
+|**Key in Database**|**Validation**|**Type**|
+|---|---|---|
+|order_number|CharField|max_length=32, null=False, editable=False|
+|user_profile|ForeignKey|**UserProfile**, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'|
+|name|CharField|max_length=50, null=False, blank=False|
+|email|EmailField|max_length=254, null=False, blank=False|
+|country|CountryField|blank_label='Country *', null=True, blank=False|
+|postcode|CharField|max_length=20, null=False, blank=True|
+|town_or_city|CharField|max_length=40, null=True, blank=False|
+|street_address1|CharField|max_length=80, null=False, blank=False|
+|street_address2|CharField|max_length=80, null=True, blank=True|
+|county|CharField|max_length=80, null=True, blank=True|
+|phone_number|CharField|max_length=20, null=False, blank=False|
+|date|DateTimeField|auto_now_add=True|
+|grand_total|DecimalField|max_digits=10,decimal_places=2,null=False, default=0|
+|original_bag|TextField|null=False, blank=False, default=''|
+|stripe_pid|CharField|max_length=254,null=False, blank=False, default=''|
+
+
 ### Technologies Used
 
 **Languages**
