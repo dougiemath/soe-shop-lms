@@ -540,6 +540,16 @@ CSS - [all clear](media/validation/w3c/css.jpg)
  - [urls.py](media/validation/pep8/profiles_app/4_lms_urls_pep8.jpg):   *All Right*  
  - [views.py](media/validation/pep8/profiles_app/5_lms_views_pep8.jpg):   *All Right*  
 
+### Lighthouse
+
+Overview - 
+
+![Lighthouse Overview](media/readme_images/lighthouse_overview.jpg)
+
+Metrics - 
+![Lighthouse Metrics](media/readme_images/lighthouse_metrics.jpg)
+
+
 ## Web Marketing
 
 ### SEO
