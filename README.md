@@ -28,30 +28,29 @@ User Stories -
 - As an Admin, I want to be able to view past orders to ensure there is no discrepancy between what the user bought and expected.
 
 
-Wireframes - Shop
-
-**Desktop**
+**Wireframes - Shop**
+*Desktop*
 
 - [Desktop View - Homepage](media/wireframes/desktop_shop/1_desktop_view_homepage.jpg)
 - [Desktop View - All Courses](media/wireframes/desktop_shop/2_desktop_view_all_courses_contents_page.jpg)
 - [Desktop View - Course Details](media/wireframes/desktop_shop/3_desktop_view_course_details.jpg)
 - [Desktop View - Shopping Bag](media/wireframes/desktop_shop/4_desktop_view_course_shopping_bag.jpg)
 - [Desktop View - Checkout](media/wireframes/desktop_shop/5_desktop_view_checkout.jpg)
-
-**Mobile**
+**Mobile*
 - [Mobile View - Homepage](media/wireframes/desktop_shop/1_mobile_view_homepage.jpg)
 - [Mobile View - All Courses](media/wireframes/desktop_shop/2_mobile_view_all_courses_contents_page.jpg)
 - [Mobile View - Course Details](media/wireframes/desktop_shop/3_mobile_view_course_details.jpg)
 - [Mobile View - Shopping Bag](media/wireframes/desktop_shop/4_mobile_view_course_shopping_bag.jpg)
 - [Mobile View - Checkout](media/wireframes/desktop_shop/5_mobile_view_checkout.jpg)
 
-Wireframes - LMS
+**Wireframes - LMS**
+*Desktop*
 
-**Desktop**
 - [Desktop View - LMS](media/wireframes/desktop_shop/1_lms_desktop_view.jpg)
 - [Desktop View - LMS - Content](media/wireframes/desktop_shop/3_lms_content_desktop_view.jpg)
 
-**Mobile**
+*Mobile*
+
 - [Mobile View - LMS](media/wireframes/desktop_shop/2_lms_mobile_view.jpg)
 - [Mobile View - LMS - Content](media/wireframes/desktop_shop/4_lms_content_mobile_view.jpg)
 
@@ -72,6 +71,7 @@ The homepage / base template allows users almost complete navigation throughout 
 - a link to the site's privacy policy (footer)
 - a link to the site's terms and conditions (footer)
 - social links
+- signup form from Mail Chimp
 
 **Searching / Course Results**
 
@@ -118,8 +118,96 @@ On this page will be a list of all the user's past orders along with their saved
 
 ![Contact Form](media/readme_images/contact.jpg)
 
-Users can contact the company with questions/comments
+Users can contact the company with questions/comments.  This message will be stroed in a database as opposed to being sent to an email address.
 
+**LMS**
+
+![LMS](media/readme_images/lms.jpg)
+
+Users who have purchased courses will see their individual course lessons displayed here.  They are categorised alphabetically by course name.  Should a user have purchased a course, but then a lesson is added/updated, it will automatically appear here.
+
+**LMS Content**
+
+Part 1:
+![LMS Content 1](media/readme_images/lms_content_1.jpg)
+Part 2:
+![LMS Content 2](media/readme_images/lms_content_2.jpg)
+Part 3:
+![LMS Content 3](media/readme_images/lms_content_3.jpg)
+Part 4:
+![LMS Content 4](media/readme_images/lms_content_4.jpg)
+
+Each lesson in the LMS is divided into 4 sections and has a progress bar along the bottom.
+- Section 1 is designed to give an overview of the question - Is it a multiple choice question, or is at an exam skill?
+- Section 2 is designed to give a sampl question to allow the user an opportunity to try the question before reading the guide.
+- Section 3 is a guide to explain how to complete the question.  There is an option to include a video here.
+- Section 4 is for further information/study.  There is an option to upload pdfs - currently using [Cloudinary](https://cloudinary.com/).
+
+I will explain the fields later on when I share the admin side of the LMS.
+
+**Manage**
+
+I have a made a control panel of sorts where the admin user can add content to the site/lms.
+
+![Manage](media/readme_images/manage.jpg)
+
+The admin can access each section by clicking the arrow on the right of the screen.  Users have a profile page where they can access their order history, whereas admins will have this page appear in its stead. 
+
+**Manage New Content**
+
+![Add New Content](media/readme_images/manage_add_new_content.jpg)
+
+We have three sections here:
+
+- add a new course category
+- add a new lesson
+- add a new course to the shop
+
+**Add a New Course Category**
+
+![Add a new course category](media/readme_images/add_lesson_category.jpg)
+
+The course category is something that is self-explanatory to the target audience (workers in the English as a Second Langauge industry).  This would be, for example, 'IELTS', 'CAE' or perhaps 'General English - B2'.  If the intended lesson is for an exisiting category, then this step can skipped.
+
+**Add a New Lesson**
+
+![Add New Lesson](media/readme_images/add_lesson.jpg)
+
+The lesson is the nuts and bolts of the LMS.  New academic content is added here.  
+
+The large fields are SummerNote widgets which can allow the user to style the content as they wish.  The CSS file takes into account bold tags and italic tags.  SummerNote does not use the more modern 'strong' and 'em' tags, so a later development could be to use a different wysiwyg editor.
+
+There is an option to include a video if wished as youtube already contains a lot of videos regarding efl content.  
+
+Finally there is an opportuntiy to include 2 PDF files.  These are currently ebing uploaded to Cloudinary and will open in a new window. 
+
+**Add New Course to Shop**
+
+![Add New Course to Shop](media/readme_images/add_shop_content.jpg)
+
+If the user has created lessons for a brand new course, users will not be able to access the content until after a purchase is made - thus a new course must be added to the shop.
+
+As above, the textfields all use SummerNote.  
+
+**Editing Lessons**
+
+![Editing Lessons](media/readme_images/edit_lesson.jpg)
+
+From the Manage page, there is an option to edit existing lessons.  This can allow users to keep the content current and to fix any errors that may be discovered post publishing.
+
+![Editing Shop Content](media/readme_images/edit_shop_content.jpg)
+
+From the Manage page, there is an option to edit existing items in the shop.  This can allow users to keep the content current and to fix any errors that may be discovered post publishing.
+
+**Inbox**
+
+![Inbox](media/readme_images/inbox.jpg)
+
+An inbox was created to allow existing/potential users to contact the company.  It was decided to keep it as part of the system as opposed to sending the emails directly to an email account.  This was chosen in order to keep everything together to avoid mismanaging of information across platforms.  
+
+![Emails](media/readme_images/email.jpg)
+
+If the comapny wishes to reply, they will need a seperate email account.  As a later development, if the comapny wishes, an email client could be embedded.
 
 ### Ongoing Bug discovery and fixes
 
@@ -351,90 +439,115 @@ There was no automated testing carried out during this project. Each User Story 
 
 ### Validation
 
-#### W3C
+#### W3C - HTML
 
 Every page was run through the [W3C Validation](https://validator.w3.org/) tool with the results displayed below.  I bagen with the publicly displayed pages and checked with their URLs.  For restricted pages, I used the source code on inspecting the page.
 
-Homepage: An issue originally flagged by the [ARC Toolkit](https://chrome.google.com/webstore/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce?hl=en) stated that I needed to add a 'required' attribute to the MailChimp form.  Adding this attribut raised an error with the W3C tool stating that I was not to add the attribute.  As this form is generated by Mail Chimp, and not myself, I have chosen to leave it as it was originally written.  - [error details](media/validation/w3c/home_page_error.jpg)
+- **Homepage**: An issue originally flagged by the [ARC Toolkit](https://chrome.google.com/webstore/detail/arc-toolkit/chdkkkccnlfncngelccgbgfmjebmkmce?hl=en) stated that I needed to add a 'required' attribute to the MailChimp form.  Adding this attribut raised an error with the W3C tool stating that I was not to add the attribute.  As this form is generated by Mail Chimp, and not myself, I have chosen to leave it as it was originally written.  - [error details](media/validation/w3c/home_page_error.jpg)
 
-All Courses: all clear()
+- **All Courses**: [all clear](media/validation/w3c/all_courses.jpg)
 
-Course Details (a random course was chosen for this test): all clear()
+- **Course Details** (a random course was chosen for this test): [all clear](media/validation/w3c/course_details.jpg)
 
-Privacy Policy: all clear()
+- **Privacy Policy**: [all clear](media/validation/w3c/privacy_policy.jpg)
 
-Terms and Conditions: all clear()
+- **Terms and Conditions**: [all clear](media/validation/w3c/terms_and_conditions.jpg)
 
-Contact: all clear()
+- **Contact**: [all clear](media/validation/w3c/contact.jpg)
 
-Profile Page (user): all clear()
+- **Profile Page (user)**: [all clear](media/validation/w3c/profile_page.jpg)
 
-Order History: all clear()
+- **Order History**: [all clear](media/validation/w3c/order_history.jpg)
 
-Shopping Bag: all clear()
+- **Shopping Bag**: [all clear](media/validation/w3c/shopping_bag.jpg)
 
-Checkout: all clear()
+- **Checkout**: [all clear](media/validation/w3c/checkout.jpg)
 
-Checkout Success: all clear()
+- **Checkout Success**: [all clear](media/validation/w3c/checkout_success.jpg)
+
+- **LMS**: [all clear](media/validation/w3c/lms.jpg)
+
+- **LMS Content**: There are four errors connected with the EmbedVideo package.  As I cannot access the source code, I cannot fix them.  At a future date an alternative could be found/created. [Error Details](media/validation/w3c/lms_content.jpg)
+
+Admin pages:
+
+- **Manage**: [all clear](media/validation/w3c/manage.jpg)
+
+- **Inbox**: [all clear](media/validation/w3c/inbox.jpg)
+
+- **Add Lesson Category**: [all clear](media/validation/w3c/add_new_lesson_category.jpg)
+
+- **Add Lesson**: Multiple errors connected with SummerNote widget.  As I have used the widget multiple times on this page, the errors are repeated.  However, when choosing a text based editor I tried [ckeditor](https://ckeditor.com/) and [tiny mce](https://django-tinymce.readthedocs.io/en/latest/index.html) and both had problems with funtionality.  I elected to use SummerNote as it is simple to use from a user perspective.  [Error details](media/validation/w3c/add_lesson.jpg).
+
+- **Add Shop Category**:  Multiple errors connected with summernote as stated above.  [Error details](media/validation/w3c/add_shop_category.jpg)
+
+---
+
+W3C CSS (Jigsaw)
+
+The CSS was run through the Jigsaw Validation tool
+
+CSS - [all clear](media/validation/w3c/css.jpg)
+
+---
+
+Pep8 - Python/Django
+
+**Bag App**
+
+- [admin.py](media/validation/pep8/bag_app/1_bag_admin_pep8.jpg): *All Right*
+- [contexts.py](media/validation/pep8/bag_app/2_bag_contexts_pep8.jpg): *All Right*
+- [urls.py](media/validation/pep8/bag_app/3_bag_urls_pep8.jpg): *All Right*
+- [views.py](media/validation/pep8/bag_app/4_bag_views_pep8.jpg): *All Right*
+
+**Checkout App**
+- [admin.py](media/validation/pep8/checkout_app/1_checkout_admin_pep8.jpg): *All Right*
+- [apps.py](media/validation/pep8/checkout_app/2_checkout_apps_pep8.jpg): *All Right*
+- [forms.py](media/validation/pep8/checkout_app/3_checkout_forms_pep8.jpg): *All Right*
+- [models.py](media/validation/pep8/checkout_app/4_checkout_models_pep8.jpg): *All Right*
+- [urls.py](media/validation/pep8/checkout_app/5_checkout_urls_pep8.jpg): *All Right*
+- [views.py](media/validation/pep8/checkout_app/6_checkout_views_pep8.jpg): *All Right*
+- [webhook_handlers.py](media/validation/pep8/checkout_app/7_checkout_webhook_handler_pep8.jpg): *All Right*
+- [webhooks.py](media/validation/pep8/checkout_app/8_checkout_webhooks_pep8.jpg): *Issue -Line 43 is too long, however it was decided not to break the line of code as there is no logical place to divide it (see image)*
 
 
+**Contact App**
 
-#### Pep8 - Python/Django
+ - [admin.py](media/validation/pep8/contact_app/1_contact_admin_pep8.jpg):   *All Right* 
+ - [forms.py](media/validation/pep8/contact_app/2_contact_forms_pep8.jpg):   *All Right* 
+ - [models.py](media/validation/pep8/contact_app/3_contact_models_pep8.jpg):   *All Right* 
+ - [urls.py](media/validation/pep8/contact_app/4_contact_urls_pep8.jpg):   *All Right* 
+ - [views.py](media/validation/pep8/contact_app/5_contact_views_pep8.jpg):   *All Right* 
 
-|**Bag App**|Results|
-|---|---|
-|[admin.py](media/validation/pep8/bag_app/1_bag_admin_pep8.jpg)|**All Right**|
-|[contexts.py](media/validation/pep8/bag_app/2_bag_contexts_pep8.jpg)|**All Right**|
-|[urls.py](media/validation/pep8/bag_app/3_bag_urls_pep8.jpg)|**All Right**|
-|[views.py](media/validation/pep8/bag_app/4_bag_views_pep8.jpg)|**All Right**|
+**Courses App**
 
-|**Checkout App**|Results|Info|
-|---|---|---|
-|[admin.py](media/validation/pep8/checkout_app/1_checkout_admin_pep8.jpg)|**All Right**||
-|[apps.py](media/validation/pep8/checkout_app/2_checkout_apps_pep8.jpg)|**All Right**||
-|[forms.py](media/validation/pep8/checkout_app/3_checkout_forms_pep8.jpg)|**All Right**||
-|[models.py](media/validation/pep8/checkout_app/4_checkout_models_pep8.jpg)|**All Right**||
-|[urls.py](media/validation/pep8/checkout_app/5_checkout_urls_pep8.jpg)|**All Right**||
-|[views.py](media/validation/pep8/checkout_app/6_checkout_views_pep8.jpg)|**All Right**||
-|[webhook_handlers.py](media/validation/pep8/checkout_app/7_checkout_webhook_handler_pep8.jpg)|**All Right**||
-|[webhooks.py](media/validation/pep8/checkout_app/8_checkout_webhooks_pep8.jpg)|*Issue*|Line 43 is too long, however it was decided not to break the line of code as there is no logical place to divide it (see image)|
+ - [admin.py](media/validation/pep8/courses_app/1_courses_admin_pep8.jpg):   *All Right*  
+ - [forms.py](media/validation/pep8/courses_app/2_courses_forms_pep8.jpg):   *All Right*  
+ - [models.py](media/validation/pep8/courses_app/3_courses_models_pep8.jpg):   *All Right*  
+ - [urls.py](media/validation/pep8/courses_app/4_courses_urls_pep8.jpg):   *All Right*  
+ - [views.py](media/validation/pep8/courses_app/5_courses_views_pep8.jpg):  *Issue - Line 27 is too long however as there is no logical place to break the line it was decided to keep it.*
 
-|**Contact App**|Results|
-|---|---|
-|[admin.py](media/validation/pep8/contact_app/1_contact_admin_pep8.jpg)|**All Right**|
-|[forms.py](media/validation/pep8/contact_app/2_contact_forms_pep8.jpg)|**All Right**|
-|[models.py](media/validation/pep8/contact_app/3_contact_models_pep8.jpg)|**All Right**|
-|[urls.py](media/validation/pep8/contact_app/4_contact_urls_pep8.jpg)|**All Right**|
-|[views.py](media/validation/pep8/contact_app/5_contact_views_pep8.jpg)|**All Right**|
+**Home App**
 
-|**Courses App**|Results|Info|
-|---|---|---|
-|[admin.py](media/validation/pep8/courses_app/1_courses_admin_pep8.jpg)|**All Right**||
-|[forms.py](media/validation/pep8/courses_app/2_courses_forms_pep8.jpg)|**All Right**||
-|[models.py](media/validation/pep8/courses_app/3_courses_models_pep8.jpg)|**All Right**||
-|[urls.py](media/validation/pep8/courses_app/4_courses_urls_pep8.jpg)|**All Right**||
-|[views.py](media/validation/pep8/courses_app/5_courses_views_pep8.jpg)|*Issue*|Line 27 is too long however as there is no logical place to break the line it was decided to keep it|
+ - [urls.py](media/validation/pep8/home_app/1_home_urls_pep8.jpg):   *All Right* 
+ - [views.py](media/validation/pep8/home_app/2_home_views_pep8.jpg):   *All Right* 
 
-|**Home App**|Results|
-|---|---|
-|[urls.py](media/validation/pep8/home_app/1_home_urls_pep8.jpg)|**All Right**|
-|[views.py](media/validation/pep8/home_app/2_home_views_pep8.jpg)|**All Right**|
+ **LMS App**
 
-|**LMS App**|Results|Info|
-|---|---|---|
-|[admin.py](media/validation/pep8/lms_app/1_lms_admin_pep8.jpg)|**All Right**||
-|[forms.py](media/validation/pep8/lms_app/2_lms_forms_pep8.jpg)|**All Right**||
-|[models.py](media/validation/pep8/lms_app/3_lms_models_pep8.jpg)|*Issue*|There are four images that are available for selection in the Lesson model.  These images were added via url as there was an issue linking to static images in Cloudinary.  After checking the [pep8 guide](https://peps.python.org/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds), it was decided that using a url shortner would affect the readability of the code and thus should be left as is.|
-|[urls.py](media/validation/pep8/lms_app/4_lms_urls_pep8.jpg)|**All Right**||
-|[views.py](media/validation/pep8/lms_app/5_lms_views_pep8.jpg)|**All Right**||
+ - [admin.py](media/validation/pep8/lms_app/1_lms_admin_pep8.jpg):   *All Right*  
+ - [forms.py](media/validation/pep8/lms_app/2_lms_forms_pep8.jpg):   *All Right*  
+ - [models.py](media/validation/pep8/lms_app/3_lms_models_pep8.jpg):  *Issue - There are four images that are available for selection in the Lesson model.  These images were added via url as there was an issue linking to static images in Cloudinary.  After checking the - [pep8 guide](https://peps.python.org/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds): , it was decided that using a url shortner would affect the readability of the code and thus should be left as is.*
+ - [urls.py](media/validation/pep8/lms_app/4_lms_urls_pep8.jpg):   *All Right*  
+ - [views.py](media/validation/pep8/lms_app/5_lms_views_pep8.jpg):   *All Right*  
 
-|**Profiles App**|Results|Info|
-|---|---|---|
-|[admin.py](media/validation/pep8/profiles_app/1_profiles_admin_pep8.jpg)|**All Right**||
-|[forms.py](media/validation/pep8/profiles_app/2_lms_forms_pep8.jpg)|*Issue*|Line 33 is too long, but as there is no logical place to break the code, it was decided to leave it as is. |
-|[models.py](media/validation/pep8/profiles_app/3_lms_models_pep8.jpg)|**All Right**||
-|[urls.py](media/validation/pep8/profiles_app/4_lms_urls_pep8.jpg)|**All Right**||
-|[views.py](media/validation/pep8/profiles_app/5_lms_views_pep8.jpg)|**All Right**||
+**Profiles App**
+
+ - [admin.py](media/validation/pep8/profiles_app/1_profiles_admin_pep8.jpg):   *All Right*  
+ - [forms.py](media/validation/pep8/profiles_app/2_lms_forms_pep8.jpg):  *Issue* Line 33 is too long, but as there is no logical place to break the code, it was decided to leave it as is.  
+ - [models.py](media/validation/pep8/profiles_app/3_lms_models_pep8.jpg):   *All Right*  
+ - [urls.py](media/validation/pep8/profiles_app/4_lms_urls_pep8.jpg):   *All Right*  
+ - [views.py](media/validation/pep8/profiles_app/5_lms_views_pep8.jpg):   *All Right*  
+
 
 
 ### Information Architecture
