@@ -2,8 +2,15 @@
 
 ![Skye Online English - Responsive Views](media/readme_images/responsive_image.jpg)
 
-
 [Skye Online English](https://www.skyeonlineenglish.com/) is an online English language teaching site.  It is currently focussed on providing face-to-face teaching.  This project intends to provide self-study opportunities for langauge students.  Similarly to sites like Udemy, this project aims to provide lifetime access for single purchases.
+
+## Business Model
+
+Currently, Skye Online English is running and is under the ownership of a sole trader (who happens to be the developer of this project).  The business is **not** aiming to be the primary source of income for the owner, but rather secondary.  Therefore, there is no budget available for marketing.  
+
+Free marketing strategies, such as a Facebook business page, Instagram page and regular newsletter will be the principle means of communicating with potential new clients.  At time of creation, there is alread a Facebook and Instagram page (more about this further down).  Regular infographics and offers can be implemented at a later date.  
+
+A quick search using [Wordtracker](https://www.wordtracker.com/) states that many people are looking at learning English in Korean - so duplicating/translating the website with an emphasis on certain langauges is something to consider.  Certainly, newsletters should be in a number of langauges.
 
 ## Planning
 
@@ -29,6 +36,7 @@ User Stories -
 
 
 **Wireframes - Shop**
+
 *Desktop*
 
 - [Desktop View - Homepage](media/wireframes/desktop_shop/1_desktop_view_homepage.jpg)
@@ -209,7 +217,7 @@ An inbox was created to allow existing/potential users to contact the company.  
 
 If the comapny wishes to reply, they will need a seperate email account.  As a later development, if the comapny wishes, an email client could be embedded.
 
-### Ongoing Bug discovery and fixes
+## Ongoing Bug discovery and fixes
 
 | Bug No' | Issue | Fix |
 |---|---|---|
@@ -226,13 +234,13 @@ If the comapny wishes to reply, they will need a seperate email account.  As a l
 |11|Superusers do not have access to courses unless they purchase them|Wrapped view code for LMS content in if statement|
 |12|PDF file were not downloading from lms|Cloudinary free account prevents sending PDF and ZIP files, updated cloudinary settings.|
 
-### Testing
+## Testing
 
-#### Manual Testing
+### Manual Testing
 
 There was no automated testing carried out during this project. Each User Story was manually tested as follows:
 
-#### User Stories
+### User Stories
 
 **As a User, I want to be able to view a list of available courses so that I can choose which one(s) to buy.**
 
@@ -437,9 +445,9 @@ There was no automated testing carried out during this project. Each User Story 
 
 - NOTE, it was decided to keep this in the Django admin site as this has the potential to be a very, very large database.
 
-### Validation
+## Validation
 
-#### W3C - HTML
+### W3C - HTML
 
 Every page was run through the [W3C Validation](https://validator.w3.org/) tool with the results displayed below.  I bagen with the publicly displayed pages and checked with their URLs.  For restricted pages, I used the source code on inspecting the page.
 
@@ -467,7 +475,7 @@ Admin pages:
 
 ---
 
-W3C CSS (Jigsaw)
+### W3C CSS (Jigsaw)
 
 The CSS was run through the Jigsaw Validation tool
 
@@ -475,7 +483,7 @@ CSS - [all clear](media/validation/w3c/css.jpg)
 
 ---
 
-Pep8 - Python/Django
+### Pep8 - Python/Django
 
 **Bag App**
 
@@ -532,11 +540,31 @@ Pep8 - Python/Django
  - [urls.py](media/validation/pep8/profiles_app/4_lms_urls_pep8.jpg):   *All Right*  
  - [views.py](media/validation/pep8/profiles_app/5_lms_views_pep8.jpg):   *All Right*  
 
+## Web Marketing
 
+### SEO
 
-### Information Architecture
+The goal of this site is to provide English lanaguge material for students who are studying English as a second langauge. I used [Wordtracker](https://www.wordtracker.com/) to generate key words connected with 'English as a Foreign Langauge' - as this is the generally accepted name of hte industry.  The results were as follows:
 
-#### Data Storage
+![Wordtracker](media/readme_images/wordtracker.jpg)
+
+The most commonly searched terms are not wholly relevant to this site.  Other searches confirmed this.  Therefore it was decided that every item in the shop would have its own dedicated Meta field which will users to add terms that are more connected to the specific course as opposed to the industry as a whole.
+
+### Facebook
+
+As this project is for a preexisting company (owned by the developer) a Facebook page is already in existance.  While the company was active (last post in 2020), there were regular updates providing quality infographics.  Visitors to the site would learn from these posts and also discover news about the company.
+
+The website design was based on the color scheme of the company's logo - which you can see here:
+
+![Facebook](media/readme_images/facebook.jpg)
+
+### Email
+
+A signup form for Mail Chimp is located in the footer of the page, so it is visibile on every page of the site for convenience.  Users only need to enter their email which will then be stored in Mail Chimp for the admins to send regular newsletters.
+
+## Information Architecture
+
+### Data Storage
 
 **Checkout App - Order Model**
 
@@ -636,7 +664,7 @@ Pep8 - Python/Django
 |course_bought|ManyToManyField|**Course**, blank=True|
 
 
-### Technologies Used
+## Technologies Used
 
 **Languages**
 
@@ -662,7 +690,7 @@ Pep8 - Python/Django
 - [Embed Video version 1.4.4](https://pypi.org/project/django-embed-video/)
 - [Pillow version 9.1.1](https://pypi.org/project/Pillow/)
 
-### Media Used
+## Media Used
 
 **Homepage image** - [Pexels](https://www.pexels.com/) - <https://images.pexels.com/photos/3786748/pexels-photo-3786748.jpeg>
 
@@ -679,3 +707,123 @@ Pep8 - Python/Django
 - Text - [#0DA97E](https://g.co/kgs/zU2fC6) & [#97688c](https://g.co/kgs/bqQVv1) & [#000000](https://g.co/kgs/xfSLW2) & [#cacecd](https://g.co/kgs/91ighC)
 - Backgrounds - [#ffff](https://g.co/kgs/yDTdox)
 - Borders - [#97688c](https://g.co/kgs/bqQVv1)
+
+
+## Deployment
+
+This project was produced in GitPod and is deployed on Heroku.  This is how to make a copy of this project and deploy it accordingly.  The images are hosted on Cloudinary, so you will to sign up for a cloudinary account in order to get an API key.  I opted to use a gmail account, the settings for which are in the `settings.py` file.  The payment system used is Stripe, which you will need to set up an account for in order to collect the PUBLIC_KEY, PRIVATE_KEY and WH keys.
+
+### To set it up locally
+
+1 - download the repository using the link at the top of the page, alternatively you can clone it using the following command:
+
+```
+git clone https://github.com/dougiemath/photo_sharing_site
+```
+
+2 - Set up a virtual environment:
+
+```
+py -m venv venv
+```
+
+3 - Activate the virtual environment:
+
+```
+venv\Scripts\activate
+```
+
+Create a project by entering the command:
+
+```
+django-admin startproject YOURPROJECTNAMEHERE 
+```
+
+Create a new app by entering the comand:
+
+```
+py manage.py startapp YOURAPPNAMEHERE
+```
+
+You are now ready to install the packages required to run this program.  You can do this by installing the requirements in the requirements.txt file:
+
+```
+pip install -r requirements.txt
+```
+
+Next we need to add the following to the list of installed apps in settings.py:
+```
+'cloudinary_storage',
+'crispy_forms',
+'allauth',
+'allauth.account',
+'allauth.socialaccount',
+'django.contrib.staticfiles',
+'cloudinary',
+'taggit',
+'django_countries',
+'embed_video',
+'django_summernote',
+'home',
+'courses',
+'bag',
+'checkout',
+'profiles',
+'contact',
+'lms',
+'**yourappname**'
+```
+
+You will need to create an `env.py` file which will contain the following:
+
+```
+os.environ["DATABASE_URL"] = "your postgresql url which you will find in heroku (see below)"
+os.environ["SECRET_KEY"] = "your secret key which will added to heroku"
+os.environ["CLOUDINARY_URL"] = "your cloudinary api"
+```
+
+### Setting up email server
+In order to send emails (such as user confirmation) you will need to configure an email.  I have used gmail and followed the guidelines as stated here:
+
+[Google Email Guidelines for Apps](https://support.google.com/mail/thread/38519529/anyone-who-can-help-me-out-with-this-error-smtplib-smtpsenderrefused-530-b-5-7-0-auth-required?hl=en)
+
+### Setting up on Heroku:
+
+1 - Set up a (or log into an existing) Heroku account.
+
+2 - Select add new app and give it a unique name
+
+3 - Select 'Resources' and search for/install the Heroku Postgres add-on.
+
+4 - Select 'Settings' and click 'Reveal Convig Vars'
+
+5 - You will find the DATABASE URL already added, copy this to the `env.py` file mentioned previously.
+
+6 - You will need the following convig vars:
+```
+CLOUDINARY_URL = your API url from cloudinary
+SECRET_KEY = your secret key must match the secret key in your `env.py` file
+EMAIL_HOST_USER = your chosen email account's address
+EMAIL_HOST_PASS = your chosen emaiil account's password or dedicated access key
+STRIPE_PUBLIC_KEY = which you will find from your strip dashboard
+STRIPE_SECRET_KEY = which you will find from your strip dashboard
+STRIPE_WH_SECRET = which you will find from your strip dashboard
+```
+### Migrate and Run
+
+Finally, all that remains is to `makemigration` by entering the following command:
+```
+python3 manage.py makemigrations
+```
+Then migrate using the following:
+```
+python3 manage.py migrate
+```
+And run the app locally:
+```
+python3 manage.py runserver
+```
+
+## Credits
+
+I would like to thank my mentor who has helped me on other projects before this one, but really smashed it out of the park for me on this one.  The advice and patience he gave me was well beyond simply 'going the extra mile'.
