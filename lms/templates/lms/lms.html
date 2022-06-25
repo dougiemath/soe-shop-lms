@@ -31,7 +31,10 @@
             <img class="card-img-top pt-2" src="{{ lesson.question_image }}" alt="Card image cap">
             <div class="card-body">
                 <h3 class="card-title">{{ lesson.category }}</h3>
+                {% if lesson.exam_category %}
                 <h5 class="card-title">{{ lesson.exam_section }}</h5>
+                {% else %}
+                {% endif %}
                 <p class="card-text">{{ lesson.name }}</p>
                 <a href="{% url 'lms_content' lesson.id %}" class="btn btn-outline-success rounded-0">Start Studying</a>
             </div>
@@ -50,7 +53,10 @@
                 <img class="card-img-top pt-2" src="{{ lesson.question_image }}" alt="Card image cap">
                 <div class="card-body">
                     <h3 class="card-title">{{ lesson.category }}</h3>
+                    {% if lesson.exam_category %}
                     <h5 class="card-title">{{ lesson.exam_section }}</h5>
+                    {% else %}
+                    {% endif %}
                     <p class="card-text">{{ lesson.name }}</p>
                     <a href="{% url 'lms_content' lesson.id %}" class="btn btn-outline-success rounded-0">Start Studying</a>
                 </div>
