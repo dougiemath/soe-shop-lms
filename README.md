@@ -367,7 +367,9 @@ Terms and Conditions - https://dougiemath-skyeonlineenglish.herokuapp.com/terms_
 
 Contact - https://dougiemath-skyeonlineenglish.herokuapp.com/contact/: all clear
 
-The following pages are all restricted from public view
+The following pages are all restricted from public view:
+
+https://dougiemath-skyeonlineenglish.herokuapp.com/profile/ - 
 
 #### Pep8 - Python/Django
 
