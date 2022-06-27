@@ -8,13 +8,13 @@
 
 Currently, Skye Online English is running and is under the ownership of a sole trader (who happens to be the developer of this project).  The business is **not** aiming to be the primary source of income for the owner, but rather secondary.  Therefore, there is no budget available for marketing.  
 
-Free marketing strategies, such as a Facebook business page, Instagram page and regular newsletter will be the principle means of communicating with potential new clients.  At time of creation, there is alread a Facebook and Instagram page (more about this further down).  Regular infographics and offers can be implemented at a later date.  
+Free marketing strategies, such as a Facebook business page, Instagram page and regular newsletter will be the principle means of communicating with potential new clients.  At time of creation, there is already a Facebook and Instagram page (more about this further down).  Regular infographics and offers can be implemented at a later date.  
 
 A quick search using [Wordtracker](https://www.wordtracker.com/) states that many people are looking at learning English in Korean - so duplicating/translating the website with an emphasis on certain langauges is something to consider.  Certainly, newsletters should be in a number of langauges.
 
 ## Planning
 
-User Stories - 
+User Stories (User) - 
 - As a User, I want to be able to view a list of available courses so that I can choose which one(s) to buy.
 - As a User, I want to be able to sort courses by category so that I can find one more suited to my needs more quickly.
 - As a User, I want to be able to view more details about a specific course so that I can make an informed decision before I purchase.
@@ -29,6 +29,8 @@ User Stories -
 - As a User, I want to be able to email the company with any questions that I may have.
 - As a User, I want to be able to access my paid-for course content so that I can study.
 - As a User, I would like to see my progress throughout each section of the course.
+
+User Stories (Admin) - 
 - As an Admin, I want to be able to add courses to my shop to encourage new business.
 - As an Admin, I want to be able to edit/update my courses to keep them current.
 - As an Admin, I want to be able to remove courses that I no longer need/want.
@@ -44,7 +46,9 @@ User Stories -
 - [Desktop View - Course Details](media/wireframes/desktop_shop/3_desktop_view_course_details.jpg)
 - [Desktop View - Shopping Bag](media/wireframes/desktop_shop/4_desktop_view_course_shopping_bag.jpg)
 - [Desktop View - Checkout](media/wireframes/desktop_shop/5_desktop_view_checkout.jpg)
-**Mobile*
+
+*Mobile*
+
 - [Mobile View - Homepage](media/wireframes/desktop_shop/1_mobile_view_homepage.jpg)
 - [Mobile View - All Courses](media/wireframes/desktop_shop/2_mobile_view_all_courses_contents_page.jpg)
 - [Mobile View - Course Details](media/wireframes/desktop_shop/3_mobile_view_course_details.jpg)
@@ -52,6 +56,7 @@ User Stories -
 - [Mobile View - Checkout](media/wireframes/desktop_shop/5_mobile_view_checkout.jpg)
 
 **Wireframes - LMS**
+
 *Desktop*
 
 - [Desktop View - LMS](media/wireframes/desktop_shop/1_lms_desktop_view.jpg)
@@ -72,8 +77,7 @@ The homepage / base template allows users almost complete navigation throughout 
 - all courses - a search with no filters applied
 - General English - a search of all published courses with the category 'General English'
 - Exam Skills - a search of all published courses with the ctegory 'Exam Skills'
-- user's Profile Page - a link to the user's order history, personal details and link to the LMS
-- Manage Content (superusers only) - link to content management (lessons, shop content)
+- user's Profile Page - a link to the user's order history, personal details and link to the LMS.  Superusers will have access to the management panel using this link.  It was decided not to give users direct access to the LMS as the main goal of this site is to sell products so having them linger before accessing the content allows for the possibility of further browsing. 
 - a search bar - for searching all published courses
 - a link to a contact form
 - a link to the site's privacy policy (footer)
@@ -85,24 +89,43 @@ The homepage / base template allows users almost complete navigation throughout 
 
 ![Search Results](media/readme_images/courses_search_results.jpg)
 
-Here we can see the filtered search results in order of course name.  At present there are only 2 courses for testing/display purposes.
+The search is a filter of all content.  In the above image we can see see what happens when we click 'All Courses' - there are two categories (Exam Skills and General English) that are on display here.  CAE and IELTS are both exam courses and General English - B1 is not.  Every course that is created will be on display in this tab.  
 
 ![Search Results empty](media/readme_images/courses_search_results_no_results.jpg)
 
 If the search results come up empty, users will see this message.
 
+**Exam Skills**
+
+![Exam Skills](media/readme_images/exam_skills.jpg)
+
+Here is the filter in action displaying the Exam courses only.
+
+**General English**
+
+![General English](media/readme_images/general_english.jpg)
+
+And here is the filter in action displaying the General English courses only.
 
 **Course Details**
 
 ![Course Details](media/readme_images/course_details_67.jpg)
 
-In the course details page the user can see much more infromation about a course than in the search results.  This image has been zoomed out to 67% to show the 'Add to Bag' feature.  Users can only add it to their shopping if it has not been added already, and if it has not been bought before.  
+In the course details page the user can see much more infromation about a course than in the search results.  This image has been zoomed out to 67% to show the 'Add to Bag' feature.  Users can only add it to their shopping if it has not been added already, and if it has not been bought before.  If the user attempts to add it again an error will appear in the top right preventing them from doing so.  This is prevent multiple purchases of the same product as, like sites similar to Udemy, the user will receive lifetime access.
+
+**Product Added to Bag**
+
+![Product Added to Bag](media/readme_images/product_added_to_bag.jpg)
+
+When a product is added to the shopping bag, the page will refresh and display 2 things:
+- A success message in the upper right corner
+- A floating sticky div at the base of the screen with the bag's total and a link to the shopping bag page.  This floating div will be on every shop page so that users can add more items but be aware of how much they will have to pay.
 
 **Shopping Bag**
 
 ![Shopping Bag](media/readme_images/shopping_bag.jpg)
 
-In the shopping bag, users can review all the courses they wish to purchase and remove items.
+In the shopping bag, users can review all the courses they wish to purchase and remove items.  There is an option to return to the courses section if they wish to add more courses to their bag.
 
 **Checkout**
 
@@ -114,13 +137,13 @@ Users can purchase their courses here.  The payment system is Stripe.  Users can
 
 ![Checkout Success](media/readme_images/post_checkout.jpg)
 
-This page will provide the user with a summary of what has just been purchased.  There will be a copy of this available in the user's profile page.
+This page will provide the user with a summary of what has just been purchased.  There will be a copy of this available in the user's profile page.  A feature which has yet to be implemented is for an automated email to be sent to the client's email address.  This is something that can be done at a later date, but for now a manual email can be sent.
 
 **Personal Profile**
 
 ![Personal Page](media/readme_images/profile_oreder.jpg)
 
-On this page will be a list of all the user's past orders along with their saved address.  This is also where the user will be able to access the LMS.  This was placed in here intentionally as opposed to in the navigation bar as the principle purpose of this site is to make money so the inital links are for business purposes.
+On this page will be a list of all the user's past orders along with their saved address.  This is also where the user will be able to access the LMS.  
 
 **Contact**
 
@@ -147,19 +170,19 @@ Part 4:
 
 Each lesson in the LMS is divided into 4 sections and has a progress bar along the bottom.
 - Section 1 is designed to give an overview of the question - Is it a multiple choice question, or is at an exam skill?
-- Section 2 is designed to give a sampl question to allow the user an opportunity to try the question before reading the guide.
+- Section 2 is designed to give a sample question to allow the user an opportunity to try the question before reading the guide.
 - Section 3 is a guide to explain how to complete the question.  There is an option to include a video here.
-- Section 4 is for further information/study.  There is an option to upload pdfs - currently using [Cloudinary](https://cloudinary.com/).
+- Section 4 is for further information/study.  There is an option to upload PDFs - currently using [Cloudinary](https://cloudinary.com/).
 
 I will explain the fields later on when I share the admin side of the LMS.
 
 **Manage**
 
-I have a made a control panel of sorts where the admin user can add content to the site/lms.
+I have a made a control panel of sorts where the admin user can add/edit content to the site/lms.
 
 ![Manage](media/readme_images/manage.jpg)
 
-The admin can access each section by clicking the arrow on the right of the screen.  Users have a profile page where they can access their order history, whereas admins will have this page appear in its stead. 
+The admin user can access each section by clicking the arrow on the right of the screen.  Users have a profile page where they can access their order history, whereas admins will have this page appear in its stead. 
 
 **Manage New Content**
 
@@ -185,9 +208,9 @@ The lesson is the nuts and bolts of the LMS.  New academic content is added here
 
 The large fields are SummerNote widgets which can allow the user to style the content as they wish.  The CSS file takes into account bold tags and italic tags.  SummerNote does not use the more modern 'strong' and 'em' tags, so a later development could be to use a different wysiwyg editor.
 
-There is an option to include a video if wished as youtube already contains a lot of videos regarding efl content.  
+There is an option to include a video if wished as Youtube already contains a lot of videos regarding EFL content.  
 
-Finally there is an opportuntiy to include 2 PDF files.  These are currently ebing uploaded to Cloudinary and will open in a new window. 
+Finally there is an opportuntiy to include 2 PDF files.  These are currently ebing uploaded to Cloudinary and will open in a new window. Users can download them from there.
 
 **Add New Course to Shop**
 
@@ -229,7 +252,7 @@ If the comapny wishes to reply, they will need a seperate email account.  As a l
 | 6 | Can access certain pages without logging in | Login_required decorators added to checkout and profiles pages |
 | 7 | Summernote fields aren't displaying in the UI, only in the admin| Updated forms.py accordingly |
 | 8 | Customers still had access to all courses that weren't paid for | Added for loop to filter course names that match what courses are bought in the user's profile |
-| 9 | Customers can purchase the same thing twice but at different times| Added for loop to add_to_bag function tocompare with items already in user's profile |
+| 9 | Customers can purchase the same thing twice but at different times| Added for loop to add_to_bag function to compare with items already in user's profile |
 | 10 | After installation of cloudinary, thumbnail images in LMS were not displaying | Changed model to Charfield and added the urls of the thumbnails in Cloudinary |
 |11|Superusers do not have access to courses unless they purchase them|Wrapped view code for LMS content in if statement|
 |12|PDF file were not downloading from lms|Cloudinary free account prevents sending PDF and ZIP files, updated cloudinary settings.|
@@ -255,8 +278,8 @@ There was no automated testing carried out during this project. Each User Story 
 |**Test**|**Result**|**Verdict**|
 |---|---|---|
 |Entered the site's url|Homepage displays correctly|-|
-|Selected 'General English' from the nav bar|An error displays stating that there are no general English courses available at this time|**PASS**|
-|Selected 'General English' from the footer|An error displays that there are no courses that match this search|**PASS**|
+|Selected 'General English' from the nav bar|The single General English course displays accordingly|**PASS**|
+|Selected 'General English' from the footer|The single General English course displays accordingly|**PASS**|
 |Selected 'Exam Skills' from the nav bar|The two exam skills courses display correctly|**PASS**|
 |Selected 'Exam Skills' from the footer|The two exam skills courses display correctly|**PASS**|
 |Entered an exam name (IELTS) into the search bar|Only the IELTS course displayed|**PASS**|
@@ -269,7 +292,7 @@ There was no automated testing carried out during this project. Each User Story 
 |**Test**|**Result**|**Verdict**|
 |---|---|---|
 |Entered the site's url|Homepage displays correctly|-|
-|Selected 'All courses' from the nav bar|A list of all (2 for development purposes) display in the form of cards|-|
+|Selected 'All courses' from the nav bar|A list of all (3 for development purposes) display in the form of cards|-|
 |Selected 'More Details' fromm the bottom of the course cards|A new page opened up with more information about the specific course I selected.|**PASS**|
 |Returned to 'All courses' and selected 'More Details' on a differernt course|A new page opened up with more information about the specific course I selected.|**PASS**|
 
@@ -278,7 +301,7 @@ There was no automated testing carried out during this project. Each User Story 
 |**Test**|**Result**|**Verdict**|
 |---|---|---|
 |Entered the site's url|Homepage displays correctly|-|
-|Selected 'All courses' from the nav bar|A list of all (2 for development purposes) display in the form of cards|-|
+|Selected 'All courses' from the nav bar|A list of all (3 for development purposes) display in the form of cards|-|
 |Selected 'More Details' fromm the bottom of the course cards|A new page opened up with more information about the specific course I selected.|-|
 |Selected 'Add to Bag'|Page refreshes and displays message stating that the item was successfully added, link appears at the bottom of the page with bag total|-|
 |Returned to 'All courses' and selected 'More Details' on a differernt course|A new page opened up with more information about the specific course I selected.|-|
@@ -299,9 +322,8 @@ There was no automated testing carried out during this project. Each User Story 
 |**Test**|**Result**|**Verdict**|
 |---|---|---|
 |Repeated steps above to add items to bag|Directed to Shopping bag page|-|
-|Clicked on 'Secure Checkout' button|Directed to checkout page where user can pay for items||
-|Filled in personal details and added Stripe Test number from Stripe documentation.  Clicked on 'Complete Payment|Overlay loads asking user to wait||
-|On completion of payment, page directs to 'Order Confirmation' page and displays message confirming purchase has been made||**PASS**|
+|Clicked on 'Secure Checkout' button|Directed to checkout page where user can pay for items |
+|Filled in personal details and added Stripe Test number from Stripe documentation.  Clicked on 'Complete Payment|Overlay loads asking user to wait. On completion of payment, page directs to 'Order Confirmation' page and displays message confirming purchase has been made|**PASS**|
 |Accessed Stripe Dashboard|Accessed webhooks in Stripe's dashboard to confirm if payment was successful. Stripe shows response code 200 for payment intent, charges and balance|**PASS**|
 
 **As a User I want to be able to store my personal data so that I can use it again without having to reinput it.**
